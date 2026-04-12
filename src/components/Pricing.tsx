@@ -39,62 +39,64 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 border-t border-white/5">
+    <section id="pricing" className="py-24 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 reveal">
-          <p className="text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Pricing</p>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-4">Straightforward pricing.<br />No surprises.</h2>
-          <p className="text-slate-400 text-lg">Start free for 14 days. No credit card required.</p>
+          <span className="inline-block bg-brand-50 text-brand-700 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Pricing</span>
+          <h2 className="font-display text-4xl md:text-5xl text-gray-900 mb-4">Straightforward pricing.<br/>No surprises.</h2>
+          <p className="text-gray-500 text-lg">Start free for 14 days. No credit card required.</p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-4 gap-5 items-start">
           {tiers.map((t, i) => (
             <div key={t.name}
-              className={`reveal rounded-2xl p-7 flex flex-col
+              className={`reveal rounded-2xl p-7 flex flex-col transition-all
                 ${t.highlight
-                  ? 'bg-amber-400 text-navy-950 relative overflow-hidden'
-                  : 'bg-navy-900 border border-white/8 text-white'
+                  ? 'bg-brand-600 text-white shadow-xl shadow-brand-600/25 scale-105 relative'
+                  : 'bg-white border border-gray-200 text-gray-900 hover:shadow-md'
                 }`}
-              style={{ transitionDelay: `${i * 80}ms` }}>
+              style={{transitionDelay:`${i*80}ms`}}>
               {t.highlight && (
-                <div className="absolute top-4 right-4 text-xs font-700 font-display bg-navy-950/20 rounded-full px-3 py-1">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900 text-xs font-700 font-display rounded-full px-4 py-1.5 whitespace-nowrap">
                   Most popular
                 </div>
               )}
-              <p className={`font-display text-lg font-700 mb-1 ${t.highlight ? 'text-navy-950' : 'text-white'}`}>
-                {t.name}
-              </p>
+
+              <p className={`font-display text-lg font-700 mb-1 ${t.highlight ? 'text-white' : 'text-gray-900'}`}>{t.name}</p>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className={`font-display text-4xl font-800 ${t.highlight ? 'text-navy-950' : 'text-white'}`}>
-                  {t.price}
-                </span>
-                <span className={`text-sm ${t.highlight ? 'text-navy-700' : 'text-slate-500'}`}>{t.period}</span>
+                <span className={`font-display text-4xl font-800 ${t.highlight ? 'text-white' : 'text-gray-900'}`}>{t.price}</span>
+                <span className={`text-sm ${t.highlight ? 'text-brand-200' : 'text-gray-400'}`}>{t.period}</span>
               </div>
-              <p className={`text-sm mb-6 ${t.highlight ? 'text-navy-700' : 'text-slate-400'}`}>{t.desc}</p>
+              <p className={`text-sm mb-6 ${t.highlight ? 'text-brand-100' : 'text-gray-400'}`}>{t.desc}</p>
 
               <ul className="space-y-2.5 mb-8 flex-1">
                 {t.features.map(f => (
                   <li key={f} className="flex items-center gap-2.5 text-sm">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                      stroke={t.highlight ? '#0a1628' : '#fbbf24'} strokeWidth="2.5">
-                      <path d="M2 7l3 3 7-7"/>
-                    </svg>
-                    <span className={t.highlight ? 'text-navy-800' : 'text-slate-300'}>{f}</span>
+                    <span className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${t.highlight ? 'bg-white/20' : 'bg-brand-100'}`}>
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke={t.highlight ? 'white' : '#059669'} strokeWidth="2">
+                        <path d="M1 4l2 2 4-4"/>
+                      </svg>
+                    </span>
+                    <span className={t.highlight ? 'text-brand-50' : 'text-gray-600'}>{f}</span>
                   </li>
                 ))}
               </ul>
 
               <a href="#"
-                className={`block text-center text-sm font-medium py-3 rounded-xl transition-all
+                className={`block text-center text-sm font-semibold py-3 rounded-xl transition-all
                   ${t.highlight
-                    ? 'bg-navy-950 text-white hover:bg-navy-800'
-                    : 'border border-white/15 text-white hover:bg-white/8'
+                    ? 'bg-white text-brand-700 hover:bg-brand-50'
+                    : 'bg-brand-600 text-white hover:bg-brand-700'
                   }`}>
                 {t.cta}
               </a>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-sm text-gray-400 mt-10">
+          All plans include a 14-day free trial · No credit card required · Cancel anytime
+        </p>
       </div>
     </section>
   )
