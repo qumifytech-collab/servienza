@@ -1,17 +1,8 @@
 'use client'
-import { useEffect } from 'react'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import EarlyAdopters from '@/components/EarlyAdopters'
-import Industries from '@/components/Industries'
-import Features from '@/components/Features'
-import HowItWorks from '@/components/HowItWorks'
-import MobileApp from '@/components/MobileApp'
-import Integrations from '@/components/Integrations'
-import SocialProof from '@/components/SocialProof'
-import Pricing from '@/components/Pricing'
-import FAQ from '@/components/FAQ'
-import Footer from '@/components/Footer'
+import {useEffect} from 'react'
+import HeroSection from '@/components/Hero'
+import WhoWeAre from "@/components/who-we-are";
+import OurServices from "@/components/our-services";
 
 export default function Home() {
   useEffect(() => {
@@ -21,7 +12,7 @@ export default function Home() {
           if (e.isIntersecting) e.target.classList.add('visible')
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      {threshold: 0.12, rootMargin: '0px 0px -40px 0px'}
     )
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
     return () => observer.disconnect()
@@ -29,18 +20,18 @@ export default function Home() {
 
   return (
     <main>
-      <Navbar />
-      <Hero />
-      <EarlyAdopters />
-      <Industries />
-      <Features />
-      <HowItWorks />
-      <MobileApp />
-      <Integrations />
-      <SocialProof />
-      <Pricing />
-      <FAQ />
-      <Footer />
+      <HeroSection/>
+      <WhoWeAre/>
+      <OurServices/>
+      {/*<Industries />*/}
+      {/*<Features />*/}
+      {/*<HowItWorks />*/}
+      {/*<MobileApp />*/}
+      {/*<Integrations />*/}
+      {/*<SocialProof />*/}
+      {/*<Pricing />*/}
+      {/*<FAQ />*/}
+      {/*<Footer />*/}
     </main>
   )
 }

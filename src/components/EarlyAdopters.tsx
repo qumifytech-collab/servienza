@@ -1,54 +1,47 @@
-const earlyAdopters = [
-  { name: 'FlowRight Plumbing', industry: 'Plumbing', location: 'Miami, FL' },
-  { name: 'ArcticBreeze HVAC', industry: 'HVAC', location: 'Houston, TX' },
-  { name: 'AquaClear Pools', industry: 'Pool Service', location: 'Tampa, FL' },
-  { name: 'GreenLawn Pro', industry: 'Landscaping', location: 'Phoenix, AZ' },
-  { name: 'ShieldPest Co.', industry: 'Pest Control', location: 'Orlando, FL' },
-  { name: 'PawsOnWheels', industry: 'Pet Grooming', location: 'Austin, TX' },
-  { name: 'SparkClean Services', industry: 'Cleaning', location: 'Atlanta, GA' },
-  { name: 'LuxeHome Beauty', industry: 'Home Beauty', location: 'Los Angeles, CA' },
-]
+"use client";
+
+const brands = [
+  { name: "Placeholder Co.", className: "text-xl font-medium tracking-tight" },
+  { name: "BRAND NAME", className: "text-base font-black tracking-[0.18em]" },
+  { name: "Sample Group", className: "text-xl font-semibold" },
+  { name: "acme.", className: "text-2xl font-light italic font-serif" },
+  { name: "LOREM INC", className: "text-base font-bold tracking-widest" },
+  { name: "Ipsum & Co", className: "text-xl font-medium" },
+  { name: "dolor.", className: "text-2xl font-light font-serif" },
+  { name: "SITAMET", className: "text-base font-black tracking-[0.12em]" },
+];
 
 export default function EarlyAdopters() {
   return (
-    <section className="py-16 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-8 reveal">
-        <p className="text-center text-xs text-slate-500 uppercase tracking-widest mb-6">
-          Early adopter companies
+    <section className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center md:items-stretch overflow-hidden">
+      {/* Left label */}
+      <div className="flex-shrink-0 flex items-center px-8 py-4">
+        <p className="text-md leading-snug text-[#9C8E84] w-28">
+          Businesses we've helped:
         </p>
       </div>
 
-      {/* Scrolling ticker */}
-      <div className="relative">
-        <div className="flex gap-4 animate-[ticker_30s_linear_infinite]" style={{
-          width: 'max-content',
-        }}>
-          {[...earlyAdopters, ...earlyAdopters].map((co, i) => (
-            <div key={i}
-              className="flex-shrink-0 flex items-center gap-3 bg-navy-900 border border-white/8
-                rounded-xl px-5 py-3">
-              <div className="w-7 h-7 rounded-lg bg-amber-400/15 flex items-center justify-center
-                text-amber-400 font-display font-700 text-xs flex-shrink-0">
-                {co.name.charAt(0)}
-              </div>
-              <div>
-                <p className="text-white text-sm font-medium whitespace-nowrap">{co.name}</p>
-                <p className="text-slate-500 text-xs whitespace-nowrap">{co.location}</p>
-              </div>
-              <span className="text-xs border border-white/8 rounded-full px-2.5 py-0.5 text-slate-500 whitespace-nowrap">
-                {co.industry}
-              </span>
-            </div>
+      {/* Marquee */}
+      <div className="relative flex-1 overflow-hidden flex items-center">
+        {/* Left fade */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-[#F4F0EA] to-transparent" />
+        {/* Right fade */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-[#F4F0EA] to-transparent" />
+
+        <div
+          className="flex items-center gap-14 animate-[ticker_35s_linear_infinite]"
+          style={{ width: "max-content" }}
+        >
+          {[...brands, ...brands].map((brand, i) => (
+            <span
+              key={i}
+              className={`whitespace-nowrap text-[#1c1c1c] ${brand.className}`}
+            >
+              {brand.name}
+            </span>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
-  )
+  );
 }

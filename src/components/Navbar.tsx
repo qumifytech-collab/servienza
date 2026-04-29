@@ -1,74 +1,103 @@
-'use client'
-import { useState, useEffect } from 'react'
+"use client";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+import React, { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-blur
-      ${scrolled ? 'bg-navy-950/90 border-b border-white/5' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center flex-shrink-0">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M3 14L9 4L15 14H3Z" fill="#050d1a" strokeWidth="0"/>
-              <circle cx="9" cy="10" r="2" fill="#050d1a"/>
-            </svg>
-          </div>
-          <span className="font-display font-800 text-lg tracking-tight text-white">
-            Servienza
-          </span>
-        </a>
+    <nav className="fixed top-0 left-0 w-full z-50">
+      {/* Header bar */}
+      <div className="h-20 bg-[#F4F0EA] border-b border-black/5 px-6 md:px-10 flex items-center justify-between relative z-50">
+        <Link href="/" className="text-2xl font-medium text-black">
+          Servienza
+        </Link>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-          <a href="#features" className="hover:text-white transition-colors">Features</a>
-          <a href="#industries" className="hover:text-white transition-colors">Industries</a>
-          <a href="#how-it-works" className="hover:text-white transition-colors">How it works</a>
-          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8 mr-8">
+          <Link href="#" className="text-sm font-medium">Features</Link>
+          <Link href="#" className="text-sm font-medium">Industries</Link>
+          <Link href="#" className="text-sm font-medium">How it works</Link>
+          <Link href="#" className="text-sm font-medium">Pricing</Link>
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors px-3 py-1.5">
-            Sign in
-          </a>
-          <a href="#"
-            className="text-sm font-medium bg-amber-400 text-navy-950 px-4 py-2 rounded-lg hover:bg-amber-300 transition-colors">
-            Start free trial
-          </a>
+        {/* Desktop CTA */}
+        <div className="hidden md:block">
+          <Button
+            size="lg"
+            className="group relative overflow-hidden rounded-xl px-5 h-11 text-sm bg-black text-white gap-2 flex items-center cursor-pointer"
+          >
+            <span className="relative z-10">Start Free Trial</span>
+
+            <span className="relative z-10 w-6 h-6 overflow-hidden flex items-center justify-center">
+              <span className="absolute transition-transform duration-300 group-hover:translate-x-6 group-hover:-translate-y-6">
+                <ArrowUpRight className="size-6" strokeWidth={2} />
+              </span>
+              <span className="absolute -translate-x-6 translate-y-6 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0">
+                <ArrowUpRight className="size-6" strokeWidth={2} />
+              </span>
+            </span>
+          </Button>
         </div>
 
-        {/* Mobile hamburger */}
-        <button className="md:hidden text-slate-400" onClick={() => setOpen(!open)}>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? <><line x1="4" y1="4" x2="18" y2="18"/><line x1="18" y1="4" x2="4" y2="18"/></> :
-              <><line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/></>}
-          </svg>
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          className="md:hidden w-12 h-12 flex items-center justify-center bg-black/5 rounded-full cursor-pointer z-50"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} color={'#000'} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-navy-900 border-t border-white/5 px-6 py-4 flex flex-col gap-4 text-sm">
-          {['Features','Industries','How it works','Pricing'].map(l => (
-            <a key={l} href={`#${l.toLowerCase().replace(/ /g,'-')}`}
-              onClick={() => setOpen(false)}
-              className="text-slate-300 hover:text-white transition-colors">{l}</a>
-          ))}
-          <a href="#" className="mt-2 text-center bg-amber-400 text-navy-950 font-medium py-2.5 rounded-lg">
-            Start free trial
-          </a>
+      {/* Full screen menu */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-[#F4F0EA] pt-32 px-6 flex flex-col transition-all duration-300 ease-in-out z-40",
+          isOpen
+            ? "opacity-100 visible translate-y-0 pointer-events-auto"
+            : "opacity-0 invisible -translate-y-5 pointer-events-none"
+        )}
+      >
+        <div className="flex flex-col gap-6">
+          <Link href="#" onClick={() => setIsOpen(false)} className="text-4xl font-medium text-black">
+            Features
+          </Link>
+          <Link href="#" onClick={() => setIsOpen(false)} className="text-4xl font-medium text-black">
+            Industries
+          </Link>
+          <Link href="#" onClick={() => setIsOpen(false)} className="text-4xl font-medium text-black">
+            How it works
+          </Link>
+          <Link href="#" onClick={() => setIsOpen(false)} className="text-4xl font-medium text-black">
+            Pricing
+          </Link>
         </div>
-      )}
+
+        <div className="mt-auto pb-12">
+          <Button
+            size="lg"
+            className="w-full group relative overflow-hidden rounded-xl px-5 h-11 text-sm bg-black text-white gap-2 flex items-center justify-center cursor-pointer"
+          >
+            <span className="relative z-10">Start Free Trial</span>
+
+            <span className="relative z-10 w-6 h-6 overflow-hidden flex items-center justify-center">
+              <span className="absolute transition-transform duration-300 group-hover:translate-x-6 group-hover:-translate-y-6">
+                <ArrowUpRight className="size-6" strokeWidth={2} />
+              </span>
+              <span className="absolute -translate-x-6 translate-y-6 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0">
+                <ArrowUpRight className="size-6" strokeWidth={2} />
+              </span>
+            </span>
+          </Button>
+        </div>
+      </div>
     </nav>
-  )
-}
+  );
+};
+
+export default Navbar;
