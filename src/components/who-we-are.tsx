@@ -13,39 +13,38 @@ const instrumentSerif = Instrument_Serif({
 const WhoWeAre = () => {
   const stats = [
     {
-      value: "10+ hrs",
+      value: "15+ hrs",
       label: "Saved every week on admin work",
     },
     {
       value: "2x faster",
-      label: "Job scheduling and dispatching",
+      label: "From booked job to invoice sent",
     },
     {
-      value: "100%",
-      label: "Visibility from job to payment",
+      value: "Day one",
+      label: "Your team is up and running",
     },
   ];
 
   return (
     <section className="py-24 px-6 bg-[#FAF6F0] overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="relative mb-16">
           {/* Badge */}
           <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
-            Who we are
+            Why it works
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative">
             <h2 className={cn(
               "text-5xl md:text-6xl text-[#1c160c] relative z-10 pr-8 tracking-tighter",
             )}>
-              Built for service businesses.
+              Built for the field.<br /> Not for IT.
             </h2>
 
             <p className="max-w-md text-[#7A726A] text-lg leading-relaxed relative z-10 pl-0 md:pl-8">
-              We built this platform to bring your customers, jobs, team, and payments together.
-              Everything stays connected so you can run your day-to-day work from one place.
+              Most field service software is built for enterprise teams with dedicated admins. Servienza is built for the owner who's also on the tools. Use the web app to run your office, the mobile app to run your field — or both, if it's just you.
             </p>
           </div>
         </div>
@@ -84,14 +83,14 @@ const WhoWeAre = () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <h3 className="text-xl font-medium tracking-tighter">
-                Ready to run your business in one place?
+                No IT team required. No month-long setup.
               </h3>
               <span className="inline-block px-3 py-1 bg-[#E8E2D8] text-black text-sm font-semibold rounded-lg w-fit">
-        Free trial available
-      </span>
+                Free trial available
+              </span>
             </div>
             <p className="text-[#7A726A] max-w-2xl text-sm">
-              Start managing your customers, jobs, team, and payments from a single platform built for field service work.
+              Most teams are fully set up on day one. No training sessions, no consultant fees, no six-week onboarding — just your business running better.
             </p>
           </div>
           <Button size={'sm'} className="bg-[#1c160c] text-white hover:bg-[#2c261c] rounded-xl px-3 h-10 text-sm font-medium shrink-0 cursor-pointer">

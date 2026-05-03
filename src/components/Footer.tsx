@@ -1,84 +1,126 @@
-export default function Footer() {
+"use client";
+
+import { ArrowUpRight } from "lucide-react";
+import AppStoreBadges from "@/components/AppStoreBadges";
+
+const navLinks = {
+  Product: ["Job Management", "Scheduling", "Team Tracking", "Invoicing"],
+  Company: ["About", "Case Studies", "Blog", "Careers"],
+  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+};
+
+const socials = [
+  { label: "X", href: "#" },
+  { label: "LinkedIn", href: "#" },
+  { label: "Instagram", href: "#" },
+];
+
+const Footer = () => {
   return (
-    <>
-      {/* Final CTA */}
-      <section className="py-24 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6 text-center reveal">
-          <div className="relative">
-            <div className="absolute inset-0 bg-amber-400/5 rounded-3xl blur-2xl" />
-            <div className="relative border border-amber-400/15 rounded-3xl p-14">
-              <p className="text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Ready to simplify?</p>
-              <h2 className="font-display text-4xl md:text-6xl text-white mb-6 leading-tight">
-                Stop juggling tools.<br />Start growing faster.
-              </h2>
-              <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-                Join service businesses already using Servienza to save hours every week and get paid faster.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#"
-                  className="inline-flex items-center justify-center gap-2 bg-amber-400 text-navy-950 font-medium
-                    text-base px-8 py-4 rounded-xl hover:bg-amber-300 transition-all amber-glow">
-                  Start your free 14-day trial
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M3 8h10M9 4l4 4-4 4"/>
-                  </svg>
-                </a>
-                <a href="#"
-                  className="inline-flex items-center justify-center gap-2 border border-white/15
-                    text-white text-base px-8 py-4 rounded-xl hover:bg-white/5 transition-all">
-                  Book a demo
-                </a>
-              </div>
-              <p className="text-sm text-slate-500 mt-6">No credit card required · Cancel anytime · Setup in minutes</p>
-            </div>
+    <footer className="bg-[#1c160c] px-8 pt-20 pb-10">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Big headline */}
+        <div className="border-b border-white/10 pb-16 mb-16">
+          <p className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+            Ready when you are
+          </p>
+          <div className="flex items-end justify-between gap-8">
+            <h2
+              className="text-white text-6xl md:text-7xl leading-none tracking-tighter max-w-2xl">
+              Your crew. Your jobs. Your money. All in one place.
+            </h2>
+
+            <a
+              href="#"
+              className="group shrink-0 flex items-center justify-center w-20 h-20 rounded-full border border-white/20 hover:border-white/60 hover:bg-white/5 transition-all duration-300 mb-2"
+            >
+              <ArrowUpRight className="w-10 h-10 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </div>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-14">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-5 gap-10 mb-12">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M3 14L9 4L15 14H3Z" fill="#050d1a"/>
-                    <circle cx="9" cy="10" r="2" fill="#050d1a"/>
-                  </svg>
-                </div>
-                <span className="font-display font-800 text-lg text-white">Servienza</span>
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-                Field service management software built for the businesses that keep the world running.
-              </p>
-              <p className="text-slate-600 text-xs mt-4">servianza.com</p>
+        {/* Nav grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+          {/* Brand column */}
+          <div className="col-span-2 md:col-span-1">
+            <p
+              className="text-white text-2xl tracking-tight mb-4"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Servienza
+            </p>
+            <p className="text-white/40 text-sm leading-relaxed">
+              Field service software built for the people who actually do the work.
+            </p>
+
+            <div className="flex gap-2 mt-8">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  className="px-3 py-1.5 rounded-lg border border-white/15 text-white/50 text-xs hover:border-white/40 hover:text-white transition-all duration-200"
+                >
+                  {s.label}
+                </a>
+              ))}
             </div>
-
-            {[
-              { title: 'Product', links: ['Features', 'Pricing', 'Mobile App', 'Integrations', 'Changelog'] },
-              { title: 'Industries', links: ['Plumbing', 'HVAC', 'Pool Service', 'Landscaping', 'Pest Control'] },
-              { title: 'Company', links: ['About', 'Blog', 'Careers', 'Contact', 'Privacy Policy'] },
-            ].map(col => (
-              <div key={col.title}>
-                <p className="text-xs font-medium text-white uppercase tracking-widest mb-4">{col.title}</p>
-                <ul className="space-y-2.5">
-                  {col.links.map(l => (
-                    <li key={l}>
-                      <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">{l}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
 
-          <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-slate-600">© 2025 Servienza. All rights reserved.</p>
-            <p className="text-xs text-slate-600">Built for modern service businesses.</p>
-          </div>
+          {/* Nav columns */}
+          {Object.entries(navLinks).map(([category, links]) => (
+            <div key={category}>
+              <p className="text-white/30 text-xs font-medium tracking-widest uppercase mb-5">
+                {category}
+              </p>
+              <ul className="flex flex-col gap-3">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a
+                      href="#"
+                      className="text-white/50 text-sm hover:text-white transition-colors duration-200"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </footer>
-    </>
-  )
-}
+        <div className="mt-6 mb-6">
+          <p className="text-white/50 text-sm mb-3">Get the mobile app</p>
+          <AppStoreBadges dark={true} />
+          <a
+            href="#"
+            className="inline-flex items-center gap-1.5 mt-3 text-white/80 text-lg hover:text-white/60 transition-colors duration-200"
+          >
+            Or use the web app
+            <ArrowUpRight className="w-5 h-5" />
+          </a>
+        </div>
+
+        {/* Wordmark */}
+        <div className="border-t border-white/10 pt-10 mb-10 overflow-hidden">
+          <p
+            className="text-white/20 text-[clamp(4rem,14vw,10rem)] leading-none select-none text-center">
+            Servienza
+          </p>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white/20 text-xs">
+            © {new Date().getFullYear()} Servienza. All rights reserved.
+          </p>
+          <p className="text-white/20 text-xs">
+            Built for field service teams everywhere.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
