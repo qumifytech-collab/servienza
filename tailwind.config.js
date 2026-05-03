@@ -72,6 +72,8 @@ module.exports = {
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
         'fade-in': 'fadeIn 0.5s ease forwards',
+        'accordion-down': 'accordionDown 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
+        'accordion-up': 'accordionUp 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
       },
       keyframes: {
         fadeUp: {
@@ -85,6 +87,14 @@ module.exports = {
         ticker: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        accordionDown: {
+          '0%': { height: '0', opacity: '0' },
+          '100%': { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+        },
+        accordionUp: {
+          '0%': { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+          '100%': { height: '0', opacity: '0' },
         },
       },
     },

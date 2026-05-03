@@ -1,23 +1,23 @@
 "use client";
 
 const brands = [
-  { name: "Placeholder Co.", className: "text-xl font-medium tracking-tight" },
-  { name: "BRAND NAME", className: "text-base font-black tracking-[0.18em]" },
-  { name: "Sample Group", className: "text-xl font-semibold" },
-  { name: "acme.", className: "text-2xl font-light italic font-serif" },
-  { name: "LOREM INC", className: "text-base font-bold tracking-widest" },
-  { name: "Ipsum & Co", className: "text-xl font-medium" },
-  { name: "dolor.", className: "text-2xl font-light font-serif" },
-  { name: "SITAMET", className: "text-base font-black tracking-[0.12em]" },
+  { name: "Torres Pool & Spa", className: "text-base font-medium tracking-tight" },
+  { name: "SUMMIT HVAC", className: "text-sm font-black tracking-[0.18em]" },
+  { name: "Greenfield Landscaping", className: "text-base font-semibold" },
+  { name: "Peak Plumbing Co.", className: "text-base font-medium" },
+  { name: "BLUE WAVE SERVICES", className: "text-sm font-black tracking-widest" },
+  { name: "Horizon Electrical", className: "text-base font-semibold" },
+  { name: "ClearPath Cleaning", className: "text-base font-medium" },
+  { name: "ProTech Field Services", className: "text-sm font-bold tracking-wide" },
 ];
 
 export default function EarlyAdopters() {
   return (
-    <section className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center md:items-stretch overflow-hidden">
+    <section className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center md:items-stretch overflow-hidden">
       {/* Left label */}
       <div className="flex-shrink-0 flex items-center px-8 py-4">
         <p className="text-md leading-snug text-[#9C8E84] w-28">
-          Businesses we've helped:
+          Businesses we&apos;ve helped:
         </p>
       </div>
 
@@ -35,7 +35,7 @@ export default function EarlyAdopters() {
           {[...brands, ...brands].map((brand, i) => (
             <span
               key={i}
-              className={`whitespace-nowrap text-[#1c1c1c] ${brand.className}`}
+              className={`whitespace-nowrap text-[#1c1c1c]/50 ${brand.className}`}
             >
               {brand.name}
             </span>

@@ -3,35 +3,34 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { MoveRight } from "lucide-react";
 
 const services = [
   {
     id: "01",
     title: "Manage jobs",
     description:
-      "Create, schedule, and track every job in one place so nothing slips through the cracks.",
+      "Create and manage every job from your web dashboard. Your crew gets it instantly on their phone — no calls, no texts, no missed details.",
     image: "/image1.avif",
   },
   {
     id: "02",
     title: "Schedule & dispatch",
     description:
-      "Assign jobs, plan routes, and keep your team moving with clear schedules and real-time updates.",
+      "Build your schedule from the web and dispatch with one tap. Your crew sees their jobs, their order, and their route the moment you assign them.",
     image: "/image2.avif",
   },
   {
     id: "03",
     title: "Track your team",
     description:
-      "Know where your team is and what they’re working on with live tracking and job updates.",
+      "See where every crew member is and where every job stands — live from your dashboard, without anyone having to check in.",
     image: "/image3.avif",
   },
   {
     id: "04",
     title: "Invoice & get paid",
     description:
-      "Send invoices, track payments, and keep your cash flow moving without extra work.",
+      "Mark a job done on the app and the invoice goes out automatically. No paperwork, no delays, no chasing payments.",
     image: "/image4.avif",
   },
 ];
@@ -64,8 +63,8 @@ const OurServices = () => {
   };
 
   return (
-    <section className="py-24 px-8 bg-[#FAF6F0]">
-      <div className="max-w-5xl mx-auto">
+    <section id="services" className="py-24 px-8 bg-[#FAF6F0]">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 flex flex-col items-center">
           <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
@@ -73,13 +72,13 @@ const OurServices = () => {
           </div>
 
           <h2 className="text-5xl md:text-6xl text-[#1c160c] mb-6 tracking-tighter">
-            Your business, fully in{" "}
-            <span className="text-[#91877D]">sync</span>
+            Everything your crew needs,{" "}
+            <span className="text-[#91877D]">in one place.</span>
           </h2>
 
           <p className="max-w-2xl text-[#7A726A] text-lg leading-relaxed">
-            From scheduling jobs to tracking work and getting paid we bring
-            everything together so you can focus on running your business.
+            From scheduling jobs to tracking work and getting paid, we bring
+            everything together so you can stop managing chaos and start doing the work.
           </p>
         </div>
 
@@ -132,10 +131,6 @@ const OurServices = () => {
                 {services[activeStep].description}
               </p>
 
-              <button className="flex items-center gap-2 text-[#1c160c] font-semibold hover:gap-4 transition-all group cursor-pointer">
-                <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                <span>See how it works</span>
-              </button>
             </div>
           </div>
         </div>
