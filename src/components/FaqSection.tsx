@@ -40,20 +40,19 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section id="faq" className="py-24 px-8 bg-[#f5f6fa]">
+    <section id="faq" className="py-24 px-8 bg-[#fff]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#F9F6F1] text-[#1a1f3d] text-sm font-medium mb-8">
             FAQ
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
-            Your questions{" "}
-            <span className="text-[#8b90a5]">answered.</span>
+          <h2 className="text-5xl md:text-6xl text-[#000] tracking-tighter mb-6">
+            Your questions answered.
           </h2>
 
-          <p className="text-[#64697e] text-lg leading-relaxed max-w-lg">
+          <p className="text-[#000] text-lg leading-relaxed max-w-lg">
             Everything you need to know about Servienza. Still have questions? Book a free call and we&apos;ll walk you through it.
           </p>
         </div>
@@ -64,20 +63,20 @@ const FaqSection = () => {
             <AccordionPrimitive.Item
               key={i}
               value={`item-${i}`}
-              className="bg-[#e4e7f2] rounded-2xl px-7 py-1 group"
+              className="bg-[#FAF8F4] rounded-2xl px-7 py-1 group"
             >
               <AccordionPrimitive.Header>
-                <AccordionPrimitive.Trigger className="flex w-full items-center justify-between py-5 text-left text-[#1a1f3d] text-base font-medium cursor-pointer outline-none">
+                <AccordionPrimitive.Trigger className="flex w-full items-center justify-between py-5 text-left text-[#000] text-base font-medium cursor-pointer outline-none">
                   <span>{faq.q}</span>
                   <span className="relative w-5 h-5 shrink-0">
-                    <Plus className="w-5 h-5 text-[#1a1f3d] absolute inset-0 transition-all duration-300 group-data-[state=open]:opacity-0 group-data-[state=open]:rotate-90" />
-                    <Minus className="w-5 h-5 text-[#1a1f3d] absolute inset-0 transition-all duration-300 opacity-0 -rotate-90 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-0" />
+                    <Plus className="w-5 h-5 text-[#000] absolute inset-0 transition-all duration-300 group-data-[state=open]:opacity-0 group-data-[state=open]:rotate-90" />
+                    <Minus className="w-5 h-5 text-[#000] absolute inset-0 transition-all duration-300 opacity-0 -rotate-90 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-0" />
                   </span>
                 </AccordionPrimitive.Trigger>
               </AccordionPrimitive.Header>
 
               <AccordionPrimitive.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                <p className="text-[#64697e] text-base leading-relaxed pb-6 pr-8">
+                <p className="text-[#000] text-base leading-relaxed pb-6 pr-8">
                   {faq.a}
                 </p>
               </AccordionPrimitive.Content>

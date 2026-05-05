@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const AppStoreBadges = ({ dark = false }: { dark?: boolean }) => {
   const base = dark
     ? "bg-white/5 border border-white/15 text-white hover:bg-white/10"
-    : "bg-[#1a1f3d] border border-transparent text-white hover:bg-[#252a4a]";
+    : "bg-[#000] border border-transparent text-white hover:bg-[#252a4a]";
 
   const sub = dark ? "text-white/40" : "text-white/60";
 

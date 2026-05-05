@@ -45,89 +45,95 @@ const capabilities = [
 
 const SmartDispatch = () => {
   return (
-    <section id="dispatch" className="py-24 px-8 bg-[#f0f2f8]">
+    <section id="dispatch" className="py-24 px-8 bg-[#FFFDFB]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#fff] text-[#000] text-sm font-medium mb-8">
             Smart Dispatch
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
-            Dispatch smarter,{" "}
-            <span className="text-[#8b90a5]">not harder.</span>
+          <h2 className="text-5xl md:text-6xl text-[#000] tracking-tighter mb-6">
+            Dispatch smarter, not harder.
           </h2>
 
-          <p className="text-[#64697e] text-lg max-w-2xl leading-relaxed">
+          <p className="text-[#000] text-lg max-w-2xl leading-relaxed">
             An AI-powered dispatcher board that routes your crew, prevents
             conflicts, and keeps your whole operation running on one screen.
           </p>
         </div>
 
         {/* Dispatcher board mockup */}
-        <div className="bg-[#1a1f3d] rounded-[2rem] p-8 md:p-10 mb-8">
+        <div className="bg-[#181715] rounded-[2rem] p-8 md:p-10 mb-8">
+
           {/* Board header */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-white font-medium text-lg">Dispatcher Board</p>
-              <p className="text-white/40 text-sm">Today — 6 technicians, 24 jobs</p>
+              <p className="text-[#faf9f5] font-medium text-lg">Dispatcher Board</p>
+              <p className="text-[#a09d96] text-sm mt-0.5">Today: 6 technicians · 24 jobs</p>
             </div>
-            <div className="flex gap-2">
-              <span className="px-3 py-1 rounded-lg bg-white/10 text-white/70 text-xs">
-                Day view
+            <div className="flex gap-1">
+              <span className="px-3 py-1.5 rounded-[6px] bg-[#fff] text-[#000] text-[12px] font-medium">
+                Day
               </span>
-              <span className="px-3 py-1 rounded-lg bg-white/5 text-white/40 text-xs">
-                Week view
+              <span className="px-3 py-1.5 rounded-[6px] text-[#a09d96] text-[12px] font-medium">
+                Week
               </span>
             </div>
           </div>
 
-          {/* Mock board rows */}
-          <div className="flex flex-col gap-3">
+          {/* Time axis */}
+          <div className="flex items-center gap-4 mb-2">
+            <div className="w-20 shrink-0" />
+            <div className="flex-1 flex justify-between px-1">
+              {["8 AM", "10 AM", "12 PM", "2 PM", "4 PM"].map((t) => (
+                <span key={t} className="text-sm text-[#6c6a64]">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Technician rows */}
+          <div className="flex flex-col gap-2">
             {[
               {
                 name: "Mike T.",
                 jobs: [
-                  { time: "8:00", label: "Pool cleaning — Garcia", color: "bg-blue-500/30 text-blue-300", w: "w-[30%]" },
-                  { time: "10:30", label: "Filter replace — Chen", color: "bg-emerald-500/30 text-emerald-300", w: "w-[25%]" },
-                  { time: "1:00", label: "Chemical balance — Rivera", color: "bg-blue-500/30 text-blue-300", w: "w-[20%]" },
-                  { time: "3:30", label: "Equipment repair — Park", color: "bg-amber-500/30 text-amber-300", w: "w-[22%]" },
+                  { time: "8:00", label: "Pool cleaning - Garcia", w: "w-[28%]" },
+                  { time: "10:30", label: "Filter replace - Chen", w: "w-[22%]" },
+                  { time: "1:00", label: "Chemical balance - Rivera", w: "w-[20%]" },
+                  { time: "3:30", label: "Equipment repair - Park", w: "w-[20%]" },
                 ],
               },
               {
                 name: "Sarah K.",
                 jobs: [
-                  { time: "8:30", label: "HVAC inspection — Torres", color: "bg-purple-500/30 text-purple-300", w: "w-[35%]" },
-                  { time: "11:00", label: "AC repair — Johnson", color: "bg-purple-500/30 text-purple-300", w: "w-[28%]" },
-                  { time: "2:30", label: "Duct cleaning — Williams", color: "bg-amber-500/30 text-amber-300", w: "w-[30%]" },
+                  { time: "8:30", label: "HVAC inspection - Torres", w: "w-[32%]" },
+                  { time: "11:00", label: "AC repair - Johnson", w: "w-[26%]" },
+                  { time: "2:30", label: "Duct cleaning - Williams", w: "w-[28%]" },
                 ],
               },
               {
                 name: "James R.",
                 jobs: [
-                  { time: "9:00", label: "Pest treatment — Adams", color: "bg-rose-500/30 text-rose-300", w: "w-[25%]" },
-                  { time: "11:30", label: "Termite inspection — Lee", color: "bg-rose-500/30 text-rose-300", w: "w-[22%]" },
-                  { time: "1:30", label: "Rodent control — Martinez", color: "bg-amber-500/30 text-amber-300", w: "w-[28%]" },
-                  { time: "4:00", label: "Follow-up — Davis", color: "bg-emerald-500/30 text-emerald-300", w: "w-[18%]" },
+                  { time: "9:00", label: "Pest treatment - Adams", w: "w-[24%]" },
+                  { time: "11:30", label: "Termite inspection - Lee", w: "w-[22%]" },
+                  { time: "1:30", label: "Rodent control - Martinez", w: "w-[26%]" },
+                  { time: "4:00", label: "Follow-up - Davis", w: "w-[16%]" },
                 ],
               },
             ].map((tech) => (
               <div key={tech.name} className="flex items-center gap-4">
                 <div className="w-20 shrink-0">
-                  <p className="text-white/70 text-sm font-medium">{tech.name}</p>
+                  <p className="text-[#a09d96] text-[13px] font-medium">{tech.name}</p>
                 </div>
                 <div className="flex-1 flex gap-1.5">
                   {tech.jobs.map((job, i) => (
                     <div
                       key={i}
-                      className={cn(
-                        "rounded-lg px-3 py-2.5 text-xs truncate",
-                        job.color,
-                        job.w
-                      )}
+                      className={cn("rounded-[6px] px-3 py-2 text-[12px] truncate bg-[#252320]", job.w)}
                     >
-                      <span className="opacity-60">{job.time}</span>{" "}
-                      {job.label}
+                      <span className="text-[#a09d96]">{job.time}</span>{" "}
+                      <span className="text-[#C1BDB7]">{job.label}</span>
                     </div>
                   ))}
                 </div>
@@ -135,20 +141,18 @@ const SmartDispatch = () => {
             ))}
           </div>
 
-          {/* Route optimization indicator */}
-          <div className="mt-6 pt-6 border-t border-white/10 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-              <Route className="w-4 h-4 text-emerald-400" />
-            </div>
+          {/* Route optimization bar */}
+          <div className="mt-6 pt-5 border-t border-white/[0.06] flex items-center gap-3">
             <div>
-              <p className="text-white/80 text-sm font-medium">
-                Routes optimized — saving 47 miles today
+              <p className="text-[#faf9f5] text-lg font-medium">
+                Routes optimized - saving 47 miles today
               </p>
-              <p className="text-white/40 text-xs">
+              <p className="text-[#a09d96] text-sm mt-0.5">
                 AI recalculated at 7:45 AM based on traffic and job locations
               </p>
             </div>
           </div>
+
         </div>
 
         {/* Capability cards */}
@@ -158,9 +162,9 @@ const SmartDispatch = () => {
             return (
               <div
                 key={cap.title}
-                className="bg-[#f5f6fa] border border-[#dfe2ef] rounded-2xl p-6 hover:bg-white hover:shadow-sm transition-all duration-300"
+                className="bg-[#fff] border border-[#dfe2ef] rounded-2xl p-6 hover:bg-white hover:shadow-sm transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#dfe2ef] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#EFEEE7] flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-[#1a1f3d]" />
                 </div>
                 <h3 className="text-[#1a1f3d] font-medium text-base mb-2">

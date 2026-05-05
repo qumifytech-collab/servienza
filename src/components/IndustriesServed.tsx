@@ -81,15 +81,15 @@ const industries = [
 
 const IndustriesServed = () => {
   return (
-    <section className="py-24 px-8 bg-[#FAF6F0]">
+    <section className="py-24 px-8 bg-[#FFFDFB]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#fff] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#F9F6F1] text-[#000] text-sm font-medium mb-8">
             Built for your trade
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
+          <h2 className="text-5xl md:text-6xl text-[#000] tracking-tighter mb-6">
             One platform, every trade.
           </h2>
 
@@ -112,10 +112,10 @@ const IndustriesServed = () => {
                   "transition-all duration-300 cursor-default"
                 )}
               >
-                <div className="w-10 h-10 rounded-xl bg-[#EFEEE7] flex items-center justify-center mb-4 group-hover:bg-[#1a1f3d] transition-colors duration-300">
-                  <Icon className="w-5 h-5 text-[#1a1f3d] group-hover:text-white transition-colors duration-300" />
+                <div className="w-10 h-10 rounded-xl bg-[#EFEEE7] flex items-center justify-center mb-4 group-hover:bg-[#000] transition-colors duration-300">
+                  <Icon className="w-5 h-5 text-[#000] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-[#1a1f3d] font-medium text-base mb-1">
+                <h3 className="text-[#000] font-medium text-base mb-1">
                   {ind.name}
                 </h3>
                 <p className="text-[#64697e] text-sm leading-snug">
@@ -125,13 +125,19 @@ const IndustriesServed = () => {
             );
           })}
         </div>
-
-        <p className="text-center text-[#8b90a5] text-sm mt-8">
-          Don&apos;t see your industry? We likely support it.{" "}
-          <a href="#contact" className="text-[#1a1f3d] font-medium hover:underline">
+        <div className="mt-8 bg-[#FAF6F0] rounded-2xl p-8 md:py-5 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#dfe2ef]">
+          <div>
+            <h3 className="text-xl font-medium text-[#000] tracking-tighter mb-1">
+              Don&apos;t see your industry?
+            </h3>
+            <p className="text-[#000] text-base">
+              We handle the full migration customers, jobs, history, invoices  so you can switch without skipping a beat.
+            </p>
+          </div>
+          <button className="bg-[#000] text-white hover:bg-[#252a4a] rounded-xl px-6 py-3 text-sm font-medium shrink-0 cursor-pointer transition-colors">
             Talk to us
-          </a>
-        </p>
+          </button>
+        </div>
       </div>
     </section>
   );

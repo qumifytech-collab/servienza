@@ -5,20 +5,20 @@ import { Sparkles } from "lucide-react";
 
 const CaseStudy = () => {
   return (
-    <section className="py-24 px-8 bg-[#f5f6fa]">
+    <section className="py-24 px-8 bg-[#FFFDFB]">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
         {/* LEFT */}
         <div>
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#F9F6F1] text-[#000] text-sm font-medium mb-8">
             Case study
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter leading-tight mb-8">
-            From missed jobs to <span className={'text-[#8b90a5]'}>15 hours</span>{" "}back every week.
+          <h2 className="text-5xl md:text-6xl text-[#000] tracking-tighter leading-tight mb-8">
+            From missed jobs to 15 hours back every week.
           </h2>
 
-          <div className="space-y-4 text-[#64697e] text-base leading-relaxed mb-10 max-w-lg">
+          <div className="space-y-4 text-[#000] text-base mb-10 max-w-lg">
             <p>
               Clearview Pools, a growing residential pool service company, was drowning in scheduling conflicts, missed jobs, and unpaid invoices piling up every week.
             </p>
@@ -32,14 +32,14 @@ const CaseStudy = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#e8eaf3] rounded-2xl p-6">
-              <p className="text-5xl text-[#1a1f3d] tracking-tighter mb-3">15+</p>
-              <p className="text-[#1a1f3d] font-medium text-sm mb-1">Hours saved</p>
+            <div className="bg-[#fff] border border-[#dfe2ef] rounded-2xl p-6">
+              <p className="text-5xl text-[#000] tracking-tighter mb-3">15+</p>
+              <p className="text-[#000] font-medium text-sm mb-1">Hours saved</p>
               <p className="text-[#64697e] text-sm">Every single week</p>
             </div>
-            <div className="bg-[#e8eaf3] rounded-2xl p-6">
-              <p className="text-5xl text-[#1a1f3d] tracking-tighter mb-3">60%</p>
-              <p className="text-[#1a1f3d] font-medium text-sm mb-1">Faster payments</p>
+            <div className="bg-[#fff] border border-[#dfe2ef] rounded-2xl p-6">
+              <p className="text-5xl text-[#000] tracking-tighter mb-3">60%</p>
+              <p className="text-[#000] font-medium text-sm mb-1">Faster payments</p>
               <p className="text-[#64697e] text-sm">With auto invoicing</p>
             </div>
           </div>

@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  Headphones,
-  DatabaseZap,
-  Rocket,
-  MessageCircle,
-  Users,
-  Heart,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import {DatabaseZap, Headphones, MessageCircle, Rocket, Users,} from "lucide-react";
+import {cn} from "@/lib/utils";
 
 const supportFeatures = [
   {
@@ -41,33 +34,26 @@ const supportFeatures = [
     desc: "Every new customer gets a dedicated onboarding specialist who learns your business and makes sure you're set up for success.",
     highlight: false,
   },
-  {
-    icon: Heart,
-    title: "We Actually Care",
-    desc: "We're building Servienza for businesses like yours. When you succeed, we succeed. That's why we go further than any other platform to make sure you're running smoothly.",
-    highlight: false,
-  },
 ];
 
 const SupportOnboarding = () => {
   return (
-    <section id="support" className="py-24 px-8 bg-[#f5f6fa]">
+    <section id="support" className="py-24 px-8 bg-[#FFFDFB]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#F9F6F1] text-[#1a1f3d] text-sm font-medium mb-8">
             White-glove support
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-            <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter leading-tight max-w-xl">
-              We don&apos;t just sell software.{" "}
-              <span className="text-[#8b90a5]">We set you up for success.</span>
+            <h2 className="text-5xl md:text-6xl text-[#000] tracking-tighter leading-tight max-w-xl">
+              We set your team up for success.
             </h2>
 
-            <p className="text-[#64697e] text-lg max-w-md leading-relaxed">
+            <p className="text-[#000] text-lg max-w-md leading-relaxed">
               Live human support, full data migration, and a dedicated team that
-              sets up your company from start to finish — at no extra cost.
+              sets up your company from start to finish at no extra cost.
             </p>
           </div>
         </div>
@@ -82,20 +68,20 @@ const SupportOnboarding = () => {
                 className={cn(
                   "rounded-2xl p-8 flex flex-col",
                   sf.highlight
-                    ? "bg-[#1a1f3d] text-white md:col-span-2 lg:col-span-1 lg:row-span-2"
-                    : "bg-[#f0f2f8] border border-[#dfe2ef]"
+                    ? "bg-[#fff] border border-[#EFEEE7] text-black md:col-span-2 lg:col-span-1 lg:row-span-2"
+                    : "bg-[#fff] border border-[#EFEEE7]"
                 )}
               >
                 <div
                   className={cn(
                     "w-12 h-12 rounded-xl flex items-center justify-center mb-6",
-                    sf.highlight ? "bg-white/10" : "bg-[#dfe2ef]"
+                    sf.highlight ? "bg-[#EFEEE7]" : "bg-[#EFEEE7]"
                   )}
                 >
                   <Icon
                     className={cn(
                       "w-6 h-6",
-                      sf.highlight ? "text-white" : "text-[#1a1f3d]"
+                      sf.highlight ? "text-black" : "text-[#1a1f3d]"
                     )}
                   />
                 </div>
@@ -103,7 +89,7 @@ const SupportOnboarding = () => {
                 <h3
                   className={cn(
                     "font-medium text-xl mb-3",
-                    sf.highlight ? "text-white" : "text-[#1a1f3d]"
+                    sf.highlight ? "text-black" : "text-[#1a1f3d]"
                   )}
                 >
                   {sf.title}
@@ -112,7 +98,7 @@ const SupportOnboarding = () => {
                 <p
                   className={cn(
                     "text-base leading-relaxed",
-                    sf.highlight ? "text-white/60" : "text-[#64697e]"
+                    sf.highlight ? "text-black" : "text-[#64697e]"
                   )}
                 >
                   {sf.desc}
@@ -125,16 +111,16 @@ const SupportOnboarding = () => {
                         {[1, 2, 3].map((i) => (
                           <div
                             key={i}
-                            className="w-8 h-8 rounded-full bg-white/20 border-2 border-[#1a1f3d] flex items-center justify-center"
+                            className="w-8 h-8 rounded-full bg-white border border-[#000] flex items-center justify-center"
                           >
-                            <span className="text-white text-xs font-medium">
+                            <span className="text-black text-xs font-medium">
                               {["M", "S", "J"][i - 1]}
                             </span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-white/50 text-sm">
-                        Your support team — always a call away
+                      <p className="text-black text-sm">
+                        Your support team always a call away
                       </p>
                     </div>
                   </div>
@@ -145,16 +131,17 @@ const SupportOnboarding = () => {
         </div>
 
         {/* Bottom banner */}
-        <div className="mt-8 bg-[#f0f2f8] rounded-2xl p-8 md:py-5 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#dfe2ef]">
+        <div
+          className="mt-8 bg-[#FAF6F0] rounded-2xl p-8 md:py-5 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-[#dfe2ef]">
           <div>
-            <h3 className="text-xl font-medium text-[#1a1f3d] tracking-tighter mb-1">
+            <h3 className="text-xl font-medium text-[#000] tracking-tighter mb-1">
               Switching from another platform?
             </h3>
-            <p className="text-[#64697e] text-sm">
-              We handle the full migration — customers, jobs, history, invoices — so you can switch without skipping a beat.
+            <p className="text-[#000] text-base">
+              We handle the full migration customers, jobs, history, invoices so you can switch without skipping a beat.
             </p>
           </div>
-          <button className="bg-[#1a1f3d] text-white hover:bg-[#252a4a] rounded-xl px-6 py-3 text-sm font-medium shrink-0 cursor-pointer transition-colors">
+          <button className="bg-[#000] text-white rounded-xl px-6 py-3 text-sm font-medium shrink-0 cursor-pointer ">
             Talk to our migration team
           </button>
         </div>

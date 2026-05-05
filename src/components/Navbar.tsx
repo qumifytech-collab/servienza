@@ -38,8 +38,8 @@ const Navbar = () => {
         className={cn(
           "h-20 px-6 md:px-10 flex items-center justify-between relative z-50 transition-all duration-300",
           scrolled
-            ? "bg-[#FAF6F0]/80 backdrop-blur-md"
-            : "bg-[#FAF6F0]"
+            ? "bg-[#FFFDFB]/80 backdrop-blur-md"
+            : "bg-[#FFFDFB]"
         )}
       >
         <Logo size="md" />

@@ -11,7 +11,6 @@ import SupportOnboarding from '@/components/SupportOnboarding'
 import Comparison from '@/components/Comparison'
 import Testimonial from '@/components/Testimonial'
 import CaseStudy from '@/components/CaseStudy'
-import ComingSoon from '@/components/ComingSoon'
 import HowWeWork from '@/components/HowWeWork'
 import FaqSection from '@/components/FaqSection'
 import ContactForm from '@/components/ContactForm'
@@ -40,13 +39,13 @@ export default function Home() {
       <Communication/>
       <InvoicingPayments/>
       <TwoApps/>
-      <SupportOnboarding/>
+      <HowWeWork/>
       <Comparison/>
       <Testimonial/>
       <CaseStudy/>
-      <ComingSoon/>
-      <HowWeWork/>
+      <SupportOnboarding/>
       <FaqSection/>
+      {/*<ComingSoon/>*/}
       <ContactForm/>
       <Footer/>
     </main>

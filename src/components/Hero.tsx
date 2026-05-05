@@ -1,11 +1,10 @@
-import { ArrowUpRight, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {Star} from "lucide-react";
 import EarlyAdopters from "@/components/EarlyAdopters";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export default function HeroSection() {
   return (
-    <main className="w-full bg-[#FAF6F0] overflow-hidden">
+    <main className="w-full bg-[#FFFDFB] overflow-hidden">
 
       {/* Hero text band */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-44 pb-14">
@@ -16,7 +15,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-2 mb-5">
               <div className="flex items-center gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={14} className="text-[#d9c5b2] fill-[#d9c5b2]" />
+                  <Star key={i} size={14} className="text-[#d9c5b2] fill-[#d9c5b2]"/>
                 ))}
               </div>
               <span className="text-[13px] font-medium text-[#6c6a64]">
@@ -68,10 +67,10 @@ export default function HeroSection() {
 
       {/* Hero Carousel */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-        <HeroCarousel />
+        <HeroCarousel/>
       </div>
 
-      <EarlyAdopters />
+      <EarlyAdopters/>
     </main>
   );
 }

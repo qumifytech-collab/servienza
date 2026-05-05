@@ -19,7 +19,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a1f3d] px-8 pt-20 pb-10">
+    <footer className="bg-[#141413] px-8 pt-20 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Big headline */}

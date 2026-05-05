@@ -119,76 +119,107 @@ const features = [
 
 const FeaturesGrid = () => {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [showFade, setShowFade] = useState(true);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    setShowFade(el.scrollTop + el.clientHeight < el.scrollHeight - 8);
+  };
 
   return (
-    <section id="features" className="py-24 px-8 bg-[#f5f6fa]">
+    <section id="features" className="py-24 px-8 bg-[#fff]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#F9F6F1] text-[#1a1f3d] text-sm font-medium mb-8">
             Features
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
-            Everything your crew needs,{" "}
-            <span className="text-[#8b90a5]">nothing they don&apos;t.</span>
-          </h2>
+          <h1 className="max-w-3xl text-5xl md:text-6xl tracking-tighter text-[#1a1a1a] mb-4 leading-[1.1]">
+            Everything your crew needs, nothing they don&apos;t.
+          </h1>
 
-          <p className="text-[#64697e] text-lg max-w-2xl leading-relaxed">
+          <p className="text-[#000] text-lg max-w-2xl leading-relaxed">
             From service logs and GPS tracking to invoicing and customer alerts
-            — every tool your business needs, built into one simple platform.
+            every tool your business needs, built into one simple platform.
           </p>
         </div>
 
         {/* Feature pills + detail */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Left: scrollable feature list */}
-          <div className="lg:col-span-2 flex flex-col gap-2 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin">
-            {features.map((f, i) => {
-              const Icon = f.icon;
-              return (
-                <button
-                  key={f.title}
-                  onClick={() => setActiveFeature(i)}
-                  className={cn(
-                    "flex items-start gap-4 p-4 rounded-2xl text-left transition-all duration-300 cursor-pointer",
-                    activeFeature === i
-                      ? "bg-[#1a1f3d] text-white"
-                      : "bg-transparent hover:bg-[#e8eaf3] text-[#1a1f3d]"
-                  )}
-                >
-                  <div
+          <div className="lg:col-span-3 relative">
+            <div
+              onScroll={handleScroll}
+              className="flex flex-col gap-2 max-h-[600px] overflow-y-auto pr-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {features.map((f, i) => {
+                const Icon = f.icon;
+
+                return (
+                  <button
+                    key={f.title}
+                    onClick={() => setActiveFeature(i)}
                     className={cn(
-                      "w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5",
-                      activeFeature === i ? "bg-white/15" : "bg-[#dfe2ef]"
+                      "flex items-start gap-4 p-4 rounded-2xl text-left transition-all duration-300 cursor-pointer border border-transparent",
+                      activeFeature === i
+                        ? "bg-black text-white"
+                        : "bg-transparent text-[#000] hover:bg-[#F9F6F1]"
                     )}
                   >
-                    <Icon
+                    <div
                       className={cn(
-                        "w-4.5 h-4.5",
-                        activeFeature === i ? "text-white" : "text-[#1a1f3d]"
-                      )}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium text-base">{f.title}</p>
-                    <p
-                      className={cn(
-                        "text-sm leading-snug mt-1",
-                        activeFeature === i ? "text-white/60" : "text-[#64697e]"
+                        "w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-300",
+                        activeFeature === i
+                          ? "bg-[#EFEEE7]"
+                          : "bg-[#E0DACE]"
                       )}
                     >
-                      {f.short}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
+                      <Icon
+                        className={cn(
+                          "w-4.5 h-4.5 transition-colors duration-300",
+                          activeFeature === i
+                            ? "text-black"
+                            : "text-[#1a1f3d]"
+                        )}
+                      />
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-base">
+                        {f.title}
+                      </p>
+
+                      <p
+                        className={cn(
+                          "text-sm leading-snug mt-1 transition-colors duration-300",
+                          activeFeature === i
+                            ? "text-white/60"
+                            : "text-[#64697e]"
+                        )}
+                      >
+                        {f.short}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Bottom fade */}
+            <div
+              className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 transition-opacity duration-300"
+              style={{
+                background:
+                  "linear-gradient(to top, #ffffff 30%, transparent)",
+                opacity: showFade ? 1 : 0,
+              }}
+            />
           </div>
 
           {/* Right: detail card */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            <div className="relative aspect-[16/10] w-full rounded-[2rem] overflow-hidden">
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            <div className="relative aspect-[9/10] w-full rounded-[2rem] overflow-hidden">
               <Image
                 key={features[activeFeature].image}
                 src={features[activeFeature].image}
@@ -199,10 +230,10 @@ const FeaturesGrid = () => {
             </div>
 
             <div className="px-2">
-              <h3 className="text-2xl font-semibold tracking-tighter text-[#1a1f3d] mb-3">
+              <h3 className="text-2xl tracking-tighter text-[#000] mb-3">
                 {features[activeFeature].title}
               </h3>
-              <p className="text-[#64697e] text-lg leading-relaxed max-w-xl">
+              <p className="text-[#64697e] text-base leading-tight max-w-xl">
                 {features[activeFeature].detail}
               </p>
             </div>

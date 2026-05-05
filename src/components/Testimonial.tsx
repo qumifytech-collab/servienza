@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="py-24 px-8 bg-[#f5f6fa]">
+    <section className="py-24 px-8 bg-[#FFFDFB]">
       <div className="max-w-6xl mx-auto">
         <div className="relative w-full rounded-[2rem] overflow-hidden" style={{ minHeight: "340px" }}>
           <Image
