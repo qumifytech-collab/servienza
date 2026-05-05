@@ -10,6 +10,9 @@ const display = Syne({subsets: ['latin'], variable: '--font-display', weight: ['
 export const metadata: Metadata = {
   title: 'Servienza — Field Service Management Software',
   description: 'Manage customers, scheduling, dispatching, routing, invoicing and payments — all in one powerful platform built for service businesses.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {

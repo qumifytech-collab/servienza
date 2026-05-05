@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import AppStoreBadges from "@/components/AppStoreBadges";
+import Logo from "@/components/Logo";
 
 const navLinks = {
   Product: ["Features", "Smart Dispatch", "Invoicing & Payments", "Mobile App", "Integrations"],
@@ -45,12 +46,9 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <p
-              className="text-white text-2xl tracking-tight mb-4"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Servienza
-            </p>
+            <div className="mb-4">
+              <Logo dark size="lg" />
+            </div>
             <p className="text-white/40 text-sm leading-relaxed">
               Field service software built for the people who actually do the work.
             </p>

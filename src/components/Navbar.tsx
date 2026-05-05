@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -42,9 +42,7 @@ const Navbar = () => {
             : "bg-[#f0f2f8] border-b border-[#1a1f3d]/5"
         )}
       >
-        <Link href="/" className="text-2xl font-medium text-[#1a1f3d]">
-          Servienza
-        </Link>
+        <Logo size="md" showTagline />
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 mr-8">
