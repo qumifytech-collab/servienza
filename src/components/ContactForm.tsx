@@ -35,19 +35,19 @@ const OptionPill = ({
     className={cn(
       "flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm transition-all cursor-pointer",
       selected
-        ? "border-[#1c160c] bg-[#EDE8E0]"
-        : "border-[#D6D0C8] bg-[#F0EBE3] text-[#7A726A]"
+        ? "border-[#1a1f3d] bg-[#e8eaf3]"
+        : "border-[#cfd2e0] bg-[#e4e7f2] text-[#64697e]"
     )}
   >
     <span
       className={cn(
         "w-4 h-4 rounded-full border-2 shrink-0 transition-all",
         selected
-          ? "bg-[#1c160c] border-[#1c160c]"
-          : "bg-transparent border-[#C4BEB6]"
+          ? "bg-[#1a1f3d] border-[#1a1f3d]"
+          : "bg-transparent border-[#c0c4d6]"
       )}
     />
-    <span className={selected ? "text-[#1c160c] font-medium" : ""}>{label}</span>
+    <span className={selected ? "text-[#1a1f3d] font-medium" : ""}>{label}</span>
   </button>
 );
 
@@ -64,13 +64,13 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 px-8 bg-[#FAF6F0]">
+    <section className="py-24 px-8 bg-[#f5f6fa]">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
 
         {/* LEFT — image card */}
         <div className="relative rounded-[2rem] overflow-hidden" style={{minHeight: "560px"}}>
           <Image
-            src="/image4.avif"
+            src="/image4.jpg"
             alt="Book a call"
             fill
             className="object-cover object-center"
@@ -103,24 +103,24 @@ const ContactForm = () => {
         </div>
 
         {/* RIGHT — form */}
-        <div className="bg-[#F4F0EA] rounded-[2rem] p-6 flex flex-col gap-6">
+        <div className="bg-[#f0f2f8] rounded-[2rem] p-6 flex flex-col gap-6">
           {/* Name + Email */}
           <div className="flex flex-col gap-4">
             <input
               type="text"
               placeholder="Name*"
-              className="w-full bg-[#E8E2D8] rounded-xl px-5 py-4 text-[#1c160c] placeholder:text-[#A8A09A] text-sm outline-none focus:ring-2 focus:ring-[#1c160c]/20 transition"
+              className="w-full bg-[#dfe2ef] rounded-xl px-5 py-4 text-[#1a1f3d] placeholder:text-[#9a9db3] text-sm outline-none focus:ring-2 focus:ring-[#1a1f3d]/20 transition"
             />
             <input
               type="email"
               placeholder="Email*"
-              className="w-full bg-[#E8E2D8] rounded-xl px-5 py-4 text-[#1c160c] placeholder:text-[#A8A09A] text-sm outline-none focus:ring-2 focus:ring-[#1c160c]/20 transition"
+              className="w-full bg-[#dfe2ef] rounded-xl px-5 py-4 text-[#1a1f3d] placeholder:text-[#9a9db3] text-sm outline-none focus:ring-2 focus:ring-[#1a1f3d]/20 transition"
             />
           </div>
 
           {/* Services */}
           <div>
-            <p className="text-[#7A726A] text-sm mb-3">What are you interested in?</p>
+            <p className="text-[#64697e] text-sm mb-3">What are you interested in?</p>
             <div className="flex flex-wrap gap-2">
               {serviceOptions.map((s) => (
                 <OptionPill
@@ -135,7 +135,7 @@ const ContactForm = () => {
 
           {/* Challenges */}
           <div>
-            <p className="text-[#7A726A] text-sm mb-3">What&apos;s your biggest challenge?</p>
+            <p className="text-[#64697e] text-sm mb-3">What&apos;s your biggest challenge?</p>
             <div className="flex flex-wrap gap-2">
               {challengeOptions.map((c) => (
                 <OptionPill
@@ -152,13 +152,13 @@ const ContactForm = () => {
           <textarea
             rows={4}
             placeholder="Tell us about your business..."
-            className="w-full bg-[#E8E2D8] rounded-xl px-5 py-4 text-[#1c160c] placeholder:text-[#A8A09A] text-sm outline-none focus:ring-2 focus:ring-[#1c160c]/20 transition resize-none"
+            className="w-full bg-[#dfe2ef] rounded-xl px-5 py-4 text-[#1a1f3d] placeholder:text-[#9a9db3] text-sm outline-none focus:ring-2 focus:ring-[#1a1f3d]/20 transition resize-none"
           />
 
           {/* Submit */}
           <button
             type="submit"
-            className="group w-full flex items-center justify-center gap-2 bg-[#1c160c] text-white rounded-xl py-4 text-base cursor-pointer"
+            className="group w-full flex items-center justify-center gap-2 bg-[#1a1f3d] text-white rounded-xl py-4 text-base cursor-pointer"
           >
             Book a free call
             <span className="relative w-5 h-5">
@@ -169,9 +169,9 @@ const ContactForm = () => {
             </span>
           </button>
 
-          <p className="text-center text-[#A8A09A] text-sm">
+          <p className="text-center text-[#9a9db3] text-sm">
             By submitting, you agree to our{" "}
-            <a href="#" className="text-[#1c160c] font-semibold hover:underline">
+            <a href="#" className="text-[#1a1f3d] font-semibold hover:underline">
               terms of service.
             </a>
           </p>

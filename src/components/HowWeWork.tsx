@@ -27,29 +27,29 @@ const steps = [
 
 const HowWeWork = () => {
   return (
-    <section id="how-we-work" className="py-24 px-8 bg-[#F4F0EA]">
+    <section id="how-we-work" className="py-24 px-8 bg-[#f0f2f8]">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT */}
         <div>
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             How we work
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1c160c] tracking-tighter leading-tight mb-6">
+          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter leading-tight mb-6">
             Up and running in a day.{" "}
-            <span className="text-[#91877D]">Not a month.</span>
+            <span className="text-[#8b90a5]">Not a month.</span>
           </h2>
 
-          <p className="text-[#7A726A] text-lg leading-relaxed mb-10 max-w-md">
+          <p className="text-[#64697e] text-lg leading-relaxed mb-10 max-w-md">
             Our three-step process takes you from day one to a fully running business — with clear guidance and support at every stage.
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="px-6 py-3 rounded-xl bg-[#1c160c] text-white text-sm hover:bg-[#2e261a] transition-colors cursor-pointer">
+            <button className="px-6 py-3 rounded-xl bg-[#1a1f3d] text-white text-sm hover:bg-[#252a4a] transition-colors cursor-pointer">
               Book a free call
             </button>
-            <button className="px-6 py-3 rounded-xl bg-white text-[#1c160c] text-sm hover:bg-[#DDD7CD] transition-colors cursor-pointer">
+            <button className="px-6 py-3 rounded-xl bg-white text-[#1a1f3d] text-sm hover:bg-[#dfe2ef] transition-colors cursor-pointer">
               Get started
             </button>
           </div>
@@ -61,23 +61,23 @@ const HowWeWork = () => {
             <div key={step.id} className="flex gap-6">
               {/* Number + line */}
               <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#1c160c] font-medium text-lg shrink-0">
+                <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-[#1a1f3d] font-medium text-lg shrink-0">
                   {step.id}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="w-px flex-1 bg-[#D6D0C8] my-2" style={{ minHeight: "40px" }} />
+                  <div className="w-px flex-1 bg-[#cfd2e0] my-2" style={{ minHeight: "40px" }} />
                 )}
               </div>
 
               {/* Content */}
               <div className="pb-10">
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-[#1c160c] font-medium text-lg">{step.title}</h3>
-                  <span className="px-2.5 py-0.5 rounded-md bg-[#E8E2D8] text-[#1c160c] text-xs font-medium">
+                  <h3 className="text-[#1a1f3d] font-medium text-lg">{step.title}</h3>
+                  <span className="px-2.5 py-0.5 rounded-md bg-[#dfe2ef] text-[#1a1f3d] text-xs font-medium">
                     {step.badge}
                   </span>
                 </div>
-                <p className="text-[#7A726A] text-base leading-relaxed">{step.description}</p>
+                <p className="text-[#64697e] text-base leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}

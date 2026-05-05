@@ -4,8 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import AppStoreBadges from "@/components/AppStoreBadges";
 
 const navLinks = {
-  Product: ["Job Management", "Scheduling", "Team Tracking", "Invoicing"],
-  Company: ["About", "Case Studies", "Blog", "Careers"],
+  Product: ["Features", "Smart Dispatch", "Invoicing & Payments", "Mobile App", "Integrations"],
+  Company: ["About", "Case Studies", "Blog", "Compare", "Careers"],
+  Support: ["Help Center", "Data Migration", "Onboarding", "Contact Us"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 
@@ -17,12 +18,12 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1c160c] px-8 pt-20 pb-10">
+    <footer className="bg-[#1a1f3d] px-8 pt-20 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Big headline */}
         <div className="border-b border-white/10 pb-16 mb-16">
-          <p className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <p className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             Ready when you are
           </p>
           <div className="flex items-end justify-between gap-8">
@@ -41,7 +42,7 @@ const Footer = () => {
         </div>
 
         {/* Nav grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <p

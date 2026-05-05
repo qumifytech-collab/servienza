@@ -10,28 +10,28 @@ const services = [
     title: "Manage jobs",
     description:
       "Create and manage every job from your web dashboard. Your crew gets it instantly on their phone — no calls, no texts, no missed details.",
-    image: "/image1.avif",
+    image: "/image1.jpg",
   },
   {
     id: "02",
     title: "Schedule & dispatch",
     description:
       "Build your schedule from the web and dispatch with one tap. Your crew sees their jobs, their order, and their route the moment you assign them.",
-    image: "/image2.avif",
+    image: "/image2.jpg",
   },
   {
     id: "03",
     title: "Track your team",
     description:
       "See where every crew member is and where every job stands — live from your dashboard, without anyone having to check in.",
-    image: "/image3.avif",
+    image: "/image3.jpg",
   },
   {
     id: "04",
     title: "Invoice & get paid",
     description:
       "Mark a job done on the app and the invoice goes out automatically. No paperwork, no delays, no chasing payments.",
-    image: "/image4.avif",
+    image: "/image4.jpg",
   },
 ];
 
@@ -63,20 +63,20 @@ const OurServices = () => {
   };
 
   return (
-    <section id="services" className="py-24 px-8 bg-[#FAF6F0]">
+    <section id="services" className="py-24 px-8 bg-[#f5f6fa]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             Services
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1c160c] mb-6 tracking-tighter">
+          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] mb-6 tracking-tighter">
             Everything your crew needs,{" "}
-            <span className="text-[#91877D]">in one place.</span>
+            <span className="text-[#8b90a5]">in one place.</span>
           </h2>
 
-          <p className="max-w-2xl text-[#7A726A] text-lg leading-relaxed">
+          <p className="max-w-2xl text-[#64697e] text-lg leading-relaxed">
             From scheduling jobs to tracking work and getting paid, we bring
             everything together so you can stop managing chaos and start doing the work.
           </p>
@@ -95,15 +95,15 @@ const OurServices = () => {
                 className={cn(
                   "group flex items-baseline gap-4 p-8 rounded-[2rem] transition-all duration-500 ease-out text-left cursor-pointer",
                   activeStep === index
-                    ? "bg-[#F4F0EA] opacity-100"
+                    ? "bg-[#f0f2f8] opacity-100"
                     : "opacity-40 hover:opacity-60"
                 )}
               >
-                <span className="text-3xl md:text-4xl text-[#1c160c] tracking-tighter">
+                <span className="text-3xl md:text-4xl text-[#1a1f3d] tracking-tighter">
                   {service.title}
                 </span>
 
-                <span className="text-sm font-medium text-[#1c160c] mt-2">
+                <span className="text-sm font-medium text-[#1a1f3d] mt-2">
                   {service.id}
                 </span>
               </button>
@@ -123,11 +123,11 @@ const OurServices = () => {
             </div>
 
             <div className="px-2">
-              <h3 className="text-2xl font-semibold tracking-tighter text-[#1c160c] mb-4">
+              <h3 className="text-2xl font-semibold tracking-tighter text-[#1a1f3d] mb-4">
                 {services[activeStep].title}
               </h3>
 
-              <p className="text-[#7A726A] text-lg mb-8 max-w-lg">
+              <p className="text-[#64697e] text-lg mb-8 max-w-lg">
                 {services[activeStep].description}
               </p>
 

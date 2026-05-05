@@ -48,7 +48,7 @@ const Marquee = ({ tags, dark }: { tags: string[]; dark?: boolean }) => (
 
 const WhyChooseUs = () => {
   return (
-    <section id="why-choose-us" className="py-24 px-8 bg-[#FAF6F0]">
+    <section id="why-choose-us" className="py-24 px-8 bg-[#f5f6fa]">
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
@@ -59,16 +59,16 @@ const WhyChooseUs = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             Why choose us
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1c160c] tracking-tighter mb-6">
+          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
             We&apos;re not your{" "}
-            <span className="text-[#91877D]">typical</span> field software.
+            <span className="text-[#8b90a5]">typical</span> field software.
           </h2>
 
-          <p className="text-[#7A726A] text-lg max-w-xl leading-relaxed">
+          <p className="text-[#64697e] text-lg max-w-xl leading-relaxed">
             We skip the bloat and complicated setups to build tools that actually work for people running real businesses.
           </p>
         </div>
@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
           {/* LEFT — Others */}
           <div className="relative rounded-[2rem] overflow-hidden" style={{ minHeight: "480px" }}>
             <Image
-              src="/image1.avif"
+              src="/image1.jpg"
               alt="Other software"
               fill
               className="object-cover object-center"
@@ -103,7 +103,7 @@ const WhyChooseUs = () => {
           {/* RIGHT — Servienza */}
           <div className="relative rounded-[2rem] overflow-hidden" style={{ minHeight: "480px" }}>
             <Image
-              src="/image2.avif"
+              src="/image2.jpg"
               alt="Servienza"
               fill
               className="object-cover object-center"

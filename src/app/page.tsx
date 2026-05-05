@@ -1,16 +1,21 @@
 'use client'
 import {useEffect} from 'react'
 import HeroSection from '@/components/Hero'
-import WhoWeAre from "@/components/who-we-are";
-import OurServices from "@/components/our-services";
-import Testimonial from "@/components/Testimonial";
-import HowWeWork from "@/components/HowWeWork";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import CaseStudy from "@/components/CaseStudy";
-import TwoApps from "@/components/TwoApps";
-import FaqSection from "@/components/FaqSection";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
+import IndustriesServed from '@/components/IndustriesServed'
+import FeaturesGrid from '@/components/FeaturesGrid'
+import SmartDispatch from '@/components/SmartDispatch'
+import Communication from '@/components/Communication'
+import InvoicingPayments from '@/components/InvoicingPayments'
+import TwoApps from '@/components/TwoApps'
+import SupportOnboarding from '@/components/SupportOnboarding'
+import Comparison from '@/components/Comparison'
+import Testimonial from '@/components/Testimonial'
+import CaseStudy from '@/components/CaseStudy'
+import ComingSoon from '@/components/ComingSoon'
+import HowWeWork from '@/components/HowWeWork'
+import FaqSection from '@/components/FaqSection'
+import ContactForm from '@/components/ContactForm'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   useEffect(() => {
@@ -29,13 +34,18 @@ export default function Home() {
   return (
     <main>
       <HeroSection/>
-      <WhoWeAre/>
-      <OurServices/>
+      <IndustriesServed/>
+      <FeaturesGrid/>
+      <SmartDispatch/>
+      <Communication/>
+      <InvoicingPayments/>
       <TwoApps/>
+      <SupportOnboarding/>
+      <Comparison/>
       <Testimonial/>
-      <HowWeWork/>
-      <WhyChooseUs/>
       <CaseStudy/>
+      <ComingSoon/>
+      <HowWeWork/>
       <FaqSection/>
       <ContactForm/>
       <Footer/>

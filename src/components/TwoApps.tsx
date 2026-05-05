@@ -4,38 +4,44 @@ import {ArrowUpRight} from "lucide-react";
 import AppStoreBadges from "@/components/AppStoreBadges";
 
 const webFeatures = [
-  "Schedule and dispatch jobs",
-  "Track your crew in real time",
-  "Manage customers and job history",
+  "Drag & drop dispatcher board",
+  "AI-powered route optimization",
+  "Full customer management & history",
   "Send invoices and track payments",
-  "View reports and business insights",
+  "QuickBooks & Stripe integrations",
+  "Technician calendars & availability",
+  "Reports, analytics & revenue dashboards",
+  "Recurring service management",
 ];
 
 const mobileFeatures = [
-  "See assigned jobs for the day",
-  "Get directions to each job site",
-  "Update job status on the go",
-  "Log notes, photos, and signatures",
-  "Mark jobs done to trigger invoicing",
+  "View assigned jobs for the day",
+  "GPS navigation to each job site",
+  "Complete digital checklists on site",
+  "Capture before/after photos",
+  "Log service details & inventory used",
+  "Mark jobs done to auto-create invoices",
+  "Track time on each job",
+  "Works offline — syncs when back online",
 ];
 
 const TwoApps = () => {
   return (
-    <section className="py-24 px-8 bg-[#F4F0EA]">
+    <section className="py-24 px-8 bg-[#f0f2f8]">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             Two apps, one business
           </div>
 
-          <h2 className="text-5xl md:text-6xl text-[#1c160c] tracking-tighter mb-6">
+          <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
             Office mode.{" "}
-            <span className="text-[#91877D]">Field mode.</span>
+            <span className="text-[#8b90a5]">Field mode.</span>
           </h2>
 
-          <p className="text-[#7A726A] text-lg leading-relaxed max-w-lg">
+          <p className="text-[#64697e] text-lg leading-relaxed max-w-lg">
             Whether it&apos;s just you or a full crew — the web app runs your office and the mobile app runs your field.
             Use one, or use both.
           </p>
@@ -45,7 +51,7 @@ const TwoApps = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
           {/* Web App */}
-          <div className="bg-[#1c160c] rounded-[2rem] p-10 flex flex-col gap-8">
+          <div className="bg-[#1a1f3d] rounded-[2rem] p-10 flex flex-col gap-8">
             <div className="flex items-center gap-3">
               <div>
                 <p className="text-white font-medium text-2xl">At your desk</p>
@@ -81,29 +87,29 @@ const TwoApps = () => {
           </div>
 
           {/* Mobile App */}
-          <div className="bg-[#EDE8E0] rounded-[2rem] p-10 flex flex-col gap-8">
+          <div className="bg-[#e8eaf3] rounded-[2rem] p-10 flex flex-col gap-8">
             <div className="flex items-center gap-3">
               <div>
-                <p className="text-[#1c160c] font-medium text-2xl">In the field</p>
-                <p className="text-[#7A726A] text-base">iOS & Android</p>
+                <p className="text-[#1a1f3d] font-medium text-2xl">In the field</p>
+                <p className="text-[#64697e] text-base">iOS & Android</p>
               </div>
             </div>
 
             <div>
-              <p className="text-[#7A726A] text-base font-medium uppercase mb-5">
+              <p className="text-[#64697e] text-base font-medium uppercase mb-5">
                 Built for the field
               </p>
               <ul className="flex flex-col gap-3">
                 {mobileFeatures.map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <span className="text-[#1c160c]/70 text-sm leading-snug">{f}</span>
+                    <span className="text-[#1a1f3d]/70 text-sm leading-snug">{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-auto pt-4 border-t border-[#1c160c]/10 flex flex-col gap-4">
-              <p className="text-[#7A726A] text-sm leading-relaxed">
+            <div className="mt-auto pt-4 border-t border-[#1a1f3d]/10 flex flex-col gap-4">
+              <p className="text-[#64697e] text-sm leading-relaxed">
                 Perfect for the crew on the road — or the solo operator who switches between office and field all day.
               </p>
               <AppStoreBadges/>

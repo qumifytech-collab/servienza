@@ -27,24 +27,24 @@ const WhoWeAre = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#FAF6F0] overflow-hidden">
+    <section className="py-24 px-6 bg-[#f5f6fa] overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="relative mb-16">
           {/* Badge */}
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#E8E2D8] text-[#1c160c] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
             Why it works
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative">
             <h2 className={cn(
-              "text-5xl md:text-6xl text-[#1c160c] relative z-10 pr-8 tracking-tighter",
+              "text-5xl md:text-6xl text-[#1a1f3d] relative z-10 pr-8 tracking-tighter",
             )}>
               Built for the field.<br /> Not for IT.
             </h2>
 
-            <p className="max-w-md text-[#7A726A] text-lg leading-relaxed relative z-10 pl-0 md:pl-8">
-              Most field service software is built for enterprise teams with dedicated admins. Servienza is built for the owner who's also on the tools. Use the web app to run your office, the mobile app to run your field — or both, if it's just you.
+            <p className="max-w-md text-[#64697e] text-lg leading-relaxed relative z-10 pl-0 md:pl-8">
+              Most field service software is built for enterprise teams with dedicated admins. Servienza is built for the owner who&apos;s also on the tools. Use the web app to run your office, the mobile app to run your field — or both, if it&apos;s just you.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ const WhoWeAre = () => {
           {/* Background Image */}
           <div
             className="absolute inset-0 z-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/hero_image.avif')" }}
+            style={{ backgroundImage: "url('/hero_image.jpg')" }}
           />
 
           {/* Grid of Stats */}
@@ -79,21 +79,21 @@ const WhoWeAre = () => {
         </div>
 
         {/* Careers Banner */}
-        <div className="mt-8 bg-[#F4F0EA] rounded-2xl p-8 md:py-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="mt-8 bg-[#f0f2f8] rounded-2xl p-8 md:py-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex flex-col gap-2">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <h3 className="text-xl font-medium tracking-tighter">
+              <h3 className="text-xl font-medium tracking-tighter text-[#1a1f3d]">
                 No IT team required. No month-long setup.
               </h3>
-              <span className="inline-block px-3 py-1 bg-[#E8E2D8] text-black text-sm font-semibold rounded-lg w-fit">
+              <span className="inline-block px-3 py-1 bg-[#dfe2ef] text-[#1a1f3d] text-sm font-semibold rounded-lg w-fit">
                 Free trial available
               </span>
             </div>
-            <p className="text-[#7A726A] max-w-2xl text-sm">
+            <p className="text-[#64697e] max-w-2xl text-sm">
               Most teams are fully set up on day one. No training sessions, no consultant fees, no six-week onboarding — just your business running better.
             </p>
           </div>
-          <Button size={'sm'} className="bg-[#1c160c] text-white hover:bg-[#2c261c] rounded-xl px-3 h-10 text-sm font-medium shrink-0 cursor-pointer">
+          <Button size={'sm'} className="bg-[#4f6bff] text-white hover:bg-[#3b4cca] rounded-xl px-3 h-10 text-sm font-medium shrink-0 cursor-pointer">
             Get started
           </Button>
         </div>

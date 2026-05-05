@@ -48,21 +48,22 @@ module.exports = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
-        navy: {
-          950: '#050d1a',
-          900: '#0a1628',
-          800: '#0f2040',
-          700: '#163058',
-          600: '#1e4278',
+        midnight: {
+          950: '#0e1125',
+          900: '#141833',
+          800: '#1a1f3d',
+          700: '#252a4a',
+          600: '#2f3560',
         },
-        amber: {
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
+        electric: {
+          400: '#7b8fff',
+          500: '#4f6bff',
+          600: '#3b4cca',
         },
-        slate: {
-          400: '#94a3b8',
-          300: '#cbd5e1',
+        purple: {
+          400: '#c084fc',
+          500: '#a855f7',
+          600: '#9333ea',
         }
       },
       fontFamily: {

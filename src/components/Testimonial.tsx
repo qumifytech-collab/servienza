@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="py-24 px-8 bg-[#FAF6F0]">
+    <section className="py-24 px-8 bg-[#f5f6fa]">
       <div className="max-w-6xl mx-auto">
         <div className="relative w-full rounded-[2rem] overflow-hidden" style={{ minHeight: "340px" }}>
           <Image
-            src="/hero_image.avif"
+            src="/hero_image.jpg"
             alt="Testimonial background"
             fill
             className="object-cover object-center"
