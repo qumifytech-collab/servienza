@@ -85,18 +85,17 @@ const IndustriesServed = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#dfe2ef] text-[#1a1f3d] text-sm font-medium mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-lg bg-[#fff] text-[#1a1f3d] text-sm font-medium mb-8">
             Built for your trade
           </div>
 
           <h2 className="text-5xl md:text-6xl text-[#1a1f3d] tracking-tighter mb-6">
-            One platform,{" "}
-            <span className="text-[#8b90a5]">every trade.</span>
+            One platform, every trade.
           </h2>
 
-          <p className="text-[#64697e] text-lg max-w-xl leading-relaxed">
+          <p className="text-[#000] text-lg max-w-xl leading-relaxed">
             Whether you run a crew of 2 or 50, Servienza adapts to how your
-            business works — not the other way around.
+            business works not the other way around.
           </p>
         </div>
 
@@ -108,12 +107,12 @@ const IndustriesServed = () => {
               <div
                 key={ind.name}
                 className={cn(
-                  "group bg-[#f5f6fa] border border-[#dfe2ef] rounded-2xl p-6",
+                  "group bg-[#fff] border border-[#dfe2ef] rounded-2xl p-6",
                   "hover:bg-white hover:border-[#cfd2e0] hover:shadow-sm",
                   "transition-all duration-300 cursor-default"
                 )}
               >
-                <div className="w-10 h-10 rounded-xl bg-[#dfe2ef] flex items-center justify-center mb-4 group-hover:bg-[#1a1f3d] transition-colors duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[#EFEEE7] flex items-center justify-center mb-4 group-hover:bg-[#1a1f3d] transition-colors duration-300">
                   <Icon className="w-5 h-5 text-[#1a1f3d] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-[#1a1f3d] font-medium text-base mb-1">

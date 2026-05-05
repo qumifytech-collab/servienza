@@ -33,7 +33,7 @@ export default function HeroSection() {
 
           {/* Right — description + CTAs, bottom-aligned to headline */}
           <div className="lg:w-[340px] lg:flex-shrink-0 flex flex-col gap-6">
-            <p className="text-lg md:text-lg max-w-2xl mx-auto  text-[#3d3d3a]">
+            <p className="text-lg md:text-lg max-w-2xl mx-auto  text-[#000] mb-4">
               Schedule, dispatch, track, invoice, and get paid from one app
               your whole team will actually use. Built for HVAC, plumbing, pest
               control, pool service, and more.
