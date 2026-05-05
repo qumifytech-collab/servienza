@@ -62,11 +62,11 @@ const Logo = ({ dark = false, size = "md", showTagline = false, className }: Log
       <div className="flex flex-col justify-center">
         <span
           style={{
-            fontFamily: "Georgia, serif",
             fontSize: `${s.fontSize}px`,
             color: textColor,
             letterSpacing: "-0.5px",
             lineHeight: 1.1,
+            fontWeight: 600,
           }}
         >
           Servienza

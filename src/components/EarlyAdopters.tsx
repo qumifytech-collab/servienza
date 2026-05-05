@@ -24,9 +24,9 @@ export default function EarlyAdopters() {
       {/* Marquee */}
       <div className="relative flex-1 overflow-hidden flex items-center">
         {/* Left fade */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-[#f0f2f8] to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-[#FAF6F0] to-transparent" />
         {/* Right fade */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-[#f0f2f8] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-[#FAF6F0] to-transparent" />
 
         <div
           className="flex items-center gap-14 animate-[ticker_35s_linear_infinite]"

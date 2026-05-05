@@ -81,7 +81,7 @@ const industries = [
 
 const IndustriesServed = () => {
   return (
-    <section className="py-24 px-8 bg-[#f0f2f8]">
+    <section className="py-24 px-8 bg-[#FAF6F0]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">

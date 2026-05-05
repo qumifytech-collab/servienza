@@ -61,7 +61,7 @@ const HeroCarousel = () => {
   return (
     <div className="relative w-full rounded-[1.5rem] overflow-hidden bg-[#1a1f3d]">
       {/* Aspect ratio container */}
-      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+      <div className="relative w-full" style={{ paddingBottom: "40%" }}>
         {/* Slide track */}
         <div
           className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
@@ -106,9 +106,6 @@ const HeroCarousel = () => {
           ))}
         </div>
       </div>
-
-      {/* Dots overlay (matching existing hero style) */}
-      <div className="absolute inset-[40px] z-10 pointer-events-none [background-image:radial-gradient(white_3px,transparent_3px)] [background-size:40px_40px] opacity-20" />
     </div>
   );
 };
