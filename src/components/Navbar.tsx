@@ -2,17 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Link from "next/link";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Dispatch", href: "#dispatch" },
+  { label: "Features",  href: "#features"  },
+  { label: "Dispatch",  href: "#dispatch"  },
   { label: "Invoicing", href: "#invoicing" },
-  { label: "Compare", href: "#compare" },
-  { label: "Support", href: "#support" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Compare",   href: "#compare"   },
+  { label: "Support",   href: "#support"   },
+  { label: "FAQ",       href: "#faq"       },
+  { label: "Pricing",   href: "/pricing"   },
 ];
 
 const Navbar = () => {
@@ -46,16 +48,27 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4 mr-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => handleAnchor(link.href)}
-              className="relative text-md font-medium text-[#1a1f3d] group cursor-pointer"
-            >
-              {link.label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#141413] transition-all duration-300 group-hover:w-full" />
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="relative text-md font-medium text-[#1a1f3d] group cursor-pointer"
+              >
+                {link.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#141413] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ) : (
+              <button
+                key={link.label}
+                onClick={() => handleAnchor(link.href)}
+                className="relative text-md font-medium text-[#1a1f3d] group cursor-pointer"
+              >
+                {link.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#141413] transition-all duration-300 group-hover:w-full" />
+              </button>
+            )
+          )}
         </div>
 
         {/* Desktop CTA */}
@@ -102,16 +115,28 @@ const Navbar = () => {
         )}
       >
         <div className="flex flex-col gap-2">
-          {navLinks.map((link, i) => (
-            <button
-              key={link.label}
-              onClick={() => handleAnchor(link.href)}
-              className="text-4xl font-medium text-[#1a1f3d] text-left py-3 border-b border-[#1a1f3d]/5 hover:pl-2 transition-all duration-200 cursor-pointer"
-              style={{ transitionDelay: isOpen ? `${i * 40}ms` : "0ms" }}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link, i) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-4xl font-medium text-[#1a1f3d] text-left py-3 border-b border-[#1a1f3d]/5 hover:pl-2 transition-all duration-200 cursor-pointer"
+                style={{ transitionDelay: isOpen ? `${i * 40}ms` : "0ms" }}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.label}
+                onClick={() => handleAnchor(link.href)}
+                className="text-4xl font-medium text-[#1a1f3d] text-left py-3 border-b border-[#1a1f3d]/5 hover:pl-2 transition-all duration-200 cursor-pointer"
+                style={{ transitionDelay: isOpen ? `${i * 40}ms` : "0ms" }}
+              >
+                {link.label}
+              </button>
+            )
+          )}
         </div>
 
         <div className="mt-auto pb-12 flex flex-col gap-3">

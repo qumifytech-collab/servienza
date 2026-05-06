@@ -48,7 +48,7 @@ const CaseStudy = () => {
         {/* RIGHT — Image card */}
         <div className="relative rounded-[2rem] overflow-hidden w-full h-full" style={{ minHeight: "400px" }}>
           <Image
-            src="/image3.jpg"
+            src="/features/image1.jpg"
             alt="Clearview Pools case study"
             fill
             className="object-cover object-center"

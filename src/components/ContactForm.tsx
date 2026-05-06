@@ -73,7 +73,7 @@ const ContactForm = () => {
           style={{ minHeight: "560px" }}
         >
           <Image
-            src="/image4.jpg"
+            src="/features/Reports.jpg"
             alt="Book a call"
             fill
             className="object-cover object-center"

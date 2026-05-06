@@ -25,7 +25,7 @@ const features = [
     short: "Detailed service history with photos, notes, and inventory used on every job.",
     detail:
       "Every job gets a complete digital log — technicians capture before/after photos, add notes, record chemicals or parts used, and the system auto-generates an invoice from the log. No more deciphering handwritten notes or chasing techs for updates.",
-    image: "/image1.jpg",
+    image: "/features/service_logs.jpg",
   },
   {
     icon: MapPin,
@@ -33,7 +33,7 @@ const features = [
     short: "Real-time crew location and route history on every job.",
     detail:
       "See where every technician is right now on a live map. Track route history, verify arrival and departure times, and give customers accurate ETAs. All automatic — your crew doesn't need to check in manually.",
-    image: "/image3.jpg",
+    image: "/features/GPS_Tracking.jpg",
   },
   {
     icon: CheckSquare,
@@ -41,7 +41,7 @@ const features = [
     short: "Out-of-the-box templates plus fully custom checklists for any service.",
     detail:
       "Start with pre-built checklists for common services like pool cleaning, HVAC maintenance, or pest treatment — or build your own from scratch. Technicians check off items as they go, ensuring nothing gets missed and giving customers proof of work.",
-    image: "/image6.jpg",
+    image: "/features/Checklists.jpg",
   },
   {
     icon: Users,
@@ -49,7 +49,7 @@ const features = [
     short: "Full customer profiles with property details, service history, and communication logs.",
     detail:
       "Every customer has a complete profile — property details, service history, photos, notes, preferred scheduling, payment history, and communication log. Your team always has full context before arriving on site.",
-    image: "/image1.jpg",
+    image: "/features/Customer.jpg",
   },
   {
     icon: Package,
@@ -57,7 +57,7 @@ const features = [
     short: "Manage your inventory of parts, chemicals, and materials across all jobs.",
     detail:
       "Maintain a catalog of every product you use — chemicals, parts, filters, materials. Technicians select items from the library when logging service, and costs auto-populate on the invoice. Track usage across jobs and know when to reorder.",
-    image: "/image5.jpg",
+    image: "/features/Product.jpg",
   },
   {
     icon: UserCog,
@@ -65,7 +65,7 @@ const features = [
     short: "Calendars, skills, time-off, and availability — all in one place.",
     detail:
       "Manage each technician's calendar, skills, certifications, territories, and availability. Handle time-off requests, set working hours, and see at a glance who's available. Schedule conflicts are flagged automatically before they become problems.",
-    image: "/image8.jpg",
+    image: "/features/Technician.jpg",
   },
   {
     icon: BarChart3,
@@ -73,7 +73,7 @@ const features = [
     short: "Revenue, job completion, technician performance — the data you need to grow.",
     detail:
       "Revenue breakdowns, job completion rates, technician utilization, customer retention, and more. See what's working, spot inefficiencies, and make smarter decisions backed by real data — not gut feelings.",
-    image: "/image7.jpg",
+    image: "/features/Reports.jpg",
   },
   {
     icon: Camera,
@@ -81,7 +81,7 @@ const features = [
     short: "Before/after photos on every job — proof of work for you and your customers.",
     detail:
       "Technicians snap photos directly in the app — before, during, and after service. Photos are timestamped, geotagged, and attached to the job record. Great for customer transparency, dispute resolution, and quality control.",
-    image: "/image6.jpg",
+    image: "/features/Documentation.jpg",
   },
   {
     icon: RefreshCw,
@@ -89,7 +89,7 @@ const features = [
     short: "Each service scheduled independently with its own cadence and pricing.",
     detail:
       "Set up weekly pool cleaning, monthly pest treatment, and quarterly HVAC maintenance — all for the same customer, each on its own schedule and at its own price. The system auto-generates visits so you never miss a recurring job.",
-    image: "/image2.jpg",
+    image: "/features/Recurring.jpg",
   },
   {
     icon: CalendarClock,
@@ -97,7 +97,7 @@ const features = [
     short: "Handle one-off service calls and manage them through their full lifecycle.",
     detail:
       "When a customer calls with an emergency or a one-time request, create the job in seconds. Track it from request to dispatch to completion to payment — with the same tools you use for recurring work. Nothing falls through the cracks.",
-    image: "/image4.jpg",
+    image: "/features/Ad-hoc.jpg",
   },
   {
     icon: FileText,
@@ -105,7 +105,7 @@ const features = [
     short: "Invoices generated automatically from completed service logs.",
     detail:
       "When a technician marks a job done and logs what they used, the invoice is created automatically — with labor, materials, and any recurring charges already calculated. Send it to the customer in one tap, or let it go out on its own.",
-    image: "/image5.jpg",
+    image: "/features/Invoicing.jpg",
   },
   {
     icon: Bell,
@@ -113,7 +113,7 @@ const features = [
     short: "Automated notifications keep customers informed at every step.",
     detail:
       "Customers get notified about upcoming services, technician en-route alerts with live tracking, job completion summaries, and payment reminders — via push notification, text, or email. They stay informed without you lifting a finger.",
-    image: "/image4.jpg",
+    image: "/features/Alerts.jpg",
   },
 ];
 

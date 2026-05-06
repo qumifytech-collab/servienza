@@ -12,7 +12,7 @@ const BASE_URL = 'https://servienza.com'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Servienza — Field Service Management Software',
+    default: 'Servienza - Field Service Management Software',
     template: '%s | Servienza',
   },
   description: 'Servienza is field service management software for HVAC, plumbing, pool service, pest control, and more. Schedule jobs, dispatch crews, track in real time, and get paid — all in one app.',
