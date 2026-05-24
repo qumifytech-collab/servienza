@@ -5,39 +5,64 @@ import Image from "next/image";
 
 const slides = [
   {
-    src: "/carousel_hvac.jpg",
-    alt: "HVAC technician inspecting outdoor unit",
+    src: "/industry_hvac.png",
+    alt: "HVAC technician with service van",
     label: "HVAC",
   },
   {
-    src: "/carousel_plumbing.jpg",
-    alt: "Plumber installing pipe fittings",
+    src: "/industry_plumbing.png",
+    alt: "Plumber with work truck",
     label: "Plumbing",
   },
   {
-    src: "/carousel_landscaping.jpg",
-    alt: "Landscaper mowing lawn",
-    label: "Landscaping",
+    src: "/industry_pool.png",
+    alt: "Pool service professional with van",
+    label: "Pool Service",
   },
   {
-    src: "/carousel_grooming.jpg",
-    alt: "Professional pet grooming",
+    src: "/industry_pest.png",
+    alt: "Pest control technician with service vehicle",
+    label: "Pest Control",
+  },
+  {
+    src: "/industry_grooming.png",
+    alt: "Pet groomer with mobile grooming van",
     label: "Pet Grooming",
   },
   {
-    src: "/carousel_cleaning.jpg",
-    alt: "Professional cleaning service",
+    src: "/industry_landscaping.png",
+    alt: "Landscaper with work truck",
+    label: "Landscaping",
+  },
+  {
+    src: "/industry_cleaning.png",
+    alt: "Cleaning professional with service van",
     label: "Cleaning",
   },
   {
-    src: "/carousel_electrical.jpg",
-    alt: "Electrician working with cables",
+    src: "/industry_electrical.png",
+    alt: "Electrician with work van",
     label: "Electrical",
   },
   {
-    src: "/carousel_handyman.jpg",
-    alt: "Home inspector in safety vest",
-    label: "Property & Handyman",
+    src: "/industry_beauty.png",
+    alt: "Beauty professional with mobile service vehicle",
+    label: "Home Beauty",
+  },
+  {
+    src: "/industry_painting.png",
+    alt: "Painter with work van",
+    label: "Painting",
+  },
+  {
+    src: "/industry_handyman.png",
+    alt: "Handyman with service truck",
+    label: "Handyman",
+  },
+  {
+    src: "/industry_property.png",
+    alt: "Property manager with vehicle",
+    label: "Property Mgmt",
   },
 ];
 
@@ -68,7 +93,7 @@ const HeroCarousel = () => {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {slides.map((slide, i) => (
-            <div key={slide.label} className="relative w-full h-full shrink-0">
+            <div key={slide.label} className="relative min-w-full h-full shrink-0">
               <Image
                 src={slide.src}
                 alt={slide.alt}
