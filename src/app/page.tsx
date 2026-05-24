@@ -1,6 +1,7 @@
 'use client'
 import {useEffect} from 'react'
 import HeroSection from '@/components/Hero'
+import ToolStackReplacement from '@/components/ToolStackReplacement'
 import IndustriesServed from '@/components/IndustriesServed'
 import FeaturesGrid from '@/components/FeaturesGrid'
 import SmartDispatch from '@/components/SmartDispatch'
@@ -12,6 +13,8 @@ import Comparison from '@/components/Comparison'
 import Testimonial from '@/components/Testimonial'
 import CaseStudy from '@/components/CaseStudy'
 import HowWeWork from '@/components/HowWeWork'
+import Pricing from '@/components/Pricing'
+import TrustBadges from '@/components/TrustBadges'
 import FaqSection from '@/components/FaqSection'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -33,8 +36,10 @@ export default function Home() {
   return (
     <main>
       <HeroSection/>
+      <ToolStackReplacement/>
       <IndustriesServed/>
       <FeaturesGrid/>
+      <HowWeWork/>
       <SmartDispatch/>
       <Communication/>
       <InvoicingPayments/>
@@ -44,6 +49,9 @@ export default function Home() {
       <Testimonial/>
       <CaseStudy/>
       <SupportOnboarding/>
+      <ComingSoon/>
+      <TrustBadges/>
+      <Pricing/>
       <FaqSection/>
       {/*<ComingSoon/>*/}
       <ContactForm/>
