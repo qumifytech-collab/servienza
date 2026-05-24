@@ -18,6 +18,7 @@ import TrustBadges from '@/components/TrustBadges'
 import FaqSection from '@/components/FaqSection'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import ComingSoon from "@/components/ComingSoon";
 
 export default function Home() {
   useEffect(() => {
