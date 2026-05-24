@@ -14,8 +14,9 @@ import Testimonial from '@/components/Testimonial'
 import CaseStudy from '@/components/CaseStudy'
 import ComingSoon from '@/components/ComingSoon'
 import HowWeWork from '@/components/HowWeWork'
+import ProductTour from '@/components/ProductTour'
+// import TrustBadges from '@/components/TrustBadges'
 import Pricing from '@/components/Pricing'
-import TrustBadges from '@/components/TrustBadges'
 import FaqSection from '@/components/FaqSection'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -40,6 +41,7 @@ export default function Home() {
       <ToolStackReplacement/>
       <IndustriesServed/>
       <FeaturesGrid/>
+      <ProductTour/>
       <HowWeWork/>
       <SmartDispatch/>
       <Communication/>
@@ -50,7 +52,7 @@ export default function Home() {
       <Testimonial/>
       <CaseStudy/>
       <ComingSoon/>
-      <TrustBadges/>
+      {/*<TrustBadges/>*/}
       <Pricing/>
       <FaqSection/>
       <ContactForm/>
