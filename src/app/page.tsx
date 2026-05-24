@@ -12,13 +12,14 @@ import SupportOnboarding from '@/components/SupportOnboarding'
 import Comparison from '@/components/Comparison'
 import Testimonial from '@/components/Testimonial'
 import CaseStudy from '@/components/CaseStudy'
+import ComingSoon from '@/components/ComingSoon'
 import HowWeWork from '@/components/HowWeWork'
+import ProductTour from '@/components/ProductTour'
+// import TrustBadges from '@/components/TrustBadges'
 import Pricing from '@/components/Pricing'
-import TrustBadges from '@/components/TrustBadges'
 import FaqSection from '@/components/FaqSection'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
-import ComingSoon from "@/components/ComingSoon";
 
 export default function Home() {
   useEffect(() => {
@@ -40,21 +41,20 @@ export default function Home() {
       <ToolStackReplacement/>
       <IndustriesServed/>
       <FeaturesGrid/>
+      <ProductTour/>
       <HowWeWork/>
       <SmartDispatch/>
       <Communication/>
       <InvoicingPayments/>
       <TwoApps/>
-      <HowWeWork/>
+      <SupportOnboarding/>
       <Comparison/>
       <Testimonial/>
       <CaseStudy/>
-      <SupportOnboarding/>
       <ComingSoon/>
-      <TrustBadges/>
+      {/*<TrustBadges/>*/}
       <Pricing/>
       <FaqSection/>
-      {/*<ComingSoon/>*/}
       <ContactForm/>
       <Footer/>
     </main>
