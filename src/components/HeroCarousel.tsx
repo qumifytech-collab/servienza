@@ -5,62 +5,62 @@ import Image from "next/image";
 
 const slides = [
   {
-    src: "/industry_hvac.png",
+    src: "/industry_hvac.webp",
     alt: "HVAC technician with service van",
     label: "HVAC",
   },
   {
-    src: "/industry_plumbing.png",
+    src: "/industry_plumbing.webp",
     alt: "Plumber with work truck",
     label: "Plumbing",
   },
   {
-    src: "/industry_pool.png",
+    src: "/industry_pool.webp",
     alt: "Pool service professional with van",
     label: "Pool Service",
   },
   {
-    src: "/industry_pest.png",
+    src: "/industry_pest.webp",
     alt: "Pest control technician with service vehicle",
     label: "Pest Control",
   },
   {
-    src: "/industry_grooming.png",
+    src: "/industry_grooming.webp",
     alt: "Pet groomer with mobile grooming van",
     label: "Pet Grooming",
   },
   {
-    src: "/industry_landscaping.png",
+    src: "/industry_landscaping.webp",
     alt: "Landscaper with work truck",
     label: "Landscaping",
   },
   {
-    src: "/industry_cleaning.png",
+    src: "/industry_cleaning.webp",
     alt: "Cleaning professional with service van",
     label: "Cleaning",
   },
   {
-    src: "/industry_electrical.png",
+    src: "/industry_electrical.webp",
     alt: "Electrician with work van",
     label: "Electrical",
   },
   {
-    src: "/industry_beauty.png",
+    src: "/industry_beauty.webp",
     alt: "Beauty professional with mobile service vehicle",
     label: "Home Beauty",
   },
   {
-    src: "/industry_painting.png",
+    src: "/industry_painting.webp",
     alt: "Painter with work van",
     label: "Painting",
   },
   {
-    src: "/industry_handyman.png",
+    src: "/industry_handyman.webp",
     alt: "Handyman with service truck",
     label: "Handyman",
   },
   {
-    src: "/industry_property.png",
+    src: "/industry_property.webp",
     alt: "Property manager with vehicle",
     label: "Property Mgmt",
   },
