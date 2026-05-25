@@ -4,11 +4,32 @@ import { ArrowUpRight } from "lucide-react";
 import AppStoreBadges from "@/components/AppStoreBadges";
 import Logo from "@/components/Logo";
 
-const navLinks = {
-  Product: ["Features", "Smart Dispatch", "Invoicing & Payments", "Mobile App", "Integrations"],
-  Company: ["About", "Case Studies", "Blog", "Compare", "Careers"],
-  Support: ["Help Center", "Data Migration", "Onboarding", "Contact Us"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+const navLinks: Record<string, { label: string; href: string }[]> = {
+  Product: [
+    { label: "Features", href: "#" },
+    { label: "Smart Dispatch", href: "#" },
+    { label: "Invoicing & Payments", href: "#" },
+    { label: "Mobile App", href: "#" },
+    { label: "Integrations", href: "#" },
+  ],
+  Company: [
+    { label: "About", href: "#" },
+    { label: "Case Studies", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Compare", href: "#" },
+    { label: "Careers", href: "#" },
+  ],
+  Support: [
+    { label: "Help Center", href: "#" },
+    { label: "Data Migration", href: "#" },
+    { label: "Onboarding", href: "#" },
+    { label: "Contact Us", href: "#contact" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Cookie Policy", href: "#" },
+  ],
 };
 
 const socials = [
@@ -74,12 +95,12 @@ const Footer = () => {
               </p>
               <ul className="flex flex-col gap-3">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-white/50 text-sm hover:text-white transition-colors duration-200"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}

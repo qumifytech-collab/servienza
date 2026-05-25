@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Star, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { submitCTA } from "@/lib/api";
 
 const serviceOptions = [
   "Job Management",
@@ -76,31 +77,14 @@ const ContactForm = () => {
 
     setSubmitting(true);
     try {
-      const res = await fetch("https://formspree.io/f/mvgadwlv", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          _replyto: email,
-          name,
-          email,
-          services: services.join(", "),
-          challenges: challenges.join(", "),
-          message,
-          _subject: `Servienza Lead: ${name} — Book a Call`,
-        }),
+      await submitCTA({
+        email,
+        name,
+        services: services.join(", "),
+        challenges: challenges.join(", "),
+        message,
+        source: "Book a Call",
       });
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(`Servienza Lead: ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nInterested in: ${services.join(", ")}\nChallenges: ${challenges.join(", ")}\nMessage: ${message}`
-      );
-      window.open(`mailto:at@qumify.com?subject=${subject}&body=${body}`);
       setSubmitted(true);
     } finally {
       setSubmitting(false);
@@ -248,7 +232,7 @@ const ContactForm = () => {
             <p className="text-center text-neutral-700 text-sm">
               By submitting, you agree to our{" "}
               <a
-                href="#"
+                href="/terms"
                 className="text-[#000] hover:underline"
               >
                 terms of service.

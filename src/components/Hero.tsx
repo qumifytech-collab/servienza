@@ -5,6 +5,7 @@ import { ArrowUpRight, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import EarlyAdopters from "@/components/EarlyAdopters";
 import HeroCarousel from "@/components/HeroCarousel";
+import { submitCTA } from "@/lib/api";
 
 export default function HeroSection() {
   const [heroEmail, setHeroEmail] = useState("");
@@ -16,23 +17,7 @@ export default function HeroSection() {
     if (!heroEmail) return;
     setHeroSubmitting(true);
     try {
-      const res = await fetch("https://formspree.io/f/mvgadwlv", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: heroEmail,
-          _subject: `Servienza Trial Signup: ${heroEmail}`,
-        }),
-      });
-      if (res.ok) {
-        setHeroSubmitted(true);
-      } else {
-        throw new Error("fail");
-      }
-    } catch {
-      window.open(
-        `mailto:at@qumify.com?subject=${encodeURIComponent("Servienza Trial Signup")}&body=${encodeURIComponent(`Email: ${heroEmail}`)}`
-      );
+      await submitCTA({ email: heroEmail, source: "Hero Trial Signup" });
       setHeroSubmitted(true);
     } finally {
       setHeroSubmitting(false);
