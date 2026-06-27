@@ -6,65 +6,19 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+        brand: {
+          50:  '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
-        accent: {
-          DEFAULT: "var(--accent)",
-          foreground: "var(--accent-foreground)",
-        },
-        popover: {
-          DEFAULT: "var(--popover)",
-          foreground: "var(--popover-foreground)",
-        },
-        card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
-        },
-        midnight: {
-          950: '#0e1125',
-          900: '#141833',
-          800: '#1a1f3d',
-          700: '#252a4a',
-          600: '#2f3560',
-        },
-        electric: {
-          400: '#7b8fff',
-          500: '#4f6bff',
-          600: '#3b4cca',
-        },
-        purple: {
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-        }
       },
       fontFamily: {
         sans: ['var(--font-body)', 'sans-serif'],
@@ -73,29 +27,15 @@ module.exports = {
       animation: {
         'fade-up': 'fadeUp 0.6s ease forwards',
         'fade-in': 'fadeIn 0.5s ease forwards',
-        'accordion-down': 'accordionDown 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
-        'accordion-up': 'accordionUp 0.3s cubic-bezier(0.87, 0, 0.13, 1)',
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '0%':   { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
+          '0%':   { opacity: '0' },
           '100%': { opacity: '1' },
-        },
-        ticker: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        accordionDown: {
-          '0%': { height: '0', opacity: '0' },
-          '100%': { height: 'var(--radix-accordion-content-height)', opacity: '1' },
-        },
-        accordionUp: {
-          '0%': { height: 'var(--radix-accordion-content-height)', opacity: '1' },
-          '100%': { height: '0', opacity: '0' },
         },
       },
     },

@@ -1,62 +1,51 @@
-'use client'
-import {useEffect} from 'react'
-import HeroSection from '@/components/Hero'
-import ToolStackReplacement from '@/components/ToolStackReplacement'
-import IndustriesServed from '@/components/IndustriesServed'
-import FeaturesGrid from '@/components/FeaturesGrid'
-import SmartDispatch from '@/components/SmartDispatch'
-import Communication from '@/components/Communication'
-import InvoicingPayments from '@/components/InvoicingPayments'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import TradesMarquee from '@/components/TradesMarquee'
+import SavingsCalculator from '@/components/SavingsCalculator'
+import Trades from '@/components/Trades'
+import Features from '@/components/Features'
+import Workflow from '@/components/Workflow'
+import DispatchShowcase from '@/components/DispatchShowcase'
+import CommunicationShowcase from '@/components/CommunicationShowcase'
+import PaymentsShowcase from '@/components/PaymentsShowcase'
+import HowItWorks from '@/components/HowItWorks'
+import WhiteGloveSetup from '@/components/WhiteGloveSetup'
 import TwoApps from '@/components/TwoApps'
-import SupportOnboarding from '@/components/SupportOnboarding'
-import Comparison from '@/components/Comparison'
-import Testimonial from '@/components/Testimonial'
-import CaseStudy from '@/components/CaseStudy'
-import ComingSoon from '@/components/ComingSoon'
-import HowWeWork from '@/components/HowWeWork'
-import ProductTour from '@/components/ProductTour'
-// import TrustBadges from '@/components/TrustBadges'
+import Compare from '@/components/Compare'
+import FounderPromise from '@/components/FounderPromise'
 import Pricing from '@/components/Pricing'
-import FaqSection from '@/components/FaqSection'
-import ContactForm from '@/components/ContactForm'
+import Faq from '@/components/Faq'
+import Security from '@/components/Security'
+import FinalCta from '@/components/FinalCta'
 import Footer from '@/components/Footer'
+import ClientInit from '@/components/ClientInit'
 
 export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('visible')
-        })
-      },
-      {threshold: 0.12, rootMargin: '0px 0px -40px 0px'}
-    )
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <main>
-      <HeroSection/>
-      <ToolStackReplacement/>
-      <IndustriesServed/>
-      <FeaturesGrid/>
-      <ProductTour/>
-      <HowWeWork/>
-      <SmartDispatch/>
-      <Communication/>
-      <InvoicingPayments/>
-      <TwoApps/>
-      <SupportOnboarding/>
-      <Comparison/>
-      <Testimonial/>
-      <CaseStudy/>
-      <ComingSoon/>
-      {/*<TrustBadges/>*/}
-      <Pricing/>
-      <FaqSection/>
-      <ContactForm/>
-      <Footer/>
-    </main>
+    <>
+      <Navbar />
+      <main id="top">
+        <Hero />
+        <TradesMarquee />
+        <SavingsCalculator />
+        <Trades />
+        <Features />
+        <Workflow />
+        <DispatchShowcase />
+        <CommunicationShowcase />
+        <PaymentsShowcase />
+        <HowItWorks />
+        <WhiteGloveSetup />
+        <TwoApps />
+        <Compare />
+        <FounderPromise />
+        <Pricing />
+        <Faq />
+        <Security />
+        <FinalCta />
+      </main>
+      <Footer />
+      <ClientInit />
+    </>
   )
 }
