@@ -122,27 +122,27 @@ export default function SmsOptInPage() {
             The screenshots below show the live consent checkboxes presented to users
             inside the {BUSINESS_NAME} application.
           </p>
-          <div className="mt-2 grid gap-6 sm:grid-cols-2">
-            <figure>
+          <div className="mt-4 space-y-12">
+            <figure className="mx-auto max-w-xl">
               <img
                 src="/legal/sms-optin-add-customer.jpg"
                 alt="Add customer form showing the unchecked SMS consent checkbox with disclosure text"
                 className="w-full rounded-xl border border-slate-200 shadow-sm"
                 loading="lazy"
               />
-              <figcaption className="mt-2 text-center text-xs text-slate-500">
-                Customer contact form — SMS consent checkbox (unchecked by default)
+              <figcaption className="mt-3 text-center text-sm text-slate-500">
+                Screenshot 1 — Customer contact form: SMS consent checkbox (unchecked by default)
               </figcaption>
             </figure>
-            <figure>
+            <figure className="mx-auto max-w-xl">
               <img
                 src="/legal/sms-optin-signup.jpg"
                 alt="Account sign-up form showing the unchecked SMS consent checkbox with disclosure text"
                 className="w-full rounded-xl border border-slate-200 shadow-sm"
                 loading="lazy"
               />
-              <figcaption className="mt-2 text-center text-xs text-slate-500">
-                Account sign-up — SMS consent checkbox (unchecked by default)
+              <figcaption className="mt-3 text-center text-sm text-slate-500">
+                Screenshot 2 — Account sign-up: SMS consent checkbox (unchecked by default)
               </figcaption>
             </figure>
           </div>
