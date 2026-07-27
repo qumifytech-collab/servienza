@@ -66,6 +66,54 @@ export default function SmsOptInPage() {
           </p>
         </div>
 
+        {/* Opt-in at a glance — mirrors the fields carriers/TCR review for the campaign CTA */}
+        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <h2 className="border-b border-slate-200 bg-slate-50 px-5 py-3 text-base font-semibold text-slate-900">
+            Opt-in at a glance
+          </h2>
+          <dl className="divide-y divide-slate-100 text-sm">
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Brand / legal entity</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                {BUSINESS_NAME} (operated by {LEGAL_ENTITY})
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Opt-in method</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                Online / in-app consent — a single, unchecked checkbox the user must
+                actively tick during account sign-up. No SMS is sent without it.
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Where consent is collected</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                Inside the {BUSINESS_NAME} web application (behind sign-in). See the
+                step-by-step path and screenshot below.
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Message types</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                Transactional / service notifications only (no marketing or promotional
+                content).
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Frequency</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                Varies by service schedule — typically a few messages per service visit.
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-1 px-5 py-3 sm:grid-cols-3">
+              <dt className="font-medium text-slate-500">Opt-out / help</dt>
+              <dd className="text-slate-800 sm:col-span-2">
+                Reply STOP to stop, HELP for help. Message &amp; data rates may apply.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
         <Section title="About our business">
           <p>
             {BUSINESS_NAME} is a product of {LEGAL_ENTITY}, the registered business behind
@@ -81,34 +129,18 @@ export default function SmsOptInPage() {
           <p>
             Consent is collected directly inside the {BUSINESS_NAME} application. SMS is{' '}
             <strong>never enabled by default</strong>. A person must affirmatively check an
-            unchecked consent box before any text message is sent to their number. We
-            collect consent in two places:
+            unchecked consent box before any text message is sent to their number.
           </p>
-          <ol className="list-decimal space-y-2 pl-5">
-            <li>
-              <strong>Customer contact creation</strong> — when a business adds a customer,
-              the staff member confirms the customer agreed to receive service/scheduling
-              texts at the number provided (shown below, left).
-            </li>
-            <li>
-              <strong>Account / technician sign-up</strong> — when a user creates their own
-              account, they may opt in to account, scheduling, and service notifications at
-              their own number (shown below, right).
-            </li>
-          </ol>
-
-          <p className="pt-1">
-            In both flows the consent checkbox is <strong>unchecked by default</strong> and
-            includes message frequency, rate disclosures, and STOP/HELP instructions:
+          <p>
+            <strong>Account / technician sign-up</strong> — when a user creates their own
+            account, they may opt in to account, scheduling, and service notifications at
+            their own number. The consent checkbox is{' '}
+            <strong>unchecked by default</strong> and includes message frequency, rate
+            disclosures, and STOP/HELP instructions:
           </p>
 
           {/* Exact consent language quoted */}
           <div className="space-y-3">
-            <blockquote className="rounded-lg border-l-4 border-brand-400 bg-white p-4 text-sm italic text-slate-700">
-              “This contact agreed to receive SMS/text messages about scheduling and
-              service at the number above. Message frequency varies. Message &amp; data
-              rates may apply. They can reply STOP to opt out, HELP for help.”
-            </blockquote>
             <blockquote className="rounded-lg border-l-4 border-brand-400 bg-white p-4 text-sm italic text-slate-700">
               “I agree to receive SMS/text messages about my account, scheduling, and
               service notifications at the number above. Message frequency varies. Message
@@ -117,23 +149,29 @@ export default function SmsOptInPage() {
           </div>
         </Section>
 
+        <Section title="Step-by-step: how to reach the consent checkbox">
+          <p>
+            Because consent is collected inside the authenticated {BUSINESS_NAME}{' '}
+            application, the checkbox is not on a public page. The screenshot in the next
+            section is provided so reviewers can verify the exact consent experience
+            without an account. For reference, an authenticated user reaches it as follows:
+          </p>
+          <ol className="list-decimal space-y-1 pl-5">
+            <li>Open the {BUSINESS_NAME} sign-up page and enter account details and mobile number.</li>
+            <li>
+              An <strong>unchecked</strong> SMS consent checkbox with full disclosure
+              appears beneath the phone field.
+            </li>
+            <li>The user ticks it to opt in; leaving it unchecked still allows sign-up with no SMS.</li>
+          </ol>
+        </Section>
+
         <Section title="Screenshots of the opt-in form">
           <p>
-            The screenshots below show the live consent checkboxes presented to users
+            The screenshot below shows the live consent checkbox presented to users
             inside the {BUSINESS_NAME} application.
           </p>
           <div className="mt-4 space-y-12">
-            <figure className="mx-auto max-w-xl">
-              <img
-                src="/legal/sms-optin-add-customer.jpg"
-                alt="Add customer form showing the unchecked SMS consent checkbox with disclosure text"
-                className="w-full rounded-xl border border-slate-200 shadow-sm"
-                loading="lazy"
-              />
-              <figcaption className="mt-3 text-center text-sm text-slate-500">
-                Screenshot 1 — Customer contact form: SMS consent checkbox (unchecked by default)
-              </figcaption>
-            </figure>
             <figure className="mx-auto max-w-xl">
               <img
                 src="/legal/sms-optin-signup.jpg"
@@ -142,7 +180,7 @@ export default function SmsOptInPage() {
                 loading="lazy"
               />
               <figcaption className="mt-3 text-center text-sm text-slate-500">
-                Screenshot 2 — Account sign-up: SMS consent checkbox (unchecked by default)
+                Account sign-up: SMS consent checkbox (unchecked by default)
               </figcaption>
             </figure>
           </div>
