@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 // Last reviewed/updated — keep in sync when the consent flow changes.
-const LAST_UPDATED = 'June 25, 2026'
+const LAST_UPDATED = 'August 1, 2026'
 
 // Business contact details shown to carriers/Twilio reviewers.
 const SUPPORT_EMAIL = 'at@servienza.com'
@@ -135,16 +135,26 @@ export default function SmsOptInPage() {
             <strong>Account / technician sign-up</strong> — when a user creates their own
             account, they may opt in to account, scheduling, and service notifications at
             their own number. The consent checkbox is{' '}
-            <strong>unchecked by default</strong> and includes message frequency, rate
-            disclosures, and STOP/HELP instructions:
+            <strong>unchecked by default</strong> and includes the brand name, message
+            frequency, rate disclosures, STOP/HELP instructions, and links to our Privacy
+            Policy and Terms:
           </p>
 
-          {/* Exact consent language quoted */}
+          {/* Exact consent language quoted — Privacy Policy / Terms render as live links in-app */}
           <div className="space-y-3">
             <blockquote className="rounded-lg border-l-4 border-brand-400 bg-white p-4 text-sm italic text-slate-700">
-              “I agree to receive SMS/text messages about my account, scheduling, and
-              service notifications at the number above. Message frequency varies. Message
-              &amp; data rates may apply. Reply STOP to opt out, HELP for help.”
+              “I agree to receive SMS/text messages from {BUSINESS_NAME} about my account,
+              scheduling, and service notifications at the number above. Message frequency
+              varies. Message &amp; data rates may apply. Reply STOP to opt out, HELP for
+              help. Please see our{' '}
+              <a className="not-italic text-brand-700 underline" href="/privacy">
+                Privacy Policy
+              </a>{' '}
+              and{' '}
+              <a className="not-italic text-brand-700 underline" href="/terms">
+                Terms
+              </a>
+              .”
             </blockquote>
           </div>
         </Section>
@@ -159,8 +169,9 @@ export default function SmsOptInPage() {
           <ol className="list-decimal space-y-1 pl-5">
             <li>Open the {BUSINESS_NAME} sign-up page and enter account details and mobile number.</li>
             <li>
-              An <strong>unchecked</strong> SMS consent checkbox with full disclosure
-              appears beneath the phone field.
+              An <strong>unchecked</strong> SMS consent checkbox with full disclosure —
+              including the {BUSINESS_NAME} brand name and links to the Privacy Policy and
+              Terms — appears beneath the phone field.
             </li>
             <li>The user ticks it to opt in; leaving it unchecked still allows sign-up with no SMS.</li>
           </ol>
@@ -175,7 +186,7 @@ export default function SmsOptInPage() {
             <figure className="mx-auto max-w-xl">
               <img
                 src="/legal/sms-optin-signup.jpg"
-                alt="Account sign-up form showing the unchecked SMS consent checkbox with disclosure text"
+                alt="Account sign-up form showing the unchecked SMS consent checkbox with disclosure text, brand name, and Privacy Policy and Terms links"
                 className="w-full rounded-xl border border-slate-200 shadow-sm"
                 loading="lazy"
               />
