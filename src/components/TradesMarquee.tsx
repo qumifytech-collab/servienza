@@ -1,5 +1,37 @@
 export default function TradesMarquee() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<section class=\"marquee-sec\">\n  <div class=\"wrap\">\n    <p class=\"marquee-label\">One platform for every field-service trade</p>\n    <div class=\"marquee\">\n      <div class=\"marquee-track\">\n        <span class=\"logo\">HVAC</span>\n        <span class=\"logo\">Plumbing</span>\n        <span class=\"logo\">Pool Service</span>\n        <span class=\"logo\">Pest Control</span>\n        <span class=\"logo\">Landscaping</span>\n        <span class=\"logo\">Electrical</span>\n        <span class=\"logo\">Cleaning</span>\n        <span class=\"logo\">Pet Grooming</span>\n        <span class=\"logo\">Painting</span>\n        <span class=\"logo\">Handyman</span>\n        <span class=\"logo\">HVAC</span>\n        <span class=\"logo\">Plumbing</span>\n        <span class=\"logo\">Pool Service</span>\n        <span class=\"logo\">Pest Control</span>\n        <span class=\"logo\">Landscaping</span>\n        <span class=\"logo\">Electrical</span>\n        <span class=\"logo\">Cleaning</span>\n        <span class=\"logo\">Pet Grooming</span>\n        <span class=\"logo\">Painting</span>\n        <span class=\"logo\">Handyman</span>\n      </div>\n    </div>\n  </div>\n</section>" }} />
-  )
+    <section className="marquee-sec">
+      <div className="wrap">
+        <p className="marquee-label">
+          One platform for every field-service trade
+        </p>
+
+        <div className="marquee">
+          <div className="marquee-track">
+            <span className="logo">HVAC</span>
+            <span className="logo">Plumbing</span>
+            <span className="logo">Pool Service</span>
+            <span className="logo">Pest Control</span>
+            <span className="logo">Landscaping</span>
+            <span className="logo">Electrical</span>
+            <span className="logo">Cleaning</span>
+            <span className="logo">Pet Grooming</span>
+            <span className="logo">Painting</span>
+            <span className="logo">Handyman</span>
+
+            <span className="logo">HVAC</span>
+            <span className="logo">Plumbing</span>
+            <span className="logo">Pool Service</span>
+            <span className="logo">Pest Control</span>
+            <span className="logo">Landscaping</span>
+            <span className="logo">Electrical</span>
+            <span className="logo">Cleaning</span>
+            <span className="logo">Pet Grooming</span>
+            <span className="logo">Painting</span>
+            <span className="logo">Handyman</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

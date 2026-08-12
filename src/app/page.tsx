@@ -18,7 +18,6 @@ import Faq from '@/components/Faq'
 import Security from '@/components/Security'
 import FinalCta from '@/components/FinalCta'
 import Footer from '@/components/Footer'
-import ClientInit from '@/components/ClientInit'
 
 export default function Home() {
   return (
@@ -44,8 +43,7 @@ export default function Home() {
         <Security />
         <FinalCta />
       </main>
-      <Footer />
-      <ClientInit />
+      <Footer />
     </>
   )
 }

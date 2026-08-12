@@ -1,5 +1,5 @@
+import { withIcons } from '@/lib/icons'
 import { industryPages } from '@/content/industries'
-import ClientInit from '@/components/ClientInit'
 import { notFound } from 'next/navigation'
 
 export function generateStaticParams() {
@@ -11,8 +11,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
   if (!html) notFound()
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      <ClientInit />
+      <div dangerouslySetInnerHTML={{ __html: withIcons(html) }} />
     </>
   )
 }

@@ -1,5 +1,62 @@
+import Icon from '@/components/Icon'
+
 export default function Navbar() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<header class=\"nav\" id=\"nav\">\n  <div class=\"wrap nav-inner\">\n    <a class=\"brand\" href=\"#top\">\n      <span class=\"brand-mark\">S</span>\n      Servienza\n    </a>\n    <nav class=\"nav-links\">\n      <a class=\"nav-link\" href=\"#features\">Features</a>\n      <a class=\"nav-link\" href=\"#setup\">Setup &amp; support</a>\n      <a class=\"nav-link\" href=\"#calculator\">Savings</a>\n      <a class=\"nav-link\" href=\"/compare/servienza-vs-servicetitan\">Compare</a>\n      <a class=\"nav-link\" href=\"#pricing\">Pricing</a>\n      <a class=\"nav-link\" href=\"#faq\">FAQ</a>\n    </nav>\n    <div class=\"nav-spacer\"></div>\n    <div class=\"nav-actions\">\n      <a class=\"login\" href=\"#\">Login</a>\n      <a class=\"btn btn-primary\" href=\"#pricing\">Get started</a>\n    </div>\n    <button class=\"btn btn-ghost nav-toggle\" aria-label=\"Menu\"><svg class=\"icon\" data-l=\"menu\"></svg></button>\n  </div>\n</header>" }} />
-  )
+    <header className="nav" id="nav">
+      <div className="wrap nav-inner">
+        <a className="brand" href="#top">
+          <span className="brand-mark">S</span>
+          Servienza
+        </a>
+
+        <nav className="nav-links">
+          <a className="nav-link" href="#features">
+            Features
+          </a>
+
+          <a className="nav-link" href="#setup">
+            Setup &amp; support
+          </a>
+
+          <a className="nav-link" href="#calculator">
+            Savings
+          </a>
+
+          <a
+            className="nav-link"
+            href="/compare/servienza-vs-servicetitan"
+          >
+            Compare
+          </a>
+
+          <a className="nav-link" href="#pricing">
+            Pricing
+          </a>
+
+          <a className="nav-link" href="#faq">
+            FAQ
+          </a>
+        </nav>
+
+        <div className="nav-spacer"></div>
+
+        <div className="nav-actions">
+          <a className="login" href="#">
+            Login
+          </a>
+
+          <a className="btn btn-primary" href="#pricing">
+            Get started
+          </a>
+        </div>
+
+        <button
+          className="btn btn-ghost nav-toggle"
+          aria-label="Menu"
+        >
+          <Icon name="menu" className="icon" />
+        </button>
+      </div>
+    </header>
+  );
 }

@@ -1,5 +1,175 @@
+import Icon from '@/components/Icon'
+
 export default function Hero() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<section class=\"hero\">\n  <div class=\"wrap hero-grid\">\n    <div class=\"hero-text\">\n      <span class=\"trust-tag reveal\">\n        <span class=\"live-dot\"></span>\n        Early access — free setup for our first crews\n      </span>\n      <h1 class=\"h-display reveal\">The all-in-one platform for service businesses.</h1>\n      <p class=\"lead reveal\">Schedule, dispatch, track, invoice, and get paid — from one app your whole team will actually use. Built for HVAC, plumbing, pest control, pool service, and more.</p>\n      <div class=\"hero-cta reveal\">\n        <a class=\"btn btn-accent btn-lg\" href=\"#pricing\">Start free trial <svg class=\"icon\" data-l=\"arrow-right\"></svg></a>\n        <a class=\"btn btn-ghost btn-lg\" href=\"#dispatch\">See how it works</a>\n      </div>\n      <div class=\"hero-fine reveal\">\n        <span class=\"dot\"><svg data-l=\"check\"></svg> 14-day free trial</span>\n        <span class=\"dot\"><svg data-l=\"check\"></svg> No credit card required</span>\n        <span class=\"dot\"><svg data-l=\"check\"></svg> Free setup &amp; migration</span>\n      </div>\n    </div>\n\n    <div class=\"hero-visual reveal\">\n      <div class=\"device\">\n        <div class=\"device-bar\">\n          <div class=\"dotrow\"><i></i><i></i><i></i></div>\n          <span class=\"device-url\"><svg data-l=\"lock\"></svg> app.servienza.com/dispatch</span>\n        </div>\n        <div class=\"board\">\n          <div class=\"board-head\">\n            <div class=\"t\">Today — 3 technicians, 12 jobs</div>\n            <div class=\"seg\"><b class=\"on\">Day</b><b>Week</b></div>\n          </div>\n          <div class=\"tech-col\">\n            <div class=\"tech-id\"><span class=\"tech-av\" style=\"background:#3B82F6\">MT</span><span class=\"tech-name\">Mike T.</span></div>\n            <div class=\"tech-jobs\">\n              <div class=\"jobchip jc-teal\"><div class=\"jt\">8:00</div><div class=\"jn\">Pool — Garcia</div></div>\n              <div class=\"jobchip jc-teal\"><div class=\"jt\">10:30</div><div class=\"jn\">Filter — Chen</div></div>\n              <div class=\"jobchip jc-teal\"><div class=\"jt\">1:00</div><div class=\"jn\">Chem — Rivera</div></div>\n            </div>\n          </div>\n          <div class=\"tech-col\">\n            <div class=\"tech-id\"><span class=\"tech-av\" style=\"background:#0E8C7E\">SK</span><span class=\"tech-name\">Sarah K.</span></div>\n            <div class=\"tech-jobs\">\n              <div class=\"jobchip jc-blue\"><div class=\"jt\">8:30</div><div class=\"jn\">HVAC — Torres</div></div>\n              <div class=\"jobchip jc-amber\"><div class=\"jt\">11:00</div><div class=\"jn\">AC repair — Johnson</div></div>\n              <div class=\"jobchip jc-amber\"><div class=\"jt\">11:15</div><div class=\"jn\">Duct — Williams</div></div>\n            </div>\n          </div>\n          <div class=\"tech-col\">\n            <div class=\"tech-id\"><span class=\"tech-av\" style=\"background:#7C83FD\">JR</span><span class=\"tech-name\">James R.</span></div>\n            <div class=\"tech-jobs\">\n              <div class=\"jobchip jc-indigo\"><div class=\"jt\">9:00</div><div class=\"jn\">Pest — Adams</div></div>\n              <div class=\"jobchip jc-indigo\"><div class=\"jt\">11:30</div><div class=\"jn\">Termite — Lee</div></div>\n              <div class=\"jobchip jc-indigo\"><div class=\"jt\">1:30</div><div class=\"jn\">Rodent — Martinez</div></div>\n            </div>\n          </div>\n          <div class=\"board-alert\">\n            <svg data-l=\"alert-triangle\"></svg>\n            <span><b>Conflict:</b> Sarah K. has overlapping jobs at 11:00 — 15 min travel time required</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"float-card reveal\">\n        <div class=\"ic-box\"><svg data-l=\"route\"></svg></div>\n        <div>\n          <div class=\"fnum\">47 miles</div>\n          <div class=\"flbl\">saved with route optimization</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>" }} />
-  )
+    <section className="hero">
+      <div className="wrap hero-grid">
+        <div className="hero-text">
+          <span className="trust-tag reveal">
+            Early access — free setup for our first crews
+          </span>
+
+          <h1 className="h-display reveal">
+            The all-in-one platform for service businesses.
+          </h1>
+
+          <p className="lead reveal">
+            Schedule, dispatch, track, invoice, and get paid — from one app your whole team will actually use. Built for HVAC, plumbing, pest control, pool service, and more.
+          </p>
+
+          <div className="hero-cta reveal">
+            <a className="btn btn-accent btn-lg" href="#pricing">
+              Start free trial
+              <Icon name="arrow-right" className="icon" />
+            </a>
+
+            <a className="btn btn-ghost btn-lg" href="#dispatch">
+              See how it works
+            </a>
+          </div>
+
+          <div className="hero-fine reveal">
+            <span className="dot">
+              <Icon name="check" />
+              14-day free trial
+            </span>
+
+            <span className="dot">
+              <Icon name="check" />
+              No credit card required
+            </span>
+
+            <span className="dot">
+              <Icon name="check" />
+              Free setup &amp; migration
+            </span>
+          </div>
+        </div>
+
+        <div className="hero-visual reveal">
+          <div className="device">
+            <div className="device-bar">
+              <div className="dotrow">
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+
+              <span className="device-url">
+                <Icon name="lock" />
+                app.servienza.com/dispatch
+              </span>
+            </div>
+
+            <div className="board">
+              <div className="board-head">
+                <div className="t">Today — 3 technicians, 12 jobs</div>
+
+                <div className="seg">
+                  <b className="on">Day</b>
+                  <b>Week</b>
+                </div>
+              </div>
+
+              <div className="tech-col">
+                <div className="tech-id">
+                  <span className="tech-av" style={{ background: "#3B82F6" }}>
+                    MT
+                  </span>
+                  <span className="tech-name">Mike T.</span>
+                </div>
+
+                <div className="tech-jobs">
+                  <div className="jobchip jc-teal">
+                    <div className="jt">8:00</div>
+                    <div className="jn">Pool — Garcia</div>
+                  </div>
+
+                  <div className="jobchip jc-teal">
+                    <div className="jt">10:30</div>
+                    <div className="jn">Filter — Chen</div>
+                  </div>
+
+                  <div className="jobchip jc-teal">
+                    <div className="jt">1:00</div>
+                    <div className="jn">Chem — Rivera</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tech-col">
+                <div className="tech-id">
+                  <span className="tech-av" style={{ background: "#0E8C7E" }}>
+                    SK
+                  </span>
+                  <span className="tech-name">Sarah K.</span>
+                </div>
+
+                <div className="tech-jobs">
+                  <div className="jobchip jc-blue">
+                    <div className="jt">8:30</div>
+                    <div className="jn">HVAC — Torres</div>
+                  </div>
+
+                  <div className="jobchip jc-amber">
+                    <div className="jt">11:00</div>
+                    <div className="jn">AC repair — Johnson</div>
+                  </div>
+
+                  <div className="jobchip jc-amber">
+                    <div className="jt">11:15</div>
+                    <div className="jn">Duct — Williams</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tech-col">
+                <div className="tech-id">
+                  <span className="tech-av" style={{ background: "#7C83FD" }}>
+                    JR
+                  </span>
+                  <span className="tech-name">James R.</span>
+                </div>
+
+                <div className="tech-jobs">
+                  <div className="jobchip jc-indigo">
+                    <div className="jt">9:00</div>
+                    <div className="jn">Pest — Adams</div>
+                  </div>
+
+                  <div className="jobchip jc-indigo">
+                    <div className="jt">11:30</div>
+                    <div className="jn">Termite — Lee</div>
+                  </div>
+
+                  <div className="jobchip jc-indigo">
+                    <div className="jt">1:30</div>
+                    <div className="jn">Rodent — Martinez</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="board-alert">
+                <Icon name="alert-triangle" />
+                <span>
+                  <b>Conflict:</b> Sarah K. has overlapping jobs at 11:00 — 15 min travel time required
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="float-card reveal">
+            <div className="ic-box">
+              <Icon name="route" />
+            </div>
+
+            <div>
+              <div className="fnum">47 miles</div>
+              <div className="flbl">saved with route optimization</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
