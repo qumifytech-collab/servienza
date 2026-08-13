@@ -1,5 +1,256 @@
+import Icon from '@/components/Icon'
+
 export default function SavingsCalculator() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<section class=\"sec bg-2\" id=\"calculator\">\n  <div class=\"wrap\">\n    <div class=\"section-head reveal\">\n      <span class=\"eyebrow\">Savings calculator</span>\n      <h2 class=\"h-section\">See what one platform saves you.</h2>\n      <p class=\"lead\">Most owners we talk to pay for five or six tools that don't talk to each other. Put in your own numbers — everything below is editable, and the math is yours.</p>\n    </div>\n\n    <div class=\"calc reveal\">\n      <div class=\"calc-inputs\">\n        <div class=\"calc-block\">\n          <div class=\"calc-label\">How big is your team?</div>\n          <div class=\"stepper\" data-stepper=\"team\">\n            <button class=\"step-btn\" data-step=\"-1\" aria-label=\"Fewer\">&minus;</button>\n            <div class=\"step-val\"><b id=\"team-val\">4</b> <span id=\"team-unit\">technicians</span></div>\n            <button class=\"step-btn\" data-step=\"1\" aria-label=\"More\">+</button>\n          </div>\n          <p class=\"calc-hint\">Sets which Servienza plan you'd be on.</p>\n        </div>\n\n        <div class=\"calc-block\">\n          <div class=\"calc-label-row\">\n            <div class=\"calc-label\">Tools you pay for today</div>\n            <span class=\"calc-hint\">tap to toggle · prices are editable</span>\n          </div>\n          <div class=\"tool-list\" id=\"tool-list\">\n            <div class=\"tool is-on\" data-price=\"29\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">Scheduling &amp; dispatch app</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"29\" aria-label=\"Monthly price\">/mo</span></div>\n            <div class=\"tool is-on\" data-price=\"30\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">GPS / fleet tracking</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"30\" aria-label=\"Monthly price\">/mo</span></div>\n            <div class=\"tool is-on\" data-price=\"35\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">Invoicing &amp; payments tool</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"35\" aria-label=\"Monthly price\">/mo</span></div>\n            <div class=\"tool is-on\" data-price=\"19\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">Customer reminders / messaging</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"19\" aria-label=\"Monthly price\">/mo</span></div>\n            <div class=\"tool is-on\" data-price=\"29\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">Reviews &amp; marketing</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"29\" aria-label=\"Monthly price\">/mo</span></div>\n            <div class=\"tool\" data-price=\"25\"><button class=\"tool-tick\" aria-label=\"Toggle\"><svg data-l=\"check\"></svg></button><span class=\"tool-name\">Reporting / analytics</span><span class=\"tool-cost\">$<input type=\"number\" min=\"0\" value=\"25\" aria-label=\"Monthly price\">/mo</span></div>\n          </div>\n        </div>\n\n        <div class=\"calc-block\">\n          <div class=\"calc-label\">Admin time you'd save</div>\n          <div class=\"calc-fields\">\n            <label class=\"calc-field\"><span>Hours a week on scheduling, invoicing &amp; paperwork</span><input type=\"number\" min=\"0\" id=\"hours\" value=\"5\"></label>\n            <label class=\"calc-field\"><span>What an hour of that time is worth ($)</span><input type=\"number\" min=\"0\" id=\"rate\" value=\"30\"></label>\n          </div>\n          <p class=\"calc-hint\">Your estimate — set either to 0 to leave time savings out.</p>\n        </div>\n      </div>\n\n      <div class=\"calc-result\">\n        <div class=\"cr-card\">\n          <div class=\"cr-kicker\">Estimated savings with Servienza</div>\n          <div class=\"cr-big\"><span id=\"cr-monthly\">$0</span><span class=\"cr-per\">/mo</span></div>\n          <div class=\"cr-annual\">about <b id=\"cr-annual\">$0</b> a year</div>\n          <div class=\"cr-break\">\n            <div class=\"cr-line\"><span>Software you'd replace</span><b id=\"cr-current\">$0/mo</b></div>\n            <div class=\"cr-line\"><span>Time saved (your estimate)</span><b id=\"cr-time\">$0/mo</b></div>\n            <div class=\"cr-line minus\"><span>Servienza <span id=\"cr-plan\">Growth</span></span><b id=\"cr-serv\">$0/mo</b></div>\n          </div>\n          <a class=\"btn btn-accent\" href=\"#pricing\">Start free trial <svg class=\"icon\" data-l=\"arrow-right\"></svg></a>\n          <p class=\"cr-note\">An estimate from the numbers you entered plus typical tool prices you can edit — not a guarantee.</p>\n        </div>\n        <div class=\"cr-setup\">\n          <div class=\"cr-setup-ic\"><svg data-l=\"hand-heart\"></svg></div>\n          <div><b>And setup is on us.</b> A real person migrates your data, connects your other tools, and builds your workflows with you — so the switch costs you time you don't have to spend.</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>" }} />
-  )
+    <section className="sec bg-2" id="calculator">
+      <div className="wrap">
+        <div className="section-head reveal">
+          <h2 className="h-section">See what one platform saves you.</h2>
+          <p className="lead">
+            Most owners we talk to pay for five or six tools that don't talk to
+            each other. Put in your own numbers — everything below is editable,
+            and the math is yours.
+          </p>
+        </div>
+
+        <div className="calc reveal">
+          <div className="calc-inputs">
+            <div className="calc-block">
+              <div className="calc-label">How big is your team?</div>
+
+              <div className="stepper" data-stepper="team">
+                <button
+                  className="step-btn"
+                  data-step="-1"
+                  aria-label="Fewer"
+                >
+                  &minus;
+                </button>
+
+                <div className="step-val">
+                  <b id="team-val">4</b>{" "}
+                  <span id="team-unit">technicians</span>
+                </div>
+
+                <button
+                  className="step-btn"
+                  data-step="1"
+                  aria-label="More"
+                >
+                  +
+                </button>
+              </div>
+
+              <p className="calc-hint">
+                Sets which Servienza plan you'd be on.
+              </p>
+            </div>
+
+            <div className="calc-block">
+              <div className="calc-label-row">
+                <div className="calc-label">Tools you pay for today</div>
+                <span className="calc-hint">
+                  tap to toggle · prices are editable
+                </span>
+              </div>
+
+              <div className="tool-list" id="tool-list">
+                <div className="tool is-on" data-price="29">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">
+                    Scheduling &amp; dispatch app
+                  </span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="29"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+
+                <div className="tool is-on" data-price="30">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">GPS / fleet tracking</span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="30"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+
+                <div className="tool is-on" data-price="35">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">
+                    Invoicing &amp; payments tool
+                  </span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="35"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+
+                <div className="tool is-on" data-price="19">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">
+                    Customer reminders / messaging
+                  </span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="19"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+
+                <div className="tool is-on" data-price="29">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">Reviews &amp; marketing</span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="29"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+
+                <div className="tool" data-price="25">
+                  <button className="tool-tick" aria-label="Toggle">
+                    <Icon name="check" />
+                  </button>
+                  <span className="tool-name">Reporting / analytics</span>
+                  <span className="tool-cost">
+                    $<input
+                      type="number"
+                      min="0"
+                      value="25"
+                      aria-label="Monthly price"
+                    />
+                    /mo
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="calc-block">
+              <div className="calc-label">Admin time you'd save</div>
+
+              <div className="calc-fields">
+                <label className="calc-field">
+                  <span>
+                    Working hours on schedule, invoice &amp; paperwork
+                  </span>
+                  <input
+                    type="number"
+                    min="0"
+                    id="hours"
+                    value="5"
+                  />
+                </label>
+
+                <label className="calc-field">
+                  <span>What an hour of that time is worth ($)</span>
+                  <input
+                    type="number"
+                    min="0"
+                    id="rate"
+                    value="30"
+                  />
+                </label>
+              </div>
+
+              <p className="calc-hint">
+                Your estimate — set either to 0 to leave time savings out.
+              </p>
+            </div>
+          </div>
+
+          <div className="calc-result">
+            <div className="cr-card">
+              <div className="cr-kicker">
+                Estimated savings with Servienza
+              </div>
+
+              <div className="cr-big">
+                <span id="cr-monthly">$0</span>
+                <span className="cr-per">/mo</span>
+              </div>
+
+              <div className="cr-annual">
+                about <b id="cr-annual">$0</b> a year
+              </div>
+
+              <div className="cr-break">
+                <div className="cr-line">
+                  <span>Software you'd replace</span>
+                  <b id="cr-current">$0/mo</b>
+                </div>
+
+                <div className="cr-line">
+                  <span>Time saved (your estimate)</span>
+                  <b id="cr-time">$0/mo</b>
+                </div>
+
+                <div className="cr-line minus">
+                  <span>
+                    Servienza <span id="cr-plan">Growth</span>
+                  </span>
+                  <b id="cr-serv">$0/mo</b>
+                </div>
+              </div>
+
+              <a className="btn btn-accent" href="#pricing">
+                Start free trial
+                <Icon name="arrow-right" className="icon" />
+              </a>
+
+              <p className="cr-note">
+                An estimate from the numbers you entered plus typical tool
+                prices you can edit — not a guarantee.
+              </p>
+            </div>
+
+            <div className="cr-setup">
+              <div className="cr-setup-ic">
+                <Icon name="hand-heart" />
+              </div>
+
+              <div>
+                <b>And setup is on us.</b> A real person migrates your data,
+                connects your other tools, and builds your workflows with you —
+                so the switch costs you time you don't have to spend.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

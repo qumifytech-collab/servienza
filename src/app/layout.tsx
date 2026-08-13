@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Plus_Jakarta_Sans } from 'next/font/google'
 import Script from 'next/script'
+import ClientInit from '@/components/ClientInit'
 import './globals.css'
 
 const body = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="light" className={`${body.variable} ${display.variable}`}>
       <body className="antialiased">
         {children}
+        <ClientInit />
         <Script src="/image-slot.js" strategy="afterInteractive" />
       </body>
     </html>

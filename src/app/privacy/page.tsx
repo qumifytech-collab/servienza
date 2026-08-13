@@ -7,10 +7,13 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const LAST_UPDATED = 'June 25, 2026'
+const LAST_UPDATED = 'August 13, 2026'
 const SUPPORT_EMAIL = 'at@servienza.com'
 const BUSINESS_NAME = 'Servienza'
 const LEGAL_ENTITY = 'Qumify Technologies Inc.'
+// Public account-deletion request page. Submit the absolute form of this URL
+// (https://servienza.com/delete-account) in Play Console.
+const DELETION_REQUEST_URL = '/delete-account'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -59,6 +62,39 @@ export default function PrivacyPage() {
               <strong>Technical data</strong> — device, log, and cookie data used to
               secure and improve the product.
             </li>
+            <li>
+              <strong>Precise location (technicians only)</strong> — we collect the precise
+              location of a technician&rsquo;s device for two purposes. First, while a
+              technician is signed in to our mobile app during your organisation&rsquo;s
+              configured working hours, we record their location periodically so their
+              employer has a record of work carried out during the working day. Second, when
+              a technician is en route to a job, we track the journey so that your
+              organisation can follow progress and estimated arrival. Both continue while the
+              app is in the background, and the app shows a persistent notification whenever
+              tracking is active. Tracking stops outside configured working hours. We do not
+              collect precise location from customers, and we do not make technician
+              location available to customers or any other outside party. The service
+              providers listed under &ldquo;How we share information&rdquo; — including our
+              mapping provider, which calculates routes and arrival estimates — process this
+              data only on our behalf and under contract.
+            </li>
+            <li>
+              <strong>Photos</strong> — before and after service photos that technicians
+              take with the device camera or select from the device photo library, uploaded
+              to our servers.
+            </li>
+            <li>
+              <strong>Customer signatures</strong> — signatures captured on the device
+              screen to confirm that work was completed, uploaded to our servers.
+            </li>
+            <li>
+              <strong>Push notification token</strong> — a device identifier used to
+              deliver job and schedule alerts to the mobile app.
+            </li>
+            <li>
+              <strong>Crash &amp; diagnostic data</strong> — crash reports, which may
+              include the state of the app at the time of an error.
+            </li>
           </ul>
         </Section>
 
@@ -91,11 +127,33 @@ export default function PrivacyPage() {
 
         <Section title="How we share information">
           <p>
-            We share information only with service providers who help us operate (e.g.,
-            cloud hosting, payment processing, and our SMS provider Twilio) under
+            We share information only with service providers who help us operate, under
             contractual confidentiality obligations, or when required by law. We do not sell
-            your personal information.
+            your personal information. These providers are:
           </p>
+          <ul className="list-disc space-y-1 pl-5">
+            <li>
+              <strong>Google Maps Platform</strong> — we send customer addresses and
+              coordinates to Google to convert addresses into map locations and to
+              calculate routes and travel times.
+            </li>
+            <li>
+              <strong>Auth0 (Okta)</strong> — account sign-in and authentication.
+            </li>
+            <li>
+              <strong>OneSignal</strong> — delivery of push notifications.
+            </li>
+            <li>
+              <strong>Sentry</strong> — crash and error reporting.
+            </li>
+            <li>
+              <strong>Twilio</strong> — SMS and text messaging.
+            </li>
+            <li>
+              <strong>Cloud hosting and payment processing providers</strong> — the
+              infrastructure we run on and the processing of payments.
+            </li>
+          </ul>
         </Section>
 
         <Section title="Data retention &amp; security">
@@ -109,9 +167,34 @@ export default function PrivacyPage() {
         <Section title="Your choices">
           <p>
             You may opt out of SMS by replying STOP, unsubscribe from emails, or request
-            access to or deletion of your information by contacting us. We will respond
-            consistent with applicable law.
+            access to your information by contacting us. To delete your account and its
+            associated data, see &ldquo;Deleting your account and data&rdquo; below. We will
+            respond consistent with applicable law.
           </p>
+        </Section>
+
+        <Section title="Deleting your account and data">
+          <p>
+            You can request deletion of your {BUSINESS_NAME} account and its associated
+            data in two ways: from inside the {BUSINESS_NAME} mobile app, or from a
+            publicly available request page on our website. You do not need to install the
+            app to make a deletion request.
+          </p>
+          {DELETION_REQUEST_URL ? (
+            <p>
+              <a className="text-brand-700 underline" href={DELETION_REQUEST_URL}>
+                Request account deletion
+              </a>
+            </p>
+          ) : null}
+          {/*
+            TODO (blocks Google Play submission): describe what deletion actually does —
+            which data is permanently erased, and which data (if any) is retained or
+            de-identified for accounting and tax purposes, and for how long. Google Play
+            requires the policy to state this, and the Data Safety declaration must match
+            it. Left unwritten deliberately: the erase-everything and anonymise-and-retain
+            wordings are mutually exclusive and this has not been decided yet.
+          */}
         </Section>
 
         <Section title="Contact">
