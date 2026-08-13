@@ -45,7 +45,7 @@ export default function DeleteAccountPage() {
         </p>
 
         <footer className="mt-14 border-t border-slate-200 pt-6 text-sm text-slate-400">
-          © 2026 {LEGAL_ENTITY} All rights reserved.
+          © 2026 {LEGAL_ENTITY}. All rights reserved.
         </footer>
       </div>
     </main>

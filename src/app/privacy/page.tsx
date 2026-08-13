@@ -63,13 +63,20 @@ export default function PrivacyPage() {
               secure and improve the product.
             </li>
             <li>
-              <strong>Precise location (technicians only)</strong> — when a technician is
-              signed in to our mobile app, we collect the precise location of their device
-              and send it to our servers. A location reading is taken when the app opens,
-              and continuous tracking runs during your organisation&rsquo;s configured
-              working hours, including while the app is in the background. While tracking is
-              active the app shows a persistent notification on the device. We do not
-              collect precise location from customers.
+              <strong>Precise location (technicians only)</strong> — we collect the precise
+              location of a technician&rsquo;s device for two purposes. First, while a
+              technician is signed in to our mobile app during your organisation&rsquo;s
+              configured working hours, we record their location periodically so their
+              employer has a record of work carried out during the working day. Second, when
+              a technician is en route to a job, we track the journey so that your
+              organisation can follow progress and estimated arrival. Both continue while the
+              app is in the background, and the app shows a persistent notification whenever
+              tracking is active. Tracking stops outside configured working hours. We do not
+              collect precise location from customers, and we do not make technician
+              location available to customers or any other outside party. The service
+              providers listed under &ldquo;How we share information&rdquo; — including our
+              mapping provider, which calculates routes and arrival estimates — process this
+              data only on our behalf and under contract.
             </li>
             <li>
               <strong>Photos</strong> — before and after service photos that technicians
@@ -200,7 +207,7 @@ export default function PrivacyPage() {
         </Section>
 
         <footer className="mt-14 border-t border-slate-200 pt-6 text-sm text-slate-400">
-          © 2026 {LEGAL_ENTITY} All rights reserved.
+          © 2026 {LEGAL_ENTITY}. All rights reserved.
         </footer>
       </div>
     </main>

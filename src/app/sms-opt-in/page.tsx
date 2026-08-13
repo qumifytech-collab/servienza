@@ -276,7 +276,7 @@ export default function SmsOptInPage() {
         </Section>
 
         <footer className="mt-14 border-t border-slate-200 pt-6 text-sm text-slate-400">
-          © 2026 {LEGAL_ENTITY} {BUSINESS_NAME} is a trademark of {LEGAL_ENTITY} All
+          © 2026 {LEGAL_ENTITY}. {BUSINESS_NAME} is a trademark of {LEGAL_ENTITY}. All
           rights reserved.
         </footer>
       </div>
