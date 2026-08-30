@@ -25,6 +25,14 @@ const faqs = [
     a: "Absolutely. You can set up multiple recurring services for the same customer — each with its own schedule, cadence, and pricing. Weekly pool cleaning, monthly pest treatment, and quarterly HVAC service all managed independently.",
   },
   {
+    q: "Can I collect a deposit when a customer approves an estimate?",
+    a: "Yes. Set a deposit on any estimate — a percentage or a fixed amount — and your customer approves and pays it online in one step through Stripe. Prefer Zelle, check, or cash? They can approve now and you record the deposit when it arrives. Either way the deposit becomes a paid invoice automatically and is credited on the final bill.",
+  },
+  {
+    q: "Are the estimates and agreements customers sign legally solid?",
+    a: "Every estimate and agreement is frozen the moment it's sent — the document gets a cryptographic fingerprint, and approval or signature produces a receipt recording who agreed, to what, and when. If a dispute ever comes up, you have verifiable proof of exactly what was accepted, not a he-said-she-said.",
+  },
+  {
     q: "Is the mobile app available for both iOS and Android?",
     a: "Yes, the mobile app is available on both the App Store and Google Play. Your field crew uses the mobile app while you manage operations from the web dashboard.",
   },

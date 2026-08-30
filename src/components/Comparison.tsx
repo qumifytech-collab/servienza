@@ -29,6 +29,28 @@ const features = [
   },
 
   {
+    category: "Estimates & Agreements",
+    items: [
+      {
+        name: "Deposit collected at online approval",
+        values: [true, true, "partial", "partial"],
+      },
+      {
+        name: "Deposit auto-credited on the final invoice",
+        values: [true, "partial", "partial", "partial"],
+      },
+      {
+        name: "Tamper-evident estimates & signed receipts",
+        values: [true, false, false, false],
+      },
+      {
+        name: "E-sign agreements on every plan",
+        values: [true, "partial", "partial", "partial"],
+      },
+    ],
+  },
+
+  {
     category: "Automation",
     items: [
       {

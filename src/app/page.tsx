@@ -5,6 +5,7 @@ import ToolStackReplacement from '@/components/ToolStackReplacement'
 import IndustriesServed from '@/components/IndustriesServed'
 import FeaturesGrid from '@/components/FeaturesGrid'
 import SmartDispatch from '@/components/SmartDispatch'
+import EstimatesDeposits from '@/components/EstimatesDeposits'
 import Communication from '@/components/Communication'
 import InvoicingPayments from '@/components/InvoicingPayments'
 import TwoApps from '@/components/TwoApps'
@@ -44,6 +45,7 @@ export default function Home() {
       <ProductTour/>
       <HowWeWork/>
       <SmartDispatch/>
+      <EstimatesDeposits/>
       <Communication/>
       <InvoicingPayments/>
       <TwoApps/>

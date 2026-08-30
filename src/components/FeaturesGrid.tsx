@@ -10,8 +10,10 @@ import {
   Users,
   Package,
   UserCog,
+  BadgeDollarSign,
   BarChart3,
   Camera,
+  FileSignature,
   RefreshCw,
   CalendarClock,
   FileText,
@@ -98,6 +100,22 @@ const features = [
     detail:
       "When a customer calls with an emergency or a one-time request, create the job in seconds. Track it from request to dispatch to completion to payment — with the same tools you use for recurring work. Nothing falls through the cracks.",
     image: "/features/feat-adhoc-requests.png",
+  },
+  {
+    icon: BadgeDollarSign,
+    title: "Estimates & Deposits",
+    short: "Customers approve online and pay the deposit in the same step.",
+    detail:
+      "Send a professional estimate with a deposit requirement — a percentage or a fixed amount. The customer approves it online and pays the deposit through Stripe in one tap (or approves and pays by Zelle or check). The deposit becomes a paid invoice instantly, the job is created automatically, and the final invoice credits the deposit — no math, no re-keying.",
+    image: "/features/feat-auto-invoicing.png",
+  },
+  {
+    icon: FileSignature,
+    title: "E-Sign Agreements",
+    short: "Service agreements signed online, with a verifiable paper trail.",
+    detail:
+      "Build agreement templates once with merge fields, then send them for e-signature in seconds. Estimates and agreements are frozen the moment they're sent — cryptographic fingerprints and signed receipts prove exactly what the customer agreed to, so a dispute never comes down to memory.",
+    image: "/features/feat-customer-management.png",
   },
   {
     icon: FileText,
