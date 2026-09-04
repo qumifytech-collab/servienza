@@ -7,6 +7,10 @@ import Features from '@/components/Features'
 import Workflow from '@/components/Workflow'
 import DispatchShowcase from '@/components/DispatchShowcase'
 import CommunicationShowcase from '@/components/CommunicationShowcase'
+import MissedCallsShowcase from '@/components/MissedCallsShowcase'
+import AgreementsShowcase from '@/components/AgreementsShowcase'
+import DocumentsShowcase from '@/components/DocumentsShowcase'
+import LiveTrackingShowcase from '@/components/LiveTrackingShowcase'
 import PaymentsShowcase from '@/components/PaymentsShowcase'
 import HowItWorks from '@/components/HowItWorks'
 import WhiteGloveSetup from '@/components/WhiteGloveSetup'
@@ -33,6 +37,10 @@ export default function Home() {
         <Workflow />
         <DispatchShowcase />
         <CommunicationShowcase />
+        <MissedCallsShowcase />
+        <AgreementsShowcase />
+        <DocumentsShowcase />
+        <LiveTrackingShowcase />
         <PaymentsShowcase />
         <HowItWorks />
         <WhiteGloveSetup />

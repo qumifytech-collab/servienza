@@ -685,3 +685,90 @@ a.trade .trade-go svg[data-l] { width: 17px; height: 17px; }
 
 /* keep imported markup visible (no JS reveal in the Next build) */
 .reveal { opacity: 1 !important; transform: none !important; }
+
+/* ============================================================
+   MISSED CALLS & AGREEMENTS
+   ============================================================ */
+
+/* hero "new" pills */
+.new-pill-row { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+.new-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--text); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 999px; padding: 7px 14px; transition: border-color .15s; }
+.new-pill:hover { border-color: var(--accent); }
+.new-pill b { font-size: 10px; font-weight: 800; letter-spacing: 0.07em; color: var(--accent); }
+.new-pill .ic { width: 14px; height: 14px; color: var(--accent); }
+
+/* voicemail stack (missed calls showcase) */
+.vm-stack { display: flex; flex-direction: column; gap: 14px; }
+.vm-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 18px 20px; }
+.vm-head { display: flex; align-items: flex-start; gap: 12px; }
+.vm-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; display: grid; place-items: center; flex-shrink: 0; font-family: var(--font-display); }
+.vm-name { font-family: var(--font-display); font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.vm-match { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.vm-match.lead-tag { background: rgba(59,130,246,0.12); color: #2563EB; }
+.vm-meta { font-size: 12.5px; color: var(--text-3); margin-top: 2px; }
+.vm-pill { margin-left: auto; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; flex-shrink: 0; }
+.vm-pill.new { background: rgba(220,38,38,0.1); color: #DC2626; }
+.vm-pill.done { background: var(--bg-2); color: var(--text-3); }
+.vm-quote { font-size: 14px; color: var(--text-2); line-height: 1.55; margin: 12px 0 0; padding-left: 12px; border-left: 2px solid var(--accent-line); }
+.vm-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.vm-actions button { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-display); font-weight: 600; font-size: 13px; border-radius: 10px; padding: 8px 14px; cursor: pointer; }
+.vm-play { background: var(--accent); color: #fff; border: none; }
+.vm-handle { background: none; color: var(--text-2); border: 1px solid var(--border-2); }
+.vm-actions .ic { width: 14px; height: 14px; }
+.vm-note { display: flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 500; color: var(--text-2); background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 11px 14px; box-shadow: var(--shadow-sm); }
+.vm-note .ic { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
+
+/* agreement signing card (agreements showcase, extends .invoice) */
+.agr-steps { display: flex; align-items: center; gap: 6px; padding: 16px 24px 0; flex-wrap: wrap; }
+.agr-step { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; padding: 4px 10px; border-radius: 999px; background: var(--bg-2); color: var(--text-3); }
+.agr-step.done { background: var(--accent-soft); color: var(--accent); }
+.agr-step.current { background: var(--accent); color: #fff; }
+.agr-step .ic { width: 11px; height: 11px; }
+.agr-arrow { color: var(--text-3); font-size: 11px; }
+.agr-sign-label { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3); margin: 4px 0 8px; }
+.agr-sign-box { border: 1.5px solid var(--border-2); border-radius: 12px; padding: 13px 16px; font-size: 21px; font-family: 'Segoe Script', 'Bradley Hand', cursive; color: var(--text); background: var(--bg-3); }
+.agr-consent { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--text-2); margin: 12px 0 14px; }
+.agr-consent .ic { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+.agr-stat { display: flex; align-items: center; gap: 12px; margin-top: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 13px 16px; box-shadow: var(--shadow-sm); }
+.agr-stat .ic-box { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
+.agr-stat .ic-box .ic { width: 19px; height: 19px; }
+.agr-stat .fnum { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.agr-stat .flbl { font-size: 12.5px; color: var(--text-3); }
+
+/* ============================================================
+   DOCUMENTS & LIVE TRACKING SHOWCASES
+   ============================================================ */
+
+/* documents table card */
+.doc-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+.doc-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid var(--border); }
+.doc-head .t { font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+.doc-upload { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-display); font-weight: 600; font-size: 13px; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 8px 14px; cursor: pointer; }
+.doc-upload .ic { width: 14px; height: 14px; }
+.doc-row { display: flex; align-items: center; gap: 13px; padding: 14px 22px; }
+.doc-row + .doc-row { border-top: 1px solid var(--border); }
+.doc-row .ic-box { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
+.doc-row .ic-box .ic { width: 18px; height: 18px; }
+.doc-info { min-width: 0; }
+.doc-name { font-family: var(--font-display); font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.doc-meta { font-size: 12px; color: var(--text-3); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.doc-access { margin-left: auto; flex-shrink: 0; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; background: var(--bg-2); color: var(--text-2); }
+.doc-access.shared { background: var(--accent-soft); color: var(--accent); }
+.doc-mail { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px; border: 1px solid var(--border-2); background: none; color: var(--text-2); display: grid; place-items: center; cursor: pointer; }
+.doc-mail .ic { width: 15px; height: 15px; }
+
+/* live tracking card */
+.trk-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+.trk-head { padding: 18px 22px 14px; }
+.trk-co { font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3); }
+.trk-title { font-family: var(--font-display); font-weight: 700; font-size: 18px; margin-top: 4px; display: flex; align-items: center; gap: 9px; }
+.trk-title .live-dot { width: 8px; height: 8px; }
+.trk-steps { display: flex; align-items: center; gap: 6px; padding: 0 22px 14px; flex-wrap: wrap; }
+.trk-map { position: relative; height: 200px; background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%); background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 36px 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+.trk-trail { position: absolute; left: 8%; top: 62%; width: 60%; border-top: 2.5px dashed var(--accent); transform: rotate(-14deg); opacity: 0.65; }
+.trk-tech { position: absolute; left: 52%; top: 44%; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 5px var(--accent-soft), var(--shadow-sm); }
+.trk-pin { position: absolute; right: 14%; top: 24%; color: #DC2626; }
+.trk-pin .ic { width: 26px; height: 26px; }
+.trk-eta { position: absolute; left: 44%; top: 58%; background: var(--panel); color: var(--panel-text); font-family: var(--font-display); font-weight: 600; font-size: 12px; padding: 6px 11px; border-radius: 9px; box-shadow: var(--shadow-sm); }
+.trk-foot { display: flex; align-items: center; gap: 7px; padding: 13px 22px; font-size: 12px; color: var(--text-3); }
+.trk-foot .ic { width: 14px; height: 14px; color: var(--accent); }
