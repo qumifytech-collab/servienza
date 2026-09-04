@@ -1,114 +1,58 @@
-# Servienza — Landing Page
+# Servienza — marketing site (Next.js 14, App Router)
 
-Built with **Next.js 14** + **Tailwind CSS** + **TypeScript**.
+This is the redesigned marketing site, structured to match your existing repo
+(`src/app` + `src/components`, Tailwind, TypeScript, DM Sans + Plus Jakarta Sans,
+emerald `brand` palette).
 
-## Quick Start
+## Run
 
 ```bash
-# 1. Install dependencies
 npm install
-
-# 2. Run development server
-npm run dev
-# → Open http://localhost:3000
-
-# 3. Build for production
+npm run dev      # http://localhost:3000
 npm run build
-npm start
 ```
 
-## Project Structure
+## Structure
 
 ```
 src/
-├── app/
-│   ├── layout.tsx        # Root layout, fonts (Syne + DM Sans)
-│   ├── globals.css       # Base styles, animations, utilities
-│   └── page.tsx          # Main page — assembles all sections
-└── components/
-    ├── Navbar.tsx         # Sticky nav with mobile menu
-    ├── Hero.tsx           # Full-screen hero + dashboard mockup
-    ├── EarlyAdopters.tsx  # Scrolling ticker of early companies
-    ├── Industries.tsx     # 8-industry card grid
-    ├── Features.tsx       # 6 core feature cards
-    ├── HowItWorks.tsx     # 3-step visual flow
-    ├── MobileApp.tsx      # App section + phone mockup
-    ├── Integrations.tsx   # QuickBooks, Stripe, GPS, etc.
-    ├── SocialProof.tsx    # Stats + 3 testimonials
-    ├── Pricing.tsx        # 4-tier pricing (Growth highlighted)
-    ├── FAQ.tsx            # Accordion FAQ
-    └── Footer.tsx         # Final CTA + full footer
+  app/
+    layout.tsx                  Fonts (DM Sans + Plus Jakarta Sans) + globals
+    globals.css                 Tailwind base + the redesign's design system
+    page.tsx                    Homepage — composes the section components
+    industries/[slug]/page.tsx  11 SEO industry pages (statically generated)
+    compare/[slug]/page.tsx     3 competitor comparison pages
+  components/
+    Navbar, Hero, SavingsCalculator, WhiteGloveSetup, Pricing, Footer, …
+    ClientInit.tsx              Mounts the small runtime (icons + interactions)
+  lib/
+    clientInit.ts               SVG icon injection, nav, FAQ, pricing toggle, calculator
+  content/
+    industries.ts               Per-trade page markup (data-driven routes)
+    competitors.ts              Per-competitor page markup
+public/
+  image-slot.js                 Drag-and-drop screenshot placeholder web component
 ```
 
-## Customization
+## How the design is wired
 
-### Colors
-Defined in `tailwind.config.js`:
-- `navy-950` — primary background `#050d1a`
-- `navy-900` — card background `#0a1628`
-- `amber-400` — primary accent `#fbbf24`
+The whole visual system lives in **`src/app/globals.css`** (appended after Tailwind's
+base). Each section component renders the reviewed, pixel-final markup. Interactions
+(scroll state, FAQ accordion, pricing toggle, the savings calculator) and the inline
+SVG icon set are handled by **`ClientInit`** / `lib/clientInit.ts`, which runs once per
+page mount.
 
-### Fonts
-Set in `src/app/layout.tsx`:
-- **Syne** (700, 800) — display/headlines
-- **DM Sans** — body text
+### Refactoring to idiomatic JSX (optional)
+Section components currently embed their reviewed HTML so the design is locked in and
+verifiable. To convert a section to hand-authored JSX, lift its markup out of the
+`dangerouslySetInnerHTML` string into normal JSX (swap `class`→`className`,
+`style="…"`→`style={{…}}`) — the CSS classes in `globals.css` stay the same, so you can
+do this one component at a time without visual change.
 
-Both loaded from Google Fonts via `next/font/google`.
-
-### Content
-Each section is its own component. Edit the data arrays at the top of each file:
-- Industries → `src/components/Industries.tsx`
-- Features → `src/components/Features.tsx`
-- Pricing tiers → `src/components/Pricing.tsx`
-- Testimonials → `src/components/SocialProof.tsx`
-- FAQ → `src/components/FAQ.tsx`
-- Early adopters → `src/components/EarlyAdopters.tsx`
-
-## Deployment
-
-### Vercel (recommended — free)
-```bash
-npm install -g vercel
-vercel
-# Follow prompts — it auto-detects Next.js
-```
-Then add your custom domain `servianza.com` in the Vercel dashboard under **Settings → Domains**.
-
-### Netlify
-```bash
-npm run build
-# Upload the `.next` folder to Netlify, or connect your GitHub repo
-```
-
-### Self-hosted (VPS / DigitalOcean)
-```bash
-npm run build
-npm start        # runs on port 3000
-# Use nginx as a reverse proxy in front of it
-```
-
-## Next Steps
-
-- [ ] Add real logo SVG to `/public/logo.svg` and update `Navbar.tsx` + `Footer.tsx`
-- [ ] Replace placeholder testimonials with real customer quotes
-- [ ] Connect CTA buttons to your signup/booking flow
-- [ ] Add Google Analytics or PostHog for tracking
-- [ ] Set up `next-sitemap` for SEO
-- [ ] Add meta OG image to `src/app/layout.tsx`
-- [ ] Create individual industry landing pages under `/src/app/industries/[slug]/`
-
-## Logo Recommendation
-
-Until you have a final logo, the current implementation uses an inline SVG triangle/pin glyph
-in amber on navy. When you have a final logo file:
-
-1. Export as SVG + PNG (transparent background)
-2. Save to `/public/logo.svg`
-3. Replace the inline SVG in `Navbar.tsx` and `Footer.tsx` with:
-   ```tsx
-   <Image src="/logo.svg" alt="Servienza" width={120} height={32} />
-   ```
-
-**Suggested logo concept**: A sharp upward-pointing triangle (route pin + upward motion)
-with a small circle cutout at center. Bold, geometric, works at any size.
-Recommended: hire a designer on 99designs ($200–500) or Looka ($65 AI-generated) to execute it.
+## Notes
+- **Brand:** emerald (`brand-600` = `#059669`), matching `tailwind.config.js`.
+- **Fonts:** DM Sans (body) + Plus Jakarta Sans (display) via `next/font`.
+- **Tweaks panel** from the design exploration is intentionally omitted — it was a
+  design-review tool, not a production feature.
+- Images in the app cards use `<image-slot>` placeholders; swap them for real
+  `<img>`/`next/image` screenshots when you have them.

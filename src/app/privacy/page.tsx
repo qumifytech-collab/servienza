@@ -1,291 +1,132 @@
-import type { Metadata } from "next";
-import Footer from "@/components/Footer";
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: 'Privacy Policy — Servienza',
   description:
-    "Privacy Policy for Servienza — learn how we collect, use, and protect your data.",
-};
+    'How Servienza (Qumify Technologies Inc.) collects, uses, and protects your information, including SMS/text messaging data.',
+  robots: { index: true, follow: true },
+}
 
-export default function PrivacyPolicy() {
+const LAST_UPDATED = 'June 25, 2026'
+const SUPPORT_EMAIL = 'at@servienza.com'
+const BUSINESS_NAME = 'Servienza'
+const LEGAL_ENTITY = 'Qumify Technologies Inc.'
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <>
-      <main className="bg-white pt-32 pb-24 px-6">
-        <article className="max-w-3xl mx-auto text-[#3a3f55] leading-relaxed [&_a]:text-[#4f6bff] [&_a]:underline [&_p]:mb-4">
-          <h1 className="text-4xl font-bold tracking-tight mb-2">
-            Privacy Policy
-          </h1>
-          <p className="text-sm text-[#8b90a5] mb-10">
-            Last updated: May 25, 2026
+    <section className="mt-10">
+      <h2 className="text-xl font-semibold text-brand-800 font-display">{title}</h2>
+      <div className="mt-3 space-y-3 text-slate-700 leading-relaxed">{children}</div>
+    </section>
+  )
+}
+
+export default function PrivacyPage() {
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-800">
+      <div className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
+        <div className="flex items-center gap-3">
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-lg font-bold text-white">
+            S
+          </span>
+          <span className="text-lg font-semibold text-slate-900">Servienza</span>
+        </div>
+
+        <h1 className="mt-8 text-3xl font-bold text-slate-900 font-display sm:text-4xl">
+          Privacy Policy
+        </h1>
+        <p className="mt-3 text-slate-600">
+          {BUSINESS_NAME} is operated by {LEGAL_ENTITY} (“{BUSINESS_NAME},” “we,” “us”).
+          This policy explains what we collect, how we use it, and the choices you have.
+        </p>
+        <p className="mt-1 text-sm text-slate-400">Last updated: {LAST_UPDATED}</p>
+
+        <Section title="Information we collect">
+          <ul className="list-disc space-y-1 pl-5">
+            <li>
+              <strong>Contact details</strong> — name, email address, phone number, and
+              service/billing addresses you or your service provider enter.
+            </li>
+            <li>
+              <strong>Account &amp; usage data</strong> — jobs, schedules, invoices, and
+              activity needed to operate the service.
+            </li>
+            <li>
+              <strong>Messaging consent</strong> — whether you opted in to SMS, and the
+              date/source of that consent.
+            </li>
+            <li>
+              <strong>Technical data</strong> — device, log, and cookie data used to
+              secure and improve the product.
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="How we use information">
+          <p>
+            We use information to provide and operate the service, schedule and complete
+            jobs, send the communications you requested, process payments, provide support,
+            and meet legal obligations.
           </p>
+        </Section>
 
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
-            <p>
-              This Privacy Policy explains how Qumify Technologies Inc.
-              (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or
-              &quot;our&quot;) collects, uses, discloses, and protects your
-              information when you use the Servienza platform available at
-              servienza.com, including our web application, mobile applications,
-              and any related services (collectively, the
-              &quot;Service&quot;).
-            </p>
-            <p>
-              By accessing or using the Service you agree to the collection and
-              use of information in accordance with this Privacy Policy. If you
-              do not agree, please do not use the Service.
-            </p>
-          </section>
+        <Section title="SMS / text messaging">
+          <p>
+            We only send text messages to people who have explicitly opted in. Message
+            frequency varies; message and data rates may apply. You can reply{' '}
+            <strong>STOP</strong> at any time to opt out, or <strong>HELP</strong> for
+            help. Full details are on our{' '}
+            <a className="text-brand-700 underline" href="/sms-opt-in">
+              SMS Messaging &amp; Opt-In Policy
+            </a>{' '}
+            page.
+          </p>
+          <p className="rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-900/80">
+            <strong>No sharing of mobile data:</strong> We do not sell, rent, or share
+            mobile phone numbers or SMS opt-in/consent information with third parties or
+            affiliates for their marketing purposes. Text-messaging consent is never shared
+            with third parties.
+          </p>
+        </Section>
 
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              2. Information We Collect
-            </h2>
+        <Section title="How we share information">
+          <p>
+            We share information only with service providers who help us operate (e.g.,
+            cloud hosting, payment processing, and our SMS provider Twilio) under
+            contractual confidentiality obligations, or when required by law. We do not sell
+            your personal information.
+          </p>
+        </Section>
 
-            <h3 className="text-lg font-medium mt-6 mb-2">
-              2.1 Information You Provide
-            </h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Account information:</strong> name, email address, phone
-                number, company name, and billing address when you create an
-                account or contact us.
-              </li>
-              <li>
-                <strong>Customer and job data:</strong> customer names,
-                addresses, service history, photos, notes, invoices, and
-                payment records you enter into the platform.
-              </li>
-              <li>
-                <strong>Communications:</strong> messages, support requests, and
-                feedback you send to us.
-              </li>
-              <li>
-                <strong>Payment information:</strong> payment details are
-                collected and processed directly by our payment processor,
-                Stripe. We do not store your full credit card number.
-              </li>
-            </ul>
+        <Section title="Data retention &amp; security">
+          <p>
+            We retain information for as long as needed to provide the service and meet
+            legal requirements, and we apply administrative, technical, and physical
+            safeguards to protect it.
+          </p>
+        </Section>
 
-            <h3 className="text-lg font-medium mt-6 mb-2">
-              2.2 Information Collected Automatically
-            </h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Device and usage data:</strong> IP address, browser
-                type, operating system, referring URL, pages viewed, and
-                interaction timestamps.
-              </li>
-              <li>
-                <strong>Location data:</strong> GPS coordinates collected from
-                the mobile app when technicians use GPS tracking features (only
-                while the app is in use and with user permission).
-              </li>
-              <li>
-                <strong>Cookies and similar technologies:</strong> we use
-                cookies and local storage to maintain sessions, remember
-                preferences, and analyze usage patterns.
-              </li>
-            </ul>
-          </section>
+        <Section title="Your choices">
+          <p>
+            You may opt out of SMS by replying STOP, unsubscribe from emails, or request
+            access to or deletion of your information by contacting us. We will respond
+            consistent with applicable law.
+          </p>
+        </Section>
 
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              3. How We Use Your Information
-            </h2>
-            <p>We use the information we collect to:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Provide, operate, and maintain the Service.</li>
-              <li>
-                Process transactions and send related information such as
-                invoices, receipts, and payment confirmations.
-              </li>
-              <li>
-                Send service-related notifications including appointment
-                reminders, technician en-route alerts, and job status updates
-                via email, SMS, or push notifications.
-              </li>
-              <li>
-                Respond to your support requests, comments, or questions.
-              </li>
-              <li>
-                Improve, personalize, and expand the Service based on usage
-                patterns.
-              </li>
-              <li>
-                Detect, prevent, and address technical issues or fraudulent
-                activity.
-              </li>
-              <li>Comply with legal obligations.</li>
-            </ul>
-          </section>
+        <Section title="Contact">
+          <p>
+            {LEGAL_ENTITY} (operating as {BUSINESS_NAME}) —{' '}
+            <a className="text-brand-700 underline" href={`mailto:${SUPPORT_EMAIL}`}>
+              {SUPPORT_EMAIL}
+            </a>
+          </p>
+        </Section>
 
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              4. Data Sharing and Disclosure
-            </h2>
-            <p>
-              <strong>
-                We do not sell, rent, or share your personal information with
-                third parties for their marketing purposes.
-              </strong>
-            </p>
-            <p>We may share information only in the following circumstances:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Service providers:</strong> trusted third-party vendors
-                who perform services on our behalf (e.g., Stripe for payment
-                processing, SendGrid for email delivery, Twilio for SMS
-                messaging, Google Cloud for hosting). These providers are
-                contractually obligated to use your data only to provide
-                services to us and are bound by confidentiality obligations.
-              </li>
-              <li>
-                <strong>Legal requirements:</strong> when required by law,
-                subpoena, court order, or government regulation.
-              </li>
-              <li>
-                <strong>Business transfers:</strong> in connection with a
-                merger, acquisition, or sale of all or a portion of our assets,
-                with prior notice to affected users.
-              </li>
-              <li>
-                <strong>With your consent:</strong> when you explicitly
-                authorize us to share data with a specific third party.
-              </li>
-            </ul>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">5. Data Security</h2>
-            <p>
-              We implement industry-standard security measures to protect your
-              data, including 256-bit TLS encryption for data in transit,
-              encrypted storage at rest, regular security audits, and access
-              controls that limit data access to authorized personnel only.
-              While no method of electronic storage is 100% secure, we strive
-              to use commercially acceptable means to protect your personal
-              information.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">6. Data Retention</h2>
-            <p>
-              We retain your personal information for as long as your account is
-              active or as needed to provide you the Service. If you close your
-              account, we will delete or anonymize your personal data within 90
-              days, except where retention is required by law or for legitimate
-              business purposes such as resolving disputes or enforcing
-              agreements.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">7. Your Rights</h2>
-            <p>
-              Depending on your location, you may have the following rights
-              regarding your personal data:
-            </p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Access:</strong> request a copy of the personal data we
-                hold about you.
-              </li>
-              <li>
-                <strong>Correction:</strong> request that we correct inaccurate
-                or incomplete data.
-              </li>
-              <li>
-                <strong>Deletion:</strong> request that we delete your personal
-                data, subject to legal retention requirements.
-              </li>
-              <li>
-                <strong>Portability:</strong> request your data in a structured,
-                machine-readable format.
-              </li>
-              <li>
-                <strong>Opt-out of communications:</strong> unsubscribe from
-                marketing emails at any time using the link in the email, or
-                text <strong>STOP</strong> to opt out of SMS messages.
-              </li>
-            </ul>
-            <p>
-              To exercise any of these rights, contact us at{" "}
-              <a href="mailto:privacy@servienza.com">privacy@servienza.com</a>{" "}
-              or at the address below.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              8. Cookies and Tracking
-            </h2>
-            <p>
-              We use essential cookies to keep you signed in and remember your
-              preferences. We may also use analytics cookies to understand how
-              the Service is used. You can control cookie preferences through
-              your browser settings. Disabling cookies may limit certain
-              features of the Service.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              9. Children&apos;s Privacy
-            </h2>
-            <p>
-              The Service is not directed to individuals under the age of 18. We
-              do not knowingly collect personal information from children. If we
-              learn that we have collected data from a child, we will promptly
-              delete it.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">
-              10. Changes to This Privacy Policy
-            </h2>
-            <p>
-              We may update this Privacy Policy from time to time. We will
-              notify you of material changes by posting the updated policy on
-              this page and updating the &quot;Last updated&quot; date. Your
-              continued use of the Service after changes are posted constitutes
-              acceptance of the revised policy.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-3">11. Contact Us</h2>
-            <p>
-              If you have questions or concerns about this Privacy Policy or our
-              data practices, please contact us:
-            </p>
-            <div className="mt-3 p-5 rounded-xl bg-[#f5f6fa] text-sm leading-relaxed">
-              <p className="font-semibold">Qumify Technologies Inc.</p>
-              <p>2 Burning Tree Ln</p>
-              <p>Boca Raton, Florida 33431</p>
-              <p className="mt-2">
-                Email:{" "}
-                <a href="mailto:privacy@servienza.com">
-                  privacy@servienza.com
-                </a>
-              </p>
-              <p>
-                Website:{" "}
-                <a
-                  href="https://www.servienza.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  servienza.com
-                </a>
-              </p>
-            </div>
-          </section>
-        </article>
-      </main>
-      <Footer />
-    </>
-  );
+        <footer className="mt-14 border-t border-slate-200 pt-6 text-sm text-slate-400">
+          © 2026 {LEGAL_ENTITY}. All rights reserved.
+        </footer>
+      </div>
+    </main>
+  )
 }
