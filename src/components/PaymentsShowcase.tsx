@@ -1,5 +1,45 @@
 export default function PaymentsShowcase() {
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<section class=\"sec bg-2\" id=\"payments\">\n  <div class=\"wrap showcase flip\">\n    <div class=\"showcase-text reveal\">\n      <span class=\"eyebrow\">Invoicing &amp; payments</span>\n      <h2 class=\"h-section\" style=\"margin-top:16px\">Get paid faster. Zero fees from us.</h2>\n      <p class=\"lead\" style=\"margin-top:18px\">Invoices generate automatically from service logs. Stripe handles payments and we don't take a cut — every dollar your customer pays goes to you.</p>\n      <ul class=\"feat-list\">\n        <li><span class=\"ic-box\"><svg data-l=\"credit-card\"></svg></span><span class=\"ft\"><b>One-click payment</b> <span>from the invoice email — no login or account needed</span></span></li>\n        <li><span class=\"ic-box\"><svg data-l=\"badge-percent\"></svg></span><span class=\"ft\"><b>Zero platform fees</b> <span>— you only pay Stripe's standard processing rate</span></span></li>\n        <li><span class=\"ic-box\"><svg data-l=\"refresh-cw\"></svg></span><span class=\"ft\"><b>QuickBooks two-way sync</b> <span>keeps your books accurate with no double entry</span></span></li>\n      </ul>\n    </div>\n    <div class=\"showcase-visual reveal\">\n      <div class=\"invoice\">\n        <div class=\"invoice-top\">\n          <div><div class=\"co\">Torres Pool &amp; Spa</div><div class=\"num\">Invoice #1042 · Maria Garcia</div></div>\n          <span class=\"invoice-status\">Paid</span>\n        </div>\n        <div class=\"invoice-body\">\n          <div class=\"inv-line\"><span class=\"desc\">Weekly pool cleaning</span><span class=\"amt\">$120.00</span></div>\n          <div class=\"inv-line\"><span class=\"desc\">Chemical balance &amp; testing</span><span class=\"amt\">$45.00</span></div>\n          <div class=\"inv-line\"><span class=\"desc\">Filter cartridge replacement</span><span class=\"amt\">$68.00</span></div>\n        </div>\n        <div class=\"inv-total\"><span class=\"tl\">Total</span><span class=\"tv\">$233.00</span></div>\n        <div class=\"invoice-pay\">\n          <button class=\"pay-btn\"><svg data-l=\"credit-card\"></svg> Pay invoice</button>\n          <div class=\"pay-meta\"><svg data-l=\"lock\"></svg> Secured by Stripe · Visa, Mastercard, ACH</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>" }} />
+    <section className="sec" id="payments">
+      <div className="wrap showcase flip">
+        <div className="showcase-text reveal">
+          <span className="eyebrow">Invoicing</span>
+          <h2 className="h-section" style={{ marginTop: 16 }}>The invoice writes itself when the job closes.</h2>
+          <p className="lead" style={{ marginTop: 18 }}>Service logs become line items. Deposits get credited. Reminders go out on their own. You approve; the rest is handled.</p>
+          <ul className="feat-list">
+            <li><span className="ic-box"><svg data-l="check-square"></svg></span><span className="ft"><b>Draft → Approved → Sent → Paid</b> <span>— one status, always current, on web and mobile</span></span></li>
+            <li><span className="ic-box"><svg data-l="bell"></svg></span><span className="ft"><b>Automatic reminders</b> <span>with a fresh pay link and the PDF attached</span></span></li>
+            <li><span className="ic-box"><svg data-l="circle-dollar-sign"></svg></span><span className="ft"><b>Deposits credited automatically</b> <span>— the estimate deposit lands on the final bill</span></span></li>
+          </ul>
+        </div>
+        <div className="showcase-visual reveal">
+          <div className="invoice">
+            <div className="invoice-top">
+              <div><div className="co">Torres Pool &amp; Spa</div><div className="num">Invoice #1041 · Hilltop HOA · Due Sep 15</div></div>
+              <span className="pill warn">Partially paid</span>
+            </div>
+            <div className="life">
+              <div className="st done"><i><svg data-l="check"></svg></i>Draft</div>
+              <div className="st done"><i><svg data-l="check"></svg></i>Approved</div>
+              <div className="st done"><i><svg data-l="check"></svg></i>Sent</div>
+              <div className="st now"><i>4</i>Partial</div>
+              <div className="st"><i>5</i>Paid</div>
+            </div>
+            <div className="invoice-body">
+              <div className="inv-line"><span className="desc">Weekly service · 3 pools × 4 visits <span className="tag">from service logs</span></span><span className="amt">$1,440.00</span></div>
+              <div className="inv-line"><span className="desc">Chemical balance &amp; testing</span><span className="amt">$180.00</span></div>
+              <div className="inv-line"><span className="desc">Pump seal replacement</span><span className="amt">$240.00</span></div>
+              <div className="inv-line credit"><span className="desc">Deposit paid on estimate #E-217</span><span className="amt">−$500.00</span></div>
+            </div>
+            <div className="inv-total"><span className="tl">Balance due</span><span className="tv"><small>of $1,860.00</small>$1,360.00</span></div>
+            <div className="inv-actions">
+              <span className="btn-sm accent">Send reminder</span>
+              <span className="btn-sm">Record payment</span>
+              <span className="meta">Reminder sent Sep 3 · opened</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }

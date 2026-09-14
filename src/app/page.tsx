@@ -12,7 +12,10 @@ import EstimatesShowcase from '@/components/EstimatesShowcase'
 import AgreementsShowcase from '@/components/AgreementsShowcase'
 import DocumentsShowcase from '@/components/DocumentsShowcase'
 import LiveTrackingShowcase from '@/components/LiveTrackingShowcase'
+import AccountingShowcase from '@/components/AccountingShowcase'
 import PaymentsShowcase from '@/components/PaymentsShowcase'
+import StripeShowcase from '@/components/StripeShowcase'
+import QuickBooksShowcase from '@/components/QuickBooksShowcase'
 import HowItWorks from '@/components/HowItWorks'
 import WhiteGloveSetup from '@/components/WhiteGloveSetup'
 import TwoApps from '@/components/TwoApps'
@@ -43,7 +46,10 @@ export default function Home() {
         <AgreementsShowcase />
         <DocumentsShowcase />
         <LiveTrackingShowcase />
+        <AccountingShowcase />
         <PaymentsShowcase />
+        <StripeShowcase />
+        <QuickBooksShowcase />
         <HowItWorks />
         <WhiteGloveSetup />
         <TwoApps />
