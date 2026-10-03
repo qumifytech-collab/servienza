@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Plus_Jakarta_Sans } from 'next/font/google'
 import Script from 'next/script'
+import ChatLauncher from '@/components/ChatLauncher'
 import './globals.css'
 
 const body = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
@@ -24,8 +25,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {CRISP_WEBSITE_ID && (
           <Script id="crisp-chat" strategy="afterInteractive">
             {`
-              window.$crisp = [];
+              window.$crisp = window.$crisp || [];
               window.CRISP_WEBSITE_ID = ${JSON.stringify(CRISP_WEBSITE_ID)};
+              // Crisp's own bubble stays hidden: ChatLauncher collects name/email/phone first and
+              // then opens the chat. Closing the window hides the bubble again.
+              window.$crisp.push(["do", "chat:hide"]);
+              window.$crisp.push(["on", "chat:closed", function () { window.$crisp.push(["do", "chat:hide"]); }]);
               // Tells the inbox this person is on the marketing site (the app tags "web"/"mobile").
               window.$crisp.push(["set", "session:data", [[["platform", "marketing"]]]]);
               window.$crisp.push(["set", "session:segments", [["prospect"]]]);
@@ -38,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `}
           </Script>
         )}
+        {CRISP_WEBSITE_ID && <ChatLauncher />}
       </body>
     </html>
   )
