@@ -11,12 +11,33 @@ export const metadata: Metadata = {
   description: 'The all-in-one platform for service businesses. Schedule, dispatch, track, invoice, and get paid — with a real person setting it up with you.',
 }
 
+// Support / sales chat. Same Crisp website as the app, so prospects and customers land in one
+// inbox. Off unless NEXT_PUBLIC_CRISP_WEBSITE_ID is set, so local dev and previews stay quiet.
+const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light" className={`${body.variable} ${display.variable}`}>
       <body className="antialiased">
         {children}
         <Script src="/image-slot.js" strategy="afterInteractive" />
+        {CRISP_WEBSITE_ID && (
+          <Script id="crisp-chat" strategy="afterInteractive">
+            {`
+              window.$crisp = [];
+              window.CRISP_WEBSITE_ID = ${JSON.stringify(CRISP_WEBSITE_ID)};
+              // Tells the inbox this person is on the marketing site (the app tags "web"/"mobile").
+              window.$crisp.push(["set", "session:data", [[["platform", "marketing"]]]]);
+              window.$crisp.push(["set", "session:segments", [["prospect"]]]);
+              (function () {
+                var s = document.createElement("script");
+                s.src = "https://client.crisp.chat/l.js";
+                s.async = true;
+                document.head.appendChild(s);
+              })();
+            `}
+          </Script>
+        )}
       </body>
     </html>
   )
