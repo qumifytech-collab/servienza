@@ -1,16 +1,25 @@
-import type { Metadata } from 'next'
-import { DM_Sans, Plus_Jakarta_Sans } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import ChatLauncher from '@/components/ChatLauncher'
+import '@fontsource-variable/manrope'
 import './globals.css'
-
-const body = DM_Sans({ subsets: ['latin'], variable: '--font-body' })
-const display = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-display', weight: ['500','600','700','800'] })
+import ChatLauncher from '@/components/ChatLauncher'
+import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/lib/site'
+import { jsonLdString, organizationJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Servienza — Field Service Management Software',
-  description: 'The all-in-one platform for service businesses. Schedule, dispatch, track, invoice, and get paid — with a real person setting it up with you.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — Scheduling, estimates & invoicing for small service businesses`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_TAGLINE,
+  applicationName: SITE_NAME,
+  openGraph: { siteName: SITE_NAME, type: 'website', images: ['/og-image.png'] },
+  twitter: { card: 'summary_large_image' },
+  icons: { icon: '/favicon.svg' },
 }
+
+export const viewport: Viewport = { themeColor: '#059669', width: 'device-width', initialScale: 1 }
 
 // Support / sales chat. Same Crisp website as the app, so prospects and customers land in one
 // inbox. Off unless NEXT_PUBLIC_CRISP_WEBSITE_ID is set, so local dev and previews stay quiet.
@@ -18,20 +27,17 @@ const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="light" className={`${body.variable} ${display.variable}`}>
-      <body className="antialiased">
+    <html lang="en">
+      <body className="font-sans">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(organizationJsonLd()) }} />
         {children}
-        <Script src="/image-slot.js" strategy="afterInteractive" />
         {CRISP_WEBSITE_ID && (
           <Script id="crisp-chat" strategy="afterInteractive">
             {`
               window.$crisp = window.$crisp || [];
               window.CRISP_WEBSITE_ID = ${JSON.stringify(CRISP_WEBSITE_ID)};
-              // Crisp's own bubble stays hidden: ChatLauncher collects name/email/phone first and
-              // then opens the chat. Closing the window hides the bubble again.
               window.$crisp.push(["do", "chat:hide"]);
               window.$crisp.push(["on", "chat:closed", function () { window.$crisp.push(["do", "chat:hide"]); }]);
-              // Tells the inbox this person is on the marketing site (the app tags "web"/"mobile").
               window.$crisp.push(["set", "session:data", [[["platform", "marketing"]]]]);
               window.$crisp.push(["set", "session:segments", [["prospect"]]]);
               (function () {

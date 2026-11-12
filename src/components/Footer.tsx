@@ -1,5 +1,61 @@
+import Link from 'next/link'
+import { Logo } from './Logo'
+import { TRADES } from '@/content/trades'
+import { COMPETITORS } from '@/content/competitors'
+import { SUPPORT_EMAIL, SUPPORT_HOURS, LEGAL_ENTITY } from '@/lib/site'
+
 export default function Footer() {
+  const year = new Date().getFullYear()
   return (
-    <div dangerouslySetInnerHTML={{ __html: "<footer class=\"footer\">\n  <div class=\"wrap\">\n    <div class=\"footer-grid\">\n      <div>\n        <a class=\"brand\" href=\"#top\"><span class=\"brand-mark\">S</span> Servienza</a>\n        <p class=\"fdesc\">Field service software built for the people who actually do the work.</p>\n        <div class=\"fsocial\">\n          <a href=\"#\" aria-label=\"X\"><svg data-l=\"twitter\"></svg></a>\n          <a href=\"#\" aria-label=\"LinkedIn\"><svg data-l=\"linkedin\"></svg></a>\n          <a href=\"#\" aria-label=\"Instagram\"><svg data-l=\"instagram\"></svg></a>\n        </div>\n      </div>\n      <div class=\"fcol\"><h5>Product</h5><a href=\"#features\">Features</a><a href=\"#dispatch\">Smart Dispatch</a><a href=\"#missed-calls\">Missed Calls</a><a href=\"#agreements\">Agreements</a><a href=\"#documents\">Documents</a><a href=\"#tracking\">Live Tracking</a><a href=\"#accounting\">Accounting</a><a href=\"#payments\">Invoicing</a><a href=\"#stripe\">Stripe payments</a><a href=\"#quickbooks\">QuickBooks sync</a><a href=\"#apps\">Mobile App</a><a href=\"#security\">Security</a></div>\n      <div class=\"fcol\"><h5>Industries</h5><a href=\"/industries/hvac\">HVAC</a><a href=\"/industries/plumbing\">Plumbing</a><a href=\"/industries/pool-service\">Pool Service</a><a href=\"/industries/pest-control\">Pest Control</a><a href=\"/industries/landscaping\">Landscaping</a></div>\n      <div class=\"fcol\"><h5>Compare</h5><a href=\"/compare/servienza-vs-servicetitan\">vs ServiceTitan</a><a href=\"/compare/servienza-vs-housecall-pro\">vs Housecall Pro</a><a href=\"/compare/servienza-vs-jobber\">vs Jobber</a><a href=\"#calculator\">Savings calculator</a></div>\n      <div class=\"fcol\"><h5>Support</h5><a href=\"/support\">Help &amp; support</a><a href=\"#setup\">Setup &amp; onboarding</a><a href=\"#setup\">Data migration</a><a href=\"#setup\">Integrations</a><a href=\"#contact\">Contact us</a></div>\n      <div class=\"fcol\"><h5>Legal</h5><a href=\"/privacy\">Privacy Policy</a><a href=\"/terms\">Terms of Service</a><a href=\"/sms-opt-in\">SMS &amp; Opt-In Policy</a></div>\n    </div>\n    <div class=\"footer-bottom\">\n      <span>© 2026 Servienza. All rights reserved.</span>\n      <span>Built for field service teams everywhere.</span>\n    </div>\n  </div>\n</footer>" }} />
+    <footer className="bg-ink text-[#B8B6AD]">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-8 pt-14 sm:px-8">
+        <div className="flex flex-wrap justify-between gap-10">
+          <div className="flex max-w-xs flex-col gap-3">
+            <Logo light />
+            <p className="text-sm leading-relaxed">Software for people who do the work themselves.</p>
+            <p className="text-sm leading-relaxed">
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="text-[#B8B6AD] hover:text-white">{SUPPORT_EMAIL}</a>
+              <br />
+              {SUPPORT_HOURS}
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-10 gap-y-8 text-sm sm:grid-cols-4">
+            <FooterCol title="Product" links={[
+              { href: '/#how', label: 'How it works' },
+              { href: '/features', label: 'Features' },
+              { href: '/pricing', label: 'Pricing' },
+              { href: '/support', label: 'Setup & support' },
+              { href: '/#faq', label: 'Questions' },
+            ]} />
+            <FooterCol title="Your trade" links={TRADES.map((t) => ({ href: `/industries/${t.slug}`, label: t.short }))} />
+            <FooterCol title="Compare" links={COMPETITORS.map((c) => ({ href: `/compare/${c.slug}`, label: `vs ${c.name}` }))} />
+            <FooterCol title="Company" links={[
+              { href: '/support', label: 'Contact' },
+              { href: '/support', label: 'Help center' },
+              { href: '/privacy', label: 'Privacy' },
+              { href: '/terms', label: 'Terms' },
+              { href: '/sms-opt-in', label: 'SMS policy' },
+            ]} />
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-5 text-[13px]">
+          <span>© {year} {LEGAL_ENTITY} · Servienza. All rights reserved.</span>
+          <span>Made in the USA</span>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+function FooterCol({ title, links }: { title: string; links: { href: string; label: string }[] }) {
+  return (
+    <div className="flex flex-col gap-2.5">
+      <b className="text-white">{title}</b>
+      {links.map((l) => (
+        <Link key={l.href + l.label} href={l.href} className="text-[#B8B6AD] hover:text-white">
+          {l.label}
+        </Link>
+      ))}
+    </div>
   )
 }
