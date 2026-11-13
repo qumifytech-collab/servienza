@@ -83,7 +83,7 @@ export const TRADES: Trade[] = [
     ],
     day: [
       { time: '6:45 AM', title: '11 yards, best order', body: 'Your route for the day, planned to save miles. Gate codes on each stop.' },
-      { time: '9:20 AM', title: 'New customer calls', body: 'You\'re on the mower. They get a text back in seconds; the voicemail is waiting as text.' },
+      { time: '9:20 AM', title: 'New customer calls', body: 'You\'re on the mower. The voicemail is waiting as text, matched to their number.' },
       { time: '2:10 PM', title: 'Mulch estimate from the driveway', body: 'Photos, a price, Send. The customer approves on her phone before you\'re home.' },
       { time: 'End of month', title: 'Invoices go out on their own', body: 'Every repeat customer gets one bill. You watch the Paid column fill up.' },
     ],
@@ -105,18 +105,18 @@ export const TRADES: Trade[] = [
     headline: 'Book the groom, drive the route, get paid at the door.',
     sub: 'For mobile and in-home groomers: appointments with travel time, pet notes and photos on every customer, reminders that cut no-shows, and payment by text before you pull away.',
     answer:
-      'Yes. Servienza schedules grooming appointments with travel time between homes, keeps each pet\'s notes, photos and vaccination records on the customer, sends day-before and on-the-way texts that reduce no-shows, and takes card payment by text link the moment the groom is done.',
+      'Yes. Servienza schedules grooming appointments with travel time between homes, keeps each pet\'s notes, photos and vaccination records on the customer, texts customers when you\'re on the way and when the groom is done, and takes card payment by text link before you pull away.',
     jobTypes: ['Full groom', 'Bath & brush', 'Nail trim', 'De-shed', 'Puppy intro'],
     pains: [
       { title: 'Appointments that respect driving time', body: 'The schedule warns you when two homes are too far apart for the gap between them, and orders the day to save miles.' },
       { title: 'Every pet remembered', body: 'Temperament notes, the clip they liked last time, vaccination dates and photos — on the customer\'s record, on your phone.' },
-      { title: 'Fewer no-shows', body: 'A text the day before and another when you\'re on the way. Customers confirm or reschedule from the text.' },
+      { title: 'Customers ready when you arrive', body: 'A text when you\'re on the way, with a live map link, and another when the groom is done.' },
       { title: 'Paid before you leave the driveway', body: 'Tap Done, the invoice texts over with a pay link, and most people pay while you\'re loading the van.' },
     ],
     day: [
       { time: '7:30 AM', title: 'Six grooms, best order', body: 'Today\'s route with each pet\'s notes a tap away.' },
       { time: '9:00 AM', title: 'Biscuit, full groom', body: 'Before-and-after photos saved and texted to the owner.' },
-      { time: '11:40 AM', title: 'Missed a call mid-groom', body: 'The caller got a text back; the voicemail is text you read between stops.' },
+      { time: '11:40 AM', title: 'Missed a call mid-groom', body: 'The voicemail is text you read between stops, matched to the customer.' },
       { time: '4:30 PM', title: 'All paid', body: 'Every invoice went out with a pay link. Nothing to chase tonight.' },
     ],
     faq: [
@@ -143,7 +143,7 @@ export const TRADES: Trade[] = [
       { title: 'Estimates in five minutes, not that evening', body: 'Pick items from your price list, add photos of the problem, send. The customer approves and signs on their phone.' },
       { title: 'Deposits before you buy materials', body: 'Ask for a set amount or a percentage on the estimate. It\'s credited on the final invoice automatically.' },
       { title: 'Small jobs that fit around big ones', body: 'Drag a two-hour job into Thursday afternoon; the board warns you if it collides with something else.' },
-      { title: 'Calls you can\'t answer from a ladder', body: 'Callers get a text back right away, and their voicemail arrives as text you can read later.' },
+      { title: 'Calls you can\'t answer from a ladder', body: 'Callers reach your greeting; their voicemail arrives as text you can read when you\'re down.' },
     ],
     day: [
       { time: '8:00 AM', title: 'Three jobs, two estimates', body: 'Today in order, with addresses and what you quoted.' },
@@ -179,7 +179,7 @@ export const TRADES: Trade[] = [
     ],
     day: [
       { time: '7:00 AM', title: 'Three techs, fourteen calls', body: 'The board is set; each tech sees only their day on the phone.' },
-      { time: '9:15 AM', title: 'No-cool call comes in', body: 'The missed call got a text back; the office drops it onto the nearest tech\'s route.' },
+      { time: '9:15 AM', title: 'No-cool call comes in', body: 'The voicemail lands as text; the office drops it onto the nearest tech\'s route.' },
       { time: '1:30 PM', title: 'Replace estimate on site', body: 'Two options, photos of the old unit, deposit on approval.' },
       { time: '5:00 PM', title: 'Every job invoiced', body: 'Nothing left in the trucks. Payments sync to QuickBooks.' },
     ],
@@ -199,9 +199,9 @@ export const TRADES: Trade[] = [
     hook: 'Same-day calls, parts',
     image: '/industry_plumbing.webp',
     headline: 'Catch the emergency call. Get paid before you leave.',
-    sub: 'For plumbing companies: missed-call text-back so the emergency doesn\'t go to the next plumber, a board that finds who\'s closest, and invoices with parts that send themselves.',
+    sub: 'For plumbing companies: missed-call voicemail-to-text so the emergency doesn\'t go to the next plumber, a board that finds who\'s closest, and invoices with parts that send themselves.',
     answer:
-      'Yes. Servienza helps a small plumbing company answer every call (missed calls get an instant text back and voicemail-to-text), dispatch the nearest technician from a live map, build estimates and invoices with parts from a price list, and get paid by text link before the truck leaves.',
+      'Yes. Servienza helps a small plumbing company answer every call (every missed call lands as a transcribed voicemail, matched to the customer), dispatch the nearest technician from a live map, build estimates and invoices with parts from a price list, and get paid by text link before the truck leaves.',
     jobTypes: ['Leak repair', 'Drain clear', 'Water heater install', 'Fixture install', 'Camera inspection'],
     pains: [
       { title: 'Emergency calls you\'re too busy to answer', body: 'A burst pipe at 2pm calls while you\'re under a sink. They get a text in seconds; the voicemail is text you read in a minute.' },
@@ -212,14 +212,14 @@ export const TRADES: Trade[] = [
     day: [
       { time: '7:30 AM', title: 'Two techs, nine calls', body: 'Each tech sees their day; the office sees everyone.' },
       { time: '11:05 AM', title: 'Water heater estimate', body: 'Options with photos, approved with a deposit on the customer\'s phone.' },
-      { time: '2:20 PM', title: 'Burst pipe call missed', body: 'Instant text back. Dispatched to the nearest tech from the map.' },
+      { time: '2:20 PM', title: 'Burst pipe call missed', body: 'Voicemail as text within a minute. Dispatched to the nearest tech from the map.' },
       { time: '6:00 PM', title: 'Paid', body: 'Every invoice went out with a pay link when the job closed.' },
     ],
     faq: [
       { q: 'Can I add a same-day job while techs are out?', a: 'Yes. Drop it on the board and the technician\'s phone updates immediately.' },
       { q: 'Can I quote flat-rate from a price book?', a: 'Yes. Your product library holds flat-rate items, hourly rates and parts.' },
       { q: 'Does it store permits and inspection documents?', a: 'Yes. Documents upload to the customer and are searchable later.' },
-      { q: 'What about after-hours calls?', a: 'The missed-call text-back runs around the clock; you choose the wording for after-hours.' },
+      { q: 'What about after-hours calls?', a: 'Your number takes voicemail around the clock, and every message is transcribed and listed for the morning — or the moment your phone buzzes.' },
     ],
     leadFeatures: ['calls', 'map', 'invoices', 'estimates'],
     switchingFrom: 'a cell phone and invoice pads, or Housecall Pro',
@@ -233,12 +233,12 @@ export const TRADES: Trade[] = [
     headline: 'Recurring cleans, happy clients, invoices that send themselves.',
     sub: 'For residential and commercial cleaning companies: weekly and bi-weekly schedules, room-by-room checklists with photos, reminders that cut lockouts, and one invoice a month per client.',
     answer:
-      'Yes. Servienza schedules recurring residential and commercial cleans, gives each cleaner a room-by-room checklist with photos, texts clients the day before to prevent lockouts, and bills recurring clients once a month with a pay link — with the office seeing every team on one board.',
+      'Yes. Servienza schedules recurring residential and commercial cleans, gives each cleaner a room-by-room checklist with photos, texts clients when the team is on the way, and bills recurring clients once a month with a pay link — with the office seeing every team on one board.',
     jobTypes: ['Weekly clean', 'Deep clean', 'Move-out clean', 'Office nightly', 'Post-construction'],
     pains: [
       { title: 'Recurring schedules that stay recurring', body: 'Weekly, bi-weekly, monthly — set once. Pause for a vacation, resume with a tap.' },
       { title: 'Checklists so every clean is the same clean', body: 'Room-by-room lists per client with photos when done. New team member? Same result.' },
-      { title: 'Fewer lockouts', body: 'A text the day before and when the team is on the way. Alarm codes and key notes on the job.' },
+      { title: 'Fewer lockouts', body: 'A text when the team is on the way. Alarm codes and key notes on the job.' },
       { title: 'Monthly invoices for commercial clients', body: 'Twenty nightly cleans become one invoice with a pay link, synced to QuickBooks.' },
     ],
     day: [
@@ -276,7 +276,7 @@ export const TRADES: Trade[] = [
     day: [
       { time: '7:15 AM', title: 'Fourteen stops, best order', body: 'Quarterlies and two initial services, routed to save miles.' },
       { time: '10:00 AM', title: 'Initial service', body: 'Agreement signed on the porch. Next three visits scheduled automatically.' },
-      { time: '12:30 PM', title: 'Missed a call', body: 'The caller got a text back; it\'s a new rodent job by 1pm.' },
+      { time: '12:30 PM', title: 'Missed a call', body: 'The voicemail lands as text; it\'s a new rodent job by 1pm.' },
       { time: '4:45 PM', title: 'Invoices out', body: 'Residential paid by text; commercial on the monthly bill.' },
     ],
     faq: [
@@ -361,18 +361,18 @@ export const TRADES: Trade[] = [
     headline: 'Appointments, travel time and payment — handled between clients.',
     sub: 'For mobile hair, nails, lashes and massage: a schedule that accounts for driving, client notes and photos, reminders that cut no-shows, and payment by text the moment you finish.',
     answer:
-      'Yes. Servienza schedules in-home beauty appointments with travel time between clients, keeps each client\'s preferences, photos and consent forms on their record, sends day-before and on-the-way texts that reduce no-shows, and takes card payment by text link when the appointment ends.',
+      'Yes. Servienza schedules in-home beauty appointments with travel time between clients, keeps each client\'s preferences, photos and consent forms on their record, texts clients when you\'re on the way and when you\'re done, and takes card payment by text link when the appointment ends.',
     jobTypes: ['Bridal hair', 'Lash fill', 'Gel manicure', 'Massage 60', 'Color & cut'],
     pains: [
       { title: 'A day that accounts for driving', body: 'The schedule warns you when two appointments are too far apart and orders the day to save miles.' },
       { title: 'Every client\'s preferences remembered', body: 'Formulas, allergies you\'ve been told about, photos of last time, signed consent forms — on the client\'s record.' },
-      { title: 'Fewer no-shows', body: 'Day-before and on-the-way texts. Clients confirm or reschedule by reply.' },
+      { title: 'Clients ready when you arrive', body: 'An on-the-way text with a live map link, and a done text when you finish.' },
       { title: 'Paid before you pack up', body: 'Tap Done, the invoice texts over with a pay link; tips can be added on the invoice.' },
     ],
     day: [
       { time: '8:00 AM', title: 'Five clients, best order', body: 'Today\'s route with each client\'s notes a tap away.' },
       { time: '10:30 AM', title: 'Bridal trial', body: 'Photos saved and texted; the wedding date booked with a deposit.' },
-      { time: '1:00 PM', title: 'Missed call between clients', body: 'The caller got a text back; you reply when you\'re free.' },
+      { time: '1:00 PM', title: 'Missed call between clients', body: 'The voicemail is text on your phone; you call back when you\'re free.' },
       { time: '6:00 PM', title: 'All paid', body: 'Every invoice went out with a pay link. Nothing to chase.' },
     ],
     faq: [

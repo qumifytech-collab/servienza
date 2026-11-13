@@ -43,8 +43,12 @@ match the web app so site and product look like one thing.
 1. **Pricing** — `src/content/plans.ts` holds the two plans (Free owner-only; Team $100/mo for two
    technicians, $25/seat after), the 60-day trial and the usage limits. `FREE_PLAN_LIVE` must stay
    `true` only while the backend's Free tier is deployed; set it `false` to show "Coming soon".
-2. **Screenshots** — six real web captures are in `public/screens/` (demo company, light theme).
-   Still placeholders: missed calls, live map, customer detail, QuickBooks, and all mobile shots. Drop captures in `public/screens/` and set `src` on the `shots` in
+2. **Screenshots** — nine real web captures are in `public/screens/` (sandbox demo company, light theme;
+   missed calls, customer detail and live map were staged in the browser with realistic data). The
+   phone shots are HTML renders built from the mobile app's code: `node scripts/phone-mocks/build.js`
+   then `node scripts/phone-mocks/shoot.js public/screens` (needs lucide-static, @fontsource-variable/jetbrains-mono
+   and Playwright). Replace any of them with a real simulator capture of the same filename.
+   Still a placeholder: QuickBooks. Drop captures in `public/screens/` and set `src` on the `shots` in
    `src/content/features.ts` (and swap `<Screenshot label=…>` on the homepage / industry pages).
    Needed: web (light theme, demo company) — schedule board, routes builder, missed calls, estimate,
    invoices, customer detail, live map, agreements, QuickBooks, dashboard; mobile — My Day,

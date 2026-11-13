@@ -11,7 +11,7 @@ const PRICE = formatPrice(PAID.monthly)
 
 export const metadata: Metadata = pageMetadata({
   title: `Pricing — ${PRICE}/month for two technicians, ${TRIAL_DAYS}-day free trial`,
-  description: `Servienza costs ${PRICE} a month for a business with up to two technicians, with missed-call text-back, customer texting, route planning and live tracking included. ${FREE_PLAN_LIVE ? 'A free owner-only plan covers scheduling, estimates, invoicing and QuickBooks. ' : ''}${TRIAL_DAYS}-day free trial, no card, no contract.`,
+  description: `Servienza costs ${PRICE} a month for a business with up to two technicians, with missed-call voicemail-to-text, customer texting, route planning and live tracking included. ${FREE_PLAN_LIVE ? 'A free owner-only plan covers scheduling, estimates, invoicing and QuickBooks. ' : ''}${TRIAL_DAYS}-day free trial, no card, no contract.`,
   path: '/pricing',
 })
 
@@ -42,7 +42,7 @@ export default function PricingPage() {
         <Container className="flex flex-col items-center gap-5 pb-8 pt-10 text-center sm:pt-16">
           <h1 className="max-w-[760px] text-[38px] font-extrabold leading-[1.05] tracking-[-1.2px] sm:text-[54px] sm:tracking-[-1.6px]">How much does Servienza cost?</h1>
           <p className="max-w-[780px] text-[17px] font-semibold leading-relaxed sm:text-[19px]">
-            Servienza costs <b>{PRICE} a month for up to two technicians</b>, with missed-call text-back, customer texting, route planning and live tracking included.
+            Servienza costs <b>{PRICE} a month for up to two technicians</b>, with missed-call voicemail-to-text, customer texting, route planning and live tracking included.
             {FREE_PLAN_LIVE ? (
               <> If it&rsquo;s just you, the <b>Free plan</b> covers scheduling, estimates, invoicing and QuickBooks at no cost, forever.</>
             ) : (
@@ -82,7 +82,7 @@ export default function PricingPage() {
                   ['Pay links on invoices (Stripe)', '✓', '✓'],
                   ['QuickBooks Online sync', '✓', '✓'],
                   ['Agreements with e-sign, documents', '✓', '✓'],
-                  ['Missed-call text-back + voicemail as text', '—', '✓ · 50 transcripts/mo'],
+                  ['Missed calls: your own number, voicemail as text', '—', '✓ · 50 transcripts/mo'],
                   ['Customer text messages', '—', '✓ · 300/mo'],
                   ['Best-route planning and drive times', '—', '✓'],
                   ['Live technician map', '—', '✓'],

@@ -34,10 +34,6 @@ export default function Hero({ webSrc, phoneSrc }: { webSrc?: string; phoneSrc?:
   return (
     <section id="top" className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-12 px-4 pb-10 pt-10 sm:px-8 sm:pt-16">
       <div className="flex min-w-0 flex-1 basis-[460px] flex-col gap-6">
-        <span className="inline-flex items-center gap-2 self-start rounded-full bg-brand-50 px-3 py-1.5 text-[13px] font-bold text-brand-700">
-          <span className="inline-block h-2 w-2 rounded-full bg-brand-600" aria-hidden="true" />
-          Built for one-truck businesses and small crews
-        </span>
         <h1 className="text-[38px] font-extrabold leading-[1.05] tracking-[-1.2px] sm:text-[60px] sm:tracking-[-1.8px]">
           Run your service business from your phone.
         </h1>

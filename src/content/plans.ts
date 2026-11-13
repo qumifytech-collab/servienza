@@ -51,7 +51,7 @@ export const PLANS: Plan[] = [
       'Customer records, agreements and documents — kept forever',
       'Phone app + web app',
     ],
-    locked: ['Missed-call voicemail and text-back', 'Customer text messages', 'Best-route planning and drive times', 'Live technician map'],
+    locked: ['Missed-call number with voicemail as text', 'Customer text messages', 'Best-route planning and drive times', 'Live technician map'],
     footnote: 'Free forever. Invoices, agreements and estimates are never deleted. Storage of service photos and reports on the Free plan may be limited in future; nothing is removed today.',
   },
   {
@@ -64,8 +64,8 @@ export const PLANS: Plan[] = [
     featured: true,
     includes: [
       'Everything in Free',
-      'Missed-call catcher: text-back + voicemail as text',
-      'Customer texts: reminders, on-the-way, invoice and pay links',
+      'Missed-call catcher: your own number, voicemail as text, caller matched to the customer',
+      'Customer texts: on the way, job done, invoice and pay links',
       'Best-route planning and drive-time warnings',
       'Live technician map',
       'Priority chat support',

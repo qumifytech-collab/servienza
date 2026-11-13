@@ -57,7 +57,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              { t: "Missed calls while you're on a job", b: 'A new customer calls, you’re elbow-deep in a pump. They call the next guy. Servienza texts them back for you, turns the voicemail into words, and saves them as a lead.', i: 'phone' },
+              { t: "Missed calls while you're on a job", b: 'A new customer calls, you’re elbow-deep in a pump. They call the next guy. Servienza takes the voicemail, turns it into words you can read between stops, and saves them as a lead so you call back the moment you\u2019re free.', i: 'phone' },
               { t: 'Chasing people to get paid', b: 'The job’s done, the invoice is “in the truck.” With Servienza the invoice goes out when you tap Done, and customers pay from a text. Reminders go out on their own.', i: 'card' },
               { t: 'Notes on napkins, photos in your camera roll', b: '“Which gate code was that?” Every customer gets one record: address, gate code, photos, what you did last time, what they owe. On your phone, always.', i: 'doc' },
             ].map((c) => (
@@ -174,11 +174,11 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ['Scheduling & reminders', 'One-time and repeat jobs. Customers get a text the day before and when you’re on the way.', '/features#schedule'],
+              ['Scheduling & reminders', 'One-time and repeat jobs. Customers get a text when you’re on the way and when the job is done.', '/features#schedule'],
               ['Estimates customers sign on their phone', 'Send a price, they tap Approve, pay a deposit if you ask. It turns into the job and the invoice.', '/features#estimates'],
               ['Invoices & card payments', 'A pay link goes out with every invoice automatically, reminders follow, one monthly invoice for repeat customers. No platform fee on top of card processing.', '/features#invoices'],
               ['One record per customer', 'Address, gate code, photos, every visit, every payment. Search it from the truck.', '/features#customers'],
-              ['Missed-call catcher', 'Can’t pick up? The caller gets a text back right away and the voicemail shows up as text you can read between jobs.', '/features#calls'],
+              ['Missed-call catcher', 'Can’t pick up? The voicemail shows up as text within a minute, matched to the customer, so you call back between jobs.', '/features#calls'],
               ['Plays nice with QuickBooks', 'Invoices and payments sync over. Your bookkeeper won’t notice anything changed, except fewer questions.', '/features#quickbooks'],
             ].map(([t, b, href]) => (
               <Link key={t} href={href} className="flex flex-col gap-2.5 rounded-2xl border border-white/15 p-6 transition-colors hover:border-brand-300/60 hover:bg-white/5">
@@ -299,10 +299,10 @@ function Step({ n, title, body, shot, children }: { n: number; title: string; bo
   return (
     <div className="flex flex-col gap-4">
       {shot ? (
-        <div className="flex h-[300px] justify-center overflow-hidden rounded-2xl border border-line bg-ground px-5 pt-5">
-          <div className="w-[180px] rounded-t-[26px] bg-ink px-2 pt-2">
+        <div className="flex h-[380px] justify-center overflow-hidden rounded-2xl border border-line bg-ground px-4 pt-4">
+          <div className="w-full max-w-[268px] rounded-t-[30px] bg-ink px-2 pt-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={shot} alt={title} className="h-[272px] w-full rounded-t-[20px] object-cover object-top" />
+            <img src={shot} alt={title} className="h-[356px] w-full rounded-t-[22px] object-cover object-top" />
           </div>
         </div>
       ) : (

@@ -65,8 +65,8 @@ export const FEATURES: Feature[] = [
     eyebrow: 'Missed-call catcher',
     question: 'What happens when I can\'t answer the phone?',
     answer:
-      'The caller gets a text back within seconds ("Hi, it\'s Maria at Blue Wave — I\'m on a job, how can I help?"). Their voicemail is turned into text you can read between stops, and if they\'re an existing customer, it\'s filed to their record. New numbers become leads you can turn into a job in one tap.',
-    bullets: ['You write the text-back once', 'Voicemail as text, in the app and by notification', 'Caller matched to the customer automatically'],
+      'The caller hears your greeting and leaves a voicemail. Within a minute it shows up in the app as text you can read between stops, matched to the customer who called — or flagged as a new number you can turn into a customer in one tap. Nobody goes to voicemail-nowhere: you see every missed call, in one list, and call back when you can.',
+    bullets: ['Your own business number, with a greeting you record once', 'Voicemail as text, in the app and by notification', 'Caller matched to the customer automatically; new numbers become leads', 'Mark each one handled so nothing slips'],
     shots: [{ label: 'Web — missed calls with transcribed voicemail and matched customer', kind: 'web', src: '/screens/web-missed-calls.jpg' }],
   },
   {
@@ -108,13 +108,16 @@ export const FEATURES: Feature[] = [
     eyebrow: 'Customer texts & emails',
     question: 'Will my customers know when I\'m coming?',
     answer:
-      'Yes, without you typing anything. They get a text the day before, one when the technician is on the way, and one when the job is done with the photos and the invoice. You choose which messages go out and the wording.',
+      'Yes, without you typing anything. When the technician taps Start Trip, the customer gets a text that they\'re on the way — with a live map link when the visit is tracked. When the job is marked done they get a text saying so, the service report by email, and the invoice with its pay link. Only customers who opted in get texts.',
     bullets: [
-      'Day-before reminder · On the way · Job done · Invoice · Payment received',
-      'Your wording, your business name',
-      'Customers can opt out any time (we handle the SMS consent rules)',
+      'On the way · Job done · Invoice with pay link · Service report',
+      'Sent from your business number, in your business name',
+      'Each one can be switched off in settings; customers can opt out any time (we handle the SMS consent rules)',
     ],
-    shots: [{ label: 'Three text bubbles — reminder, on the way, done + pay link', kind: 'phone' }],
+    shots: [
+      { label: 'Customer\'s phone — on the way, done, invoice', kind: 'phone', src: '/screens/customer-texts.png', alt: 'Text thread a customer receives: technician on the way with a live map link, visit finished, invoice with pay link' },
+      { label: 'Customer\'s phone — live map link', kind: 'phone', src: '/screens/customer-track-page.png', alt: 'The live map page a customer opens from the on-the-way text, showing the technician driving to their address' },
+    ],
   },
   {
     id: 'agreements',
@@ -177,6 +180,6 @@ export const FEATURE_CHIPS: { label: string; id: string }[] = [
   { label: 'Double-booking warnings', id: 'schedule' },
   { label: 'Live technician map', id: 'map' },
   { label: 'Agreements with e-sign', id: 'agreements' },
-  { label: 'Day-before & on-the-way texts', id: 'texts' },
+  { label: 'On-the-way & job-done texts', id: 'texts' },
   { label: 'Documents & reports', id: 'customers' },
 ]

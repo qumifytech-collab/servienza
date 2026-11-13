@@ -4,11 +4,12 @@ import { Breadcrumbs, Button, CheckList, Container, Eyebrow, Screenshot } from '
 import { SIGNUP_URL, TRIAL_DAYS } from '@/lib/site'
 import { breadcrumbJsonLd, faqJsonLd, jsonLdString, pageMetadata } from '@/lib/seo'
 import { screen } from '@/lib/screens'
+import ShotCarousel from '@/components/ShotCarousel'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Features — everything Servienza does, in plain English',
   description:
-    'Scheduling with double-booking warnings, best-route planning, a technician phone app, missed-call text-back, estimates with e-sign and deposits, invoices with pay links and automatic reminders, QuickBooks sync and more — every feature on every plan.',
+    'Scheduling with double-booking warnings, best-route planning, a technician phone app, missed-call voicemail-to-text, estimates with e-sign and deposits, invoices with pay links and automatic reminders, QuickBooks sync and more — every feature on every plan.',
   path: '/features',
 })
 
@@ -49,10 +50,10 @@ export default function FeaturesPage() {
               className={`flex flex-wrap items-center gap-10 rounded-[20px] p-6 sm:p-10 ${dark ? 'bg-ink text-ground' : 'border border-line bg-white'} ${flip ? 'flex-wrap-reverse' : ''}`}
             >
               {flip && <Shots f={f} />}
-              <div className="flex flex-1 basis-[420px] flex-col gap-3.5">
+              <div className="flex flex-[2] basis-[320px] flex-col gap-3.5">
                 <Eyebrow light={dark}>{f.eyebrow}</Eyebrow>
-                <h2 className="text-[26px] font-extrabold leading-[1.15] tracking-[-0.6px] sm:text-[30px]">{f.question}</h2>
-                <p className={`text-[17px] font-semibold leading-relaxed ${dark ? 'text-ground' : 'text-ink'}`}>{f.answer}</p>
+                <h2 className="text-[24px] font-extrabold leading-[1.15] tracking-[-0.6px] sm:text-[28px]">{f.question}</h2>
+                <p className={`text-[16px] font-semibold leading-relaxed ${dark ? 'text-ground' : 'text-ink'}`}>{f.answer}</p>
                 <CheckList items={f.bullets} light={dark} />
               </div>
               {!flip && <Shots f={f} />}
@@ -78,19 +79,26 @@ export default function FeaturesPage() {
 }
 
 function Shots({ f }: { f: (typeof FEATURES)[number] }) {
-  const phones = f.shots.filter((s) => s.kind === 'phone')
-  const webs = f.shots.filter((s) => s.kind === 'web')
+  const shots = f.shots.map((s) => ({ ...s, src: screen(s.src) }))
+  const mixed = shots.length > 1 && new Set(shots.map((s) => s.kind)).size > 1
   return (
-    <div className="flex flex-1 basis-[460px] flex-wrap items-center justify-center gap-4">
-      {webs.map((s) => (
-        <Screenshot key={s.label} label={s.label} src={screen(s.src)} alt={s.alt} className="w-full min-w-0 flex-1 basis-[260px]" />
-      ))}
-      {phones.map((s) => (
-        <Screenshot key={s.label} kind="phone" label={s.label} src={screen(s.src)} alt={s.alt} />
-      ))}
+    <div className="flex min-w-0 flex-[3] basis-[480px] flex-col items-center justify-center gap-4">
+      {mixed ? (
+        <ShotCarousel shots={shots} />
+      ) : (
+        <div className="flex w-full flex-wrap items-center justify-center gap-4">
+          {shots.map((s) =>
+            s.kind === 'web' ? (
+              <Screenshot key={s.label} label={s.label} src={s.src} alt={s.alt} className="w-full min-w-0 flex-1 basis-[300px]" />
+            ) : (
+              <Screenshot key={s.label} kind="phone" label={s.label} src={s.src} alt={s.alt} />
+            ),
+          )}
+        </div>
+      )}
       {f.id === 'invoices' && (
         <div className="flex w-full flex-col gap-1.5 rounded-[14px] border border-white/15 bg-[#252420] p-4 text-[13px]">
-          <span className="text-[11px] font-bold text-[#B8B6AD]">TEXT TO CUSTOMER — SENT AUTOMATICALLY</span>
+          <span className="text-[11px] font-bold text-[#B8B6AD]">TEXT TO CUSTOMER — SENT WITH THE INVOICE</span>
           <span>
             Hi Dana, today&rsquo;s service at Green Valley is done. Invoice #1042 for $63.00 — pay here: <span className="text-brand-300">pay.servienza.com/8k2</span>
           </span>

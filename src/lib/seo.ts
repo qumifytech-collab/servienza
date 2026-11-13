@@ -95,7 +95,7 @@ export function softwareAppJsonLd() {
       'Drag-and-drop schedule board with double-booking warnings',
       'Best-route planning',
       'Technician phone app with checklists and photos',
-      'Missed-call text-back and voicemail-to-text',
+      'Missed-call voicemail-to-text with your own business number',
       'Estimates with e-signature and deposits',
       'Invoicing with pay links (Stripe) and automatic reminders',
       'Service agreements with e-signature',

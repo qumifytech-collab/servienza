@@ -148,6 +148,27 @@ const approve = `<div class="screen web" id="customer-approve-estimate">${status
 <div class="t12" style="color:#6B7280;text-align:center;margin-top:10px;text-decoration:underline">Approve now, pay the deposit another way (Zelle, check) →</div></div>
 </div><div class="home" style="background:#F3F4F6"></div></div>`;
 
+
+const bubble = (t, time) => `<div class="msgwrap"><div class="msg">${t}</div>${time ? `<div class="mtime">${time}</div>` : ''}</div>`;
+const texts = `<div class="screen" id="customer-texts" style="background:#fff">${statusBar}
+<div class="imsgh"><div class="row" style="width:100%"><span style="color:#007AFF;display:flex;align-items:center;gap:2px">${ic('chevron-left', 22, '#007AFF')}<span style="font-size:17px">Messages</span></span></div><div class="avatarb">BW</div><div style="font-size:12px;margin-top:4px">Blue Wave Services ›</div></div>
+<div class="imsgbody">
+<div class="mday">Today</div>
+${bubble('Hi Linda, Priya from Blue Wave Services is on the way to 77 Palm Ave now. Follow along: <span class="lnk">app.servienza.com/track/8k2f</span>', '9:52 AM')}
+${bubble('Hi Linda, Blue Wave Services has finished today’s visit at 77 Palm Ave. Thank you!', '10:41 AM')}
+${bubble('Blue Wave Services: Your invoice INV-1042 for $185.00 is ready. Pay securely here: <span class="lnk">pay.servienza.com/8k2</span>', '10:44 AM')}
+</div>
+<div class="imsgin"><span class="plusb">${ic('plus', 16, '#6B6B70')}</span><span class="inp2">Text Message · SMS</span></div>
+<div class="home"></div></div>`;
+
+const trackMap = `<svg class="tmap" viewBox="0 0 390 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="390" height="520" fill="#EEF2EC"/><rect x="300" y="0" width="90" height="520" fill="#B9D7F0"/><g stroke="#FFFFFF" stroke-width="7"><path d="M0 120H300M0 300H300M0 440H300M80 0V520M200 0V520M270 0V520"/></g><g stroke="#FFFFFF" stroke-width="3"><path d="M0 60H300M0 200H300M0 380H300M40 0V520M130 0V520M160 0V520M240 0V520"/></g><rect x="90" y="130" width="60" height="40" fill="#DDE4D8"/><rect x="210" y="310" width="50" height="60" fill="#DDE4D8"/><rect x="20" y="320" width="50" height="50" fill="#DDE4D8"/><path d="M40 60 L 80 60 L 80 200 L 200 200 L 200 300 L 270 300 L 270 380" stroke="#3b82f6" stroke-width="4" fill="none" stroke-opacity=".9" stroke-linecap="round"/><circle cx="40" cy="60" r="7" fill="#22c55e" stroke="#fff" stroke-width="2"/><g transform="translate(200 300)"><circle r="17" fill="#15803d" stroke="#fff" stroke-width="3"/><text y="4" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Manrope">PN</text></g><path d="M270 380 l-7 -14 h14 z" fill="#ef4444" stroke="#fff" stroke-width="2"/></svg>`;
+const trackPage = `<div class="screen web" id="customer-track-page" style="background:#fff">${statusBar}
+<div class="url">${ic('lock', 11, '#56564E')}app.servienza.com</div>
+<div style="padding:14px 16px 10px;border-bottom:1px solid #E5E7EB"><div style="font-size:18px;font-weight:600;color:#111827">Blue Wave Services</div><div class="t13" style="color:#6B7280;margin-top:2px">Live technician location · updates every 10 seconds</div></div>
+<div style="position:relative;flex:1;overflow:hidden">${trackMap}
+<div style="position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);border:1px solid #E5E7EB;border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.12)"><div class="row" style="gap:12px"><div style="width:40px;height:40px;border-radius:20px;background:#15803d;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center">PN</div><div><div style="font-size:15px;font-weight:600;color:#111827">Priya Nair</div><div class="t13" style="color:#15803d;font-weight:600">On the way</div></div></div><div class="t13" style="color:#6B7280;margin-top:10px">Heading to <b style="color:#111827">77 Palm Ave, Seminole FL</b></div><div class="row t11" style="gap:10px;margin-top:10px;color:#6B7280;font-weight:600"><span style="color:#15803d">● En route</span><span>○ Arrived</span><span>○ Done</span></div></div>
+</div><div class="home" style="background:#fff"></div></div>`;
+
 const css = `
 @font-face{font-family:Manrope;src:url(file://${MAN}) format('woff2');font-weight:200 800}
 @font-face{font-family:JB;src:url(file://${MONO}) format('woff2');font-weight:100 800}
@@ -215,6 +236,19 @@ body{background:#ddd;font-family:Manrope,sans-serif;color:#16160F;-webkit-font-s
 .col{flex:1;position:relative;border-right:1px solid rgba(20,20,14,.11)}
 .dcard{position:absolute;left:4px;right:4px;background:#FBFBF9;border:1px solid rgba(20,20,14,.11);border-left:3px solid;border-radius:6px;padding:6px 8px;overflow:hidden}
 .web{background:#F3F4F6;font-family:Manrope,sans-serif}
+.imsgh{display:flex;flex-direction:column;align-items:center;padding:4px 10px 10px;border-bottom:1px solid #E5E5EA;background:rgba(249,249,249,.94);color:#16160F}
+.avatarb{width:50px;height:50px;border-radius:25px;background:linear-gradient(#A8A8AE,#8E8E93);color:#fff;font-weight:600;font-size:18px;display:flex;align-items:center;justify-content:center;margin-top:-10px}
+.imsgbody{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.mday{text-align:center;font-size:11px;color:#8E8E93;font-weight:600;margin:4px 0 2px}
+.msgwrap{display:flex;flex-direction:column;gap:3px}
+.msg{max-width:78%;background:#E9E9EB;color:#16160F;border-radius:18px;padding:9px 13px;font-size:15px;line-height:20px;font-weight:400;align-self:flex-start}
+.msg.out{background:#34C759;color:#fff;align-self:flex-end}
+.mtime{font-size:11px;color:#8E8E93;padding-left:8px}
+.lnk{color:#007AFF;text-decoration:underline}
+.imsgin{display:flex;align-items:center;gap:8px;padding:8px 12px 44px;border-top:1px solid #E5E5EA}
+.plusb{width:32px;height:32px;border-radius:16px;background:#E9E9EB;display:flex;align-items:center;justify-content:center}
+.inp2{flex:1;height:34px;border:1px solid #D1D1D6;border-radius:17px;padding:0 12px;display:flex;align-items:center;font-size:15px;color:#8E8E93;font-weight:400}
+.tmap{width:100%;height:100%;display:block}
 .url{margin:4px 16px 10px;height:38px;border-radius:12px;background:#E5E7EB;display:flex;align-items:center;justify-content:center;gap:5px;font-size:14px;color:#374151;font-weight:500}
 .wcard{margin:0 12px;background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:20px 16px;box-shadow:0 1px 2px rgba(0,0,0,.05);color:#111827}
 .wbox{flex:1;border:1px solid #E5E7EB;border-radius:6px;padding:10px 12px}.wl{font-size:11px;text-transform:uppercase;color:#6B7280;font-weight:500;letter-spacing:.3px}
@@ -226,5 +260,5 @@ body{background:#ddd;font-family:Manrope,sans-serif;color:#16160F;-webkit-font-s
 .wbtn{height:40px;border-radius:6px;background:#111827;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
 .wbtn.out{background:#fff;color:#111827;border:1px solid #D1D5DB;margin-top:8px}
 `;
-fs.writeFileSync('mocks.html', `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${myDay}${checklist}${invoiceSent}${money}${serviceDetail}${dispatch}${approve}</body></html>`);
+fs.writeFileSync('mocks.html', `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${myDay}${checklist}${invoiceSent}${money}${serviceDetail}${dispatch}${approve}${texts}${trackPage}</body></html>`);
 console.log('written');
