@@ -59,6 +59,11 @@ export default function PrivacyPage() {
               <strong>Technical data</strong> — device, log, and cookie data used to
               secure and improve the product.
             </li>
+            <li>
+              <strong>Website visits</strong> — on servienza.com we count page views with
+              Vercel Web Analytics, which sets no cookies and does not identify you. If you
+              open the chat widget, Crisp sets a cookie so your conversation survives a reload.
+            </li>
           </ul>
         </Section>
 

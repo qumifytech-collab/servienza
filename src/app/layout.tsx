@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import '@fontsource-variable/manrope'
 import './globals.css'
 import ChatLauncher from '@/components/ChatLauncher'
@@ -50,6 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Script>
         )}
         {CRISP_WEBSITE_ID && <ChatLauncher />}
+        {/* Vercel Web Analytics: page views only, no cookies, no cross-site identifier — so no consent banner. Collects only on Vercel deployments. */}
+        <Analytics />
       </body>
     </html>
   )

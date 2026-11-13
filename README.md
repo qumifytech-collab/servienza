@@ -31,6 +31,10 @@ src/components/ui.tsx      Primitives: Container, Button, Faq, Screenshot (place
 src/components/home/       Hero (trade picker) and the HTML app mockups
 ```
 
+Analytics: `@vercel/analytics` (`<Analytics />` in `src/app/layout.tsx`) — cookieless page views, free within
+Vercel's included allowance; turn it on once under the project's **Analytics** tab in the Vercel dashboard.
+Sign-up attribution (which trade page a customer came from) is in the web app at Admin → Sign-ups by trade.
+
 Fonts are self-hosted (`@fontsource-variable/manrope`) — no Google Fonts request. Palette and type
 match the web app so site and product look like one thing.
 
