@@ -12,7 +12,7 @@ export const dynamic = 'force-static'
  */
 export function GET() {
   const plans = PLANS.filter((p) => p.monthly > 0 || FREE_PLAN_LIVE)
-    .map((p) => `- ${p.name}: ${p.monthly === 0 ? 'free forever' : `${formatPrice(p.monthly)}/month`} — ${p.seatsLabel}. Includes: ${p.includes.join('; ')}.${p.limits ? ' Fair-use limits: ' + p.limits.join('; ') + '.' : ''}`)
+    .map((p) => `- ${p.name}: ${p.monthly === 0 ? 'free forever' : `${formatPrice(p.monthly)}/month${p.annual ? ` or ${formatPrice(p.annual)}/year (20% off)` : ''}`} — ${p.seatsLabel}. Includes: ${p.includes.join('; ')}.${p.limits ? ' Fair-use limits: ' + p.limits.join('; ') + '.' : ''}`)
     .join('\n')
   const trades = TRADES.map((t) => `- [${t.name}](${SITE_URL}/industries/${t.slug}): ${t.hook}`).join('\n')
   const features = FEATURES.map((f) => `- **${f.eyebrow}** — ${f.answer}`).join('\n')

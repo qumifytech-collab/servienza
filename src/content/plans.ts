@@ -12,6 +12,10 @@ export const FREE_PLAN_LIVE = true
 
 /** Extra technician seat, per month (confirmed 12 Nov 2026). null would hide the number and say "talk to us". */
 export const EXTRA_SEAT_MONTHLY: number | null = 25
+/** Extra technician seat on annual billing (decided 15 Nov 2026, same 20% off). */
+export const EXTRA_SEAT_ANNUAL = 240
+/** What the Annual toggle advertises: 960 vs 12 × 100. */
+export const ANNUAL_SAVING_PCT = 20
 
 export type PlanId = 'free' | 'paid'
 
@@ -21,6 +25,8 @@ export type Plan = {
   tagline: string
   /** USD per month; 0 = free. */
   monthly: number
+  /** USD per year when billed annually (20% off). Absent on Free. */
+  annual?: number
   /** Technicians / users included. */
   seats: number
   seatsLabel: string
@@ -59,6 +65,7 @@ export const PLANS: Plan[] = [
     name: 'Team',
     tagline: 'You plus a technician, with the phone and texting features on.',
     monthly: 100,
+    annual: 960,
     seats: 2,
     seatsLabel: '2 technicians included',
     featured: true,
@@ -79,5 +86,10 @@ export const PAID = PLANS[1]
 export const FREE = PLANS[0]
 
 export function formatPrice(n: number): string {
-  return n === 0 ? '$0' : `$${n}`
+  return n === 0 ? '$0' : `$${n.toLocaleString('en-US')}`
+}
+
+/** "$80" — the per-month equivalent of the annual price, for the toggle. */
+export function annualPerMonth(annual: number): string {
+  return `$${Math.round(annual / 12)}`
 }

@@ -40,8 +40,10 @@ match the web app so site and product look like one thing.
 
 ## Before launch — things only you can fill in
 
-1. **Pricing** — `src/content/plans.ts` holds the two plans (Free owner-only; Team $100/mo for two
-   technicians, $25/seat after), the 60-day trial and the usage limits. `FREE_PLAN_LIVE` must stay
+1. **Pricing** — `src/content/plans.ts` holds the two plans (Free owner-only; Team $100/mo or $960/yr
+   for two technicians, $25/mo or $240/yr per extra seat), the 60-day trial and the usage limits.
+   Stripe needs four prices with these lookup keys: `team_monthly`, `team_annual`, `extra_seat_monthly`,
+   `extra_seat_annual`. `FREE_PLAN_LIVE` must stay
    `true` only while the backend's Free tier is deployed; set it `false` to show "Coming soon".
 2. **Screenshots** — nine real web captures are in `public/screens/` (sandbox demo company, light theme;
    missed calls, customer detail and live map were staged in the browser with realistic data). The

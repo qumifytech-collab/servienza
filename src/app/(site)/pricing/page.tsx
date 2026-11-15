@@ -3,7 +3,7 @@ import Link from 'next/link'
 import PricingPlans from '@/components/PricingPlans'
 import CtaBand from '@/components/CtaBand'
 import { Container, Faq, H2, Lead } from '@/components/ui'
-import { EXTRA_SEAT_MONTHLY, FREE, FREE_PLAN_LIVE, PAID, TRIAL_DAYS, formatPrice } from '@/content/plans'
+import { EXTRA_SEAT_ANNUAL, EXTRA_SEAT_MONTHLY, FREE, FREE_PLAN_LIVE, PAID, TRIAL_DAYS, formatPrice } from '@/content/plans'
 import { COMPETITORS } from '@/content/competitors'
 import { breadcrumbJsonLd, faqJsonLd, jsonLdString, pageMetadata, softwareAppJsonLd } from '@/lib/seo'
 
@@ -21,14 +21,15 @@ const PRICING_FAQ = [
   { q: 'I only want the Free plan. Do I still get the trial?', a: `Yes — every account starts with ${TRIAL_DAYS} days of Team so you can see the texting and missed-call features with your own customers. If they aren’t for you, do nothing: you move to Free automatically, with everything you entered intact.` },
   { q: 'What happens if I hit the text or voicemail limit?', a: 'You get a notice, and that’s all. Voicemails are still recorded and listed, just without the typed-out transcript. Pay links switch to email, and alerts to your team go by push and email. Login codes are never counted or blocked. Limits reset on the 1st.' },
   { q: 'Why have limits at all?', a: 'Texts and transcription cost us per message. The limits are set well above what a two-person business uses in a normal month; they exist so one unusual month doesn’t change the flat price for everyone.' },
-  { q: 'Is there a contract?', a: 'No. Monthly billing, cancel any time from the app.' },
+  { q: 'Is there a contract?', a: 'No. Pay monthly and cancel any time from the app. Or pay for a year up front at 20% off ($960 instead of $1,200); an annual plan runs to the end of the year you paid for and does not renew if you cancel.' },
+  { q: 'Can I switch between monthly and annual?', a: 'Yes, from the billing page in the app. Switching to annual charges the year right away; switching back takes effect when the annual term ends.' },
   { q: 'If I leave, can I take my data?', a: 'Yes — customers, jobs, invoices and payments export to spreadsheets with one click, before or after you cancel.' },
 ]
 
 const MONEY_QUESTIONS = [
   { q: 'What does it cost to take card payments?', a: 'Only Stripe’s standard card rate, charged by Stripe. Servienza adds no fee of its own on payments. Cash and check payments are free to record.' },
   { q: 'Is there a setup or onboarding fee?', a: 'No. The setup call and moving your customer list in are free.' },
-  { q: 'Can I add a third technician?', a: `Yes. Extra technician seats are $${EXTRA_SEAT_MONTHLY}/month each on the Team plan, added from the billing page whenever you hire.` },
+  { q: 'Can I add a third technician?', a: `Yes. Extra technician seats are $${EXTRA_SEAT_MONTHLY}/month each on the Team plan ($${EXTRA_SEAT_ANNUAL}/year on annual billing), added from the billing page whenever you hire.` },
 ]
 
 export default function PricingPage() {
@@ -76,7 +77,8 @@ export default function PricingPage() {
               </thead>
               <tbody>
                 {[
-                  ['People who can log in', '1 (the owner)', `2 technicians · +$${EXTRA_SEAT_MONTHLY}/mo each after`],
+                  ['Price', 'Free forever', `${PRICE}/mo, or ${formatPrice(PAID.annual ?? 0)}/yr (20% off)`],
+                  ['People who can log in', '1 (the owner)', `2 technicians · +$${EXTRA_SEAT_MONTHLY}/mo (or $${EXTRA_SEAT_ANNUAL}/yr) each after`],
                   ['Customers, jobs, estimates, invoices', 'Unlimited', 'Unlimited'],
                   ['Phone app + web app', '✓', '✓'],
                   ['Pay links on invoices (Stripe)', '✓', '✓'],

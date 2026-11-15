@@ -66,21 +66,24 @@ export function organizationJsonLd() {
 
 /** SoftwareApplication with Offers — offers are only emitted for plans with a final price. */
 export function softwareAppJsonLd() {
-  const offers = PLANS.filter((p) => p.monthly > 0 || FREE_PLAN_LIVE).map((p) => ({
-    '@type': 'Offer',
-    name: `${p.name} plan`,
-    price: String(p.monthly),
-    priceCurrency: 'USD',
-    description: `${p.seatsLabel}. ${p.includes.slice(0, 3).join(', ')}.`,
-    url: `${SITE_URL}/pricing`,
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      price: String(p.monthly),
+  const offers = PLANS.filter((p) => p.monthly > 0 || FREE_PLAN_LIVE).flatMap((p) => {
+    const offer = (price: number, duration: 'P1M' | 'P1Y', unit: 'month' | 'year') => ({
+      '@type': 'Offer',
+      name: `${p.name} plan${p.monthly > 0 ? ` (${unit}ly)` : ''}`,
+      price: String(price),
       priceCurrency: 'USD',
-      billingDuration: 'P1M',
-      unitText: 'month',
-    },
-  }))
+      description: `${p.seatsLabel}. ${p.includes.slice(0, 3).join(', ')}.`,
+      url: `${SITE_URL}/pricing`,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: String(price),
+        priceCurrency: 'USD',
+        billingDuration: duration,
+        unitText: unit,
+      },
+    })
+    return p.annual ? [offer(p.monthly, 'P1M', 'month'), offer(p.annual, 'P1Y', 'year')] : [offer(p.monthly, 'P1M', 'month')]
+  })
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',

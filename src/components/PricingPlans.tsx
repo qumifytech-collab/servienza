@@ -1,12 +1,37 @@
-import { EXTRA_SEAT_MONTHLY, FREE_PLAN_LIVE, PLANS, TRIAL_DAYS, formatPrice } from '@/content/plans'
+'use client'
+
+import { useState } from 'react'
+import { ANNUAL_SAVING_PCT, EXTRA_SEAT_ANNUAL, EXTRA_SEAT_MONTHLY, FREE_PLAN_LIVE, PLANS, TRIAL_DAYS, annualPerMonth, formatPrice } from '@/content/plans'
 import { BOOK_CALL_URL, SIGNUP_URL } from '@/lib/site'
 import { CheckList } from './ui'
 
-/** The two plan cards. Used on the homepage and /pricing. Server component — no toggle, prices are flat monthly. */
+type Interval = 'month' | 'year'
+
+/** The two plan cards with a Monthly / Annual toggle. Used on the homepage and /pricing. The monthly price is what renders on the server, so crawlers see it. */
 export default function PricingPlans({ headingLevel = 'h3' }: { headingLevel?: 'h2' | 'h3' }) {
   const H = headingLevel
+  const [interval, setInterval_] = useState<Interval>('month')
+  const yearly = interval === 'year'
   return (
     <div className="flex w-full flex-col items-center gap-8">
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        <span className="text-[15px] font-semibold text-muted">Billing</span>
+        <div role="radiogroup" aria-label="Billing period" className="inline-flex rounded-xl bg-ground p-1">
+          {(['month', 'year'] as const).map((i) => (
+            <button
+              key={i}
+              type="button"
+              role="radio"
+              aria-checked={interval === i}
+              onClick={() => setInterval_(i)}
+              className={`rounded-lg px-4 py-2 text-[15px] font-bold transition-colors ${interval === i ? 'bg-ink text-white' : 'text-ink hover:bg-white'}`}
+            >
+              {i === 'month' ? 'Monthly' : 'Annual'}
+            </button>
+          ))}
+        </div>
+        <span className="text-[15px] font-bold text-brand-700 underline decoration-brand-300 decoration-[3px] underline-offset-4">Save {ANNUAL_SAVING_PCT}% with annual billing</span>
+      </div>
       <div className="grid w-full max-w-[900px] gap-5 md:grid-cols-2">
         {PLANS.map((p) => {
           const isFree = p.id === 'free'
@@ -20,17 +45,22 @@ export default function PricingPlans({ headingLevel = 'h3' }: { headingLevel?: '
                 <p className="mt-1 text-[15px] text-muted">{p.tagline}</p>
               </div>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-[44px] font-extrabold tracking-[-1.5px]">{formatPrice(p.monthly)}</span>
+                <span className="text-[44px] font-extrabold tracking-[-1.5px]">{isFree ? formatPrice(0) : yearly && p.annual ? annualPerMonth(p.annual) : formatPrice(p.monthly)}</span>
                 <span className="text-[15px] text-faint">{isFree ? 'forever' : '/month'}</span>
               </div>
-              <p className="-mt-3 text-sm font-bold text-ink/80">{p.seatsLabel}</p>
+              <p className="-mt-3 text-sm font-bold text-ink/80">
+                {p.seatsLabel}
+                {!isFree && p.annual && (
+                  <span className="block font-semibold text-faint">{yearly ? `Billed ${formatPrice(p.annual)} a year` : `or ${formatPrice(p.annual)} a year (${annualPerMonth(p.annual)}/mo)`}</span>
+                )}
+              </p>
               {comingSoon ? (
                 <a href={SIGNUP_URL} className="block rounded-xl border border-line py-3.5 text-center text-base font-bold text-ink hover:bg-ground">
                   Start the {TRIAL_DAYS}-day trial instead
                 </a>
               ) : (
                 <a
-                  href={`${SIGNUP_URL}?plan=${p.id}`}
+                  href={`${SIGNUP_URL}?plan=${p.id}${!isFree && yearly ? '&billing=year' : ''}`}
                   className={`block rounded-xl py-3.5 text-center text-base font-bold ${p.featured ? 'bg-brand-600 text-white hover:bg-brand-700' : 'border border-line text-ink hover:bg-ground'}`}
                 >
                   {isFree ? 'Start free' : `Start ${TRIAL_DAYS}-day free trial`}
@@ -67,11 +97,11 @@ export default function PricingPlans({ headingLevel = 'h3' }: { headingLevel?: '
       </div>
       <p className="max-w-[720px] text-center text-[15px] leading-relaxed text-muted">
         {EXTRA_SEAT_MONTHLY !== null ? (
-          <>Need more than two technicians? Add seats for ${EXTRA_SEAT_MONTHLY}/month each. </>
+          <>Need more than two technicians? Add seats for {yearly ? `$${EXTRA_SEAT_ANNUAL} a year` : `$${EXTRA_SEAT_MONTHLY}/month`} each. </>
         ) : (
           <>More than two technicians? <a href={BOOK_CALL_URL} className="font-bold text-brand-700 hover:text-brand-800">Talk to us</a> — we&rsquo;ll price the extra seats for you. </>
         )}
-        No contract. Cancel any time and take your data with you.
+        {yearly ? 'Annual plans are paid up front and run for the year; cancel and you drop to Free when it ends.' : 'No contract. Cancel any time and take your data with you.'} Take your data with you whenever you leave.
       </p>
     </div>
   )
