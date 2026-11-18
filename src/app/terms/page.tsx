@@ -9,12 +9,13 @@ export const metadata: Metadata = {
 }
 
 /*
- * DRAFT — 16 Nov 2026. Written to match the product as built (Free and Team plans, 60-day trial,
- * monthly/annual billing, customer texts, missed-call voicemail, technician tracking, Stripe
- * pay links, QuickBooks). Have a lawyer review before publishing; clauses marked [LAWYER] are the
- * ones most worth their time. Keep LAST_UPDATED in step with the Privacy Policy.
+ * DRAFT — 17 Nov 2026. Matches the product as built (Free and Team plans, 60-day trial,
+ * monthly/annual billing, customer texts, missed-call voicemail, technician tracking, Stripe pay
+ * links, QuickBooks); liability cap (6 months' fees) and arbitration confirmed by the owner.
+ * Awaiting lawyer review; §19 carries a LAWYER comment. The same text is served to the apps from
+ * wonderpool-api resources/legal/terms.md — keep the two in step.
  */
-const LAST_UPDATED = 'November 16, 2026'
+const LAST_UPDATED = 'November 17, 2026'
 const SUPPORT_EMAIL = 'at@servienza.com'
 const BUSINESS_NAME = 'Servienza'
 const LEGAL_ENTITY = 'Qumify Technologies Inc.'
@@ -471,11 +472,10 @@ export default function TermsPage() {
             TO THE FULLEST EXTENT PERMITTED BY LAW, {LEGAL_ENTITY.toUpperCase()} AND ITS OFFICERS, EMPLOYEES
             AND SUPPLIERS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR
             PUNITIVE DAMAGES, OR FOR LOST PROFITS, REVENUE, DATA OR GOODWILL, ARISING FROM THE SERVICE OR
-            THESE TERMS, EVEN IF ADVISED OF THE POSSIBILITY. OUR TOTAL LIABILITY FOR ALL CLAIMS IN ANY
-            TWELVE-MONTH PERIOD WILL NOT EXCEED THE GREATER OF (A) THE FEES YOU PAID US IN THE TWELVE
-            MONTHS BEFORE THE CLAIM AROSE AND (B) ONE HUNDRED U.S. DOLLARS. [LAWYER: confirm cap and
-            check state carve-outs.] Some states do not allow some of these limits, in which case they
-            apply only as far as that state’s law permits.
+            THESE TERMS, EVEN IF ADVISED OF THE POSSIBILITY. OUR TOTAL LIABILITY FOR ALL CLAIMS WILL
+            NOT EXCEED THE GREATER OF (A) THE FEES YOU PAID US IN THE SIX MONTHS BEFORE THE CLAIM AROSE
+            AND (B) ONE HUNDRED U.S. DOLLARS. Some states do not allow some of these limits, in which
+            case they apply only as far as that state’s law permits.
           </p>
         </Section>
 
@@ -512,7 +512,8 @@ export default function TermsPage() {
             dispute; we then have 30 days to try to resolve it informally before anything formal starts.
           </p>
           <p>
-            <strong>Arbitration.</strong> [LAWYER: review this section as a whole.] Any dispute that is
+            {/* LAWYER: review this dispute-resolution section as a whole. */}
+            <strong>Arbitration.</strong> Any dispute that is
             not resolved informally will be settled by binding individual arbitration administered by the
             American Arbitration Association under its Commercial Arbitration Rules, by one arbitrator,
             in {VENUE_COUNTY} or by video, in English. For claims under $10,000 we pay the AAA filing and

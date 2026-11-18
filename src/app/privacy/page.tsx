@@ -9,11 +9,12 @@ export const metadata: Metadata = {
 }
 
 /*
- * DRAFT — 16 Nov 2026. Matches the product as built. Items marked [CONFIRM] are retention periods
- * and provider names to verify against the backend before publishing. Keep LAST_UPDATED in step
- * with the Terms of Service.
+ * DRAFT — 17 Nov 2026, facts confirmed by the owner (providers, retention periods). Awaiting
+ * lawyer review before the DRAFT label comes off. Retention periods are enforced by
+ * wonderpool-api DataRetentionWorker; change both together. The same text is served to the apps
+ * from wonderpool-api resources/legal/privacy.md — keep the two in step.
  */
-const LAST_UPDATED = 'November 16, 2026'
+const LAST_UPDATED = 'November 17, 2026'
 const SUPPORT_EMAIL = 'at@servienza.com'
 const PRIVACY_EMAIL = 'at@servienza.com'
 const BUSINESS_NAME = 'Servienza'
@@ -140,9 +141,8 @@ export default function PrivacyPage() {
           </ul>
           <p>
             We do not use your customers’ information to market to them, and we do not use Company Data
-            to train artificial-intelligence models. Voicemail transcription is done by an automated
-            speech-to-text provider that processes the recording for us and does not keep it for its own
-            purposes.
+            to train artificial-intelligence models. Voicemail transcription is automated (Twilio’s transcription service) and the transcript
+            is used only to show you the message.
           </p>
         </Section>
 
@@ -173,12 +173,12 @@ export default function PrivacyPage() {
           <ul className="list-disc space-y-1.5 pl-5">
             <li>
               <strong>Service providers</strong> who process it for us under contracts that limit them to
-              our instructions: cloud hosting and databases in the United States; Stripe (subscription
-              billing and your customers’ card payments); Twilio (business phone numbers, voicemail
-              recording); our text and email delivery provider (Pingram); our speech-to-text provider
-              for voicemail transcripts; Google (Maps, routing and address lookup); Apple and Google
-              (push notifications and app distribution); Crisp (support chat); Vercel (website hosting
-              and analytics); error-reporting tools (Sentry). [CONFIRM list against production.]
+              our instructions: Akamai Linode (servers and database, United States) and Google Cloud
+              Storage (photos and documents); Stripe (subscription billing and your customers’ card
+              payments); Twilio (business phone numbers, voicemail recording and transcription);
+              Pingram (text and email delivery); Auth0 (sign-in); OneSignal, Apple and Google (push
+              notifications and app distribution); Google (Maps, routing and address lookup); Crisp
+              (support chat); Vercel (website hosting and analytics); Sentry (error reporting).
             </li>
             <li>
               <strong>Your own integrations</strong>, when you connect them: Intuit QuickBooks receives
@@ -210,8 +210,8 @@ export default function PrivacyPage() {
             only during the working hours the company sets, and only while the technician is signed in
             and tracking is on. The app shows a status line whenever it is reporting location, and
             technicians can see their company’s working-hours settings. Positions are used for the live
-            map, drive-time estimates and the customer tracking page, and are kept for 90 days
-            [CONFIRM] before being deleted. We never use location for advertising.
+            map, drive-time estimates and the customer tracking page, and are deleted after 90 days.
+            We never use location for advertising.
           </p>
           <p>
             <strong>Camera and photos</strong> are used only when a technician takes or attaches a job
@@ -240,9 +240,9 @@ export default function PrivacyPage() {
             <li><strong>Account and Company Data</strong> — for as long as your account exists, on any plan. Moving to the Free plan deletes nothing.</li>
             <li><strong>After you delete your account</strong> — removed from live systems within 30 days and from backups within 90, except records we must keep.</li>
             <li><strong>Invoice, payment and tax records</strong> — 7 years, as accounting law requires.</li>
-            <li><strong>Texting consent and opt-out records</strong> — 4 years after the last message, as messaging rules require. [CONFIRM]</li>
-            <li><strong>Voicemail recordings and transcripts</strong> — while the account exists, unless you delete them sooner. [CONFIRM]</li>
-            <li><strong>Technician location history</strong> — 90 days. [CONFIRM]</li>
+            <li><strong>Texting consent and opt-out records</strong> — while the customer record exists.</li>
+            <li><strong>Voicemail recordings and transcripts</strong> — 12 months, then deleted; the record that a call was missed, from which number and when, stays in the customer’s history.</li>
+            <li><strong>Technician location history</strong> — 90 days.</li>
             <li><strong>Login and security logs</strong> — 12 months.</li>
             <li><strong>Business phone numbers</strong> — released 30 days after a Company leaves the Team plan.</li>
           </ul>

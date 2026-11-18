@@ -23,5 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page('/privacy', 0.2, 'yearly'),
     page('/terms', 0.2, 'yearly'),
     page('/sms-opt-in', 0.2, 'yearly'),
+    page('/delete-account', 0.2, 'yearly'),
   ]
 }

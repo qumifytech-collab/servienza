@@ -35,6 +35,7 @@ export default function Footer() {
               { href: '/privacy', label: 'Privacy' },
               { href: '/terms', label: 'Terms' },
               { href: '/sms-opt-in', label: 'SMS policy' },
+              { href: '/delete-account', label: 'Delete account' },
             ]} />
           </div>
         </div>
