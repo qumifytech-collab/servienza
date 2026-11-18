@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   openGraph: { siteName: SITE_NAME, type: 'website', images: ['/og-image.png'] },
   twitter: { card: 'summary_large_image' },
-  icons: { icon: '/favicon.svg' },
 }
 
 export const viewport: Viewport = { themeColor: '#059669', width: 'device-width', initialScale: 1 }
