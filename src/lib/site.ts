@@ -16,8 +16,9 @@ export const BOOK_CALL_URL = '/book-a-call'
 export const SUPPORT_EMAIL = 'at@servienza.com'
 export const SUPPORT_HOURS = 'Monday–Friday, 8am–6pm ET'
 
-export const APP_STORE_URL = '#app-store' // TODO: real App Store link after review
-export const PLAY_STORE_URL = '#google-play' // TODO: real Play Store link after review
+export const APP_STORE_URL = 'https://apps.apple.com/app/servienza/id6827989036' // live 21 Nov 2026
+/** Empty until Play review clears; the store buttons hide a store whose link is empty. */
+export const PLAY_STORE_URL = ''
 
 export { TRIAL_DAYS } from '@/content/plans'
 

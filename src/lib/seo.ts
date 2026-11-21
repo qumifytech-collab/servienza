@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { SITE_NAME, SITE_TAGLINE, SITE_URL, SUPPORT_EMAIL, LEGAL_ENTITY } from './site'
+import { APP_STORE_URL, PLAY_STORE_URL, SITE_NAME, SITE_TAGLINE, SITE_URL, SUPPORT_EMAIL, LEGAL_ENTITY } from './site'
 import { FREE_PLAN_LIVE, PLANS } from '@/content/plans'
 
 /** Per-page metadata with canonical + OG/Twitter filled in. */
@@ -92,6 +92,7 @@ export function softwareAppJsonLd() {
     applicationSubCategory: 'Field service management',
     operatingSystem: 'iOS, Android, Web',
     url: SITE_URL,
+    installUrl: [APP_STORE_URL, PLAY_STORE_URL].filter(Boolean),
     description: SITE_TAGLINE,
     featureList: [
       'Scheduling and repeat jobs',

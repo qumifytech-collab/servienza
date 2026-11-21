@@ -26,8 +26,8 @@ export default function CtaBand({
           </div>
           {stores && (
             <div className="flex gap-2.5">
-              <a href={APP_STORE_URL} className="rounded-[9px] bg-ink px-3.5 py-2.5 text-[13px] font-bold text-white hover:bg-black">App Store</a>
-              <a href={PLAY_STORE_URL} className="rounded-[9px] bg-ink px-3.5 py-2.5 text-[13px] font-bold text-white hover:bg-black">Google Play</a>
+              {APP_STORE_URL && <a href={APP_STORE_URL} className="rounded-[9px] bg-ink px-3.5 py-2.5 text-[13px] font-bold text-white hover:bg-black">App Store</a>}
+              {PLAY_STORE_URL && <a href={PLAY_STORE_URL} className="rounded-[9px] bg-ink px-3.5 py-2.5 text-[13px] font-bold text-white hover:bg-black">Google Play</a>}
             </div>
           )}
         </div>
