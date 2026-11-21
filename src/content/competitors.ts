@@ -37,8 +37,8 @@ export const COMPETITORS: Competitor[] = [
     verdict:
       'Jobber is a bigger, older product with more add-ons; Servienza is simpler, charges one flat price for a two-technician business with no per-user add-ons, and sets you up on a call instead of leaving you to do it. If you have fewer than ten people and you\'d rather talk to a person than watch tutorials, Servienza is the better fit. If you want a large marketplace of integrations or built-in marketing tools, look at Jobber.',
     rows: [
-      { label: 'Price for one person', ours: 'Free plan (owner only; no texting or missed-call features) or the $100/mo Team plan', theirs: 'Core $49/mo ($29 billed yearly), 1 user — automated reminders and QuickBooks sync are not on Core' },
-      { label: 'Price for two technicians', ours: '$100/mo flat, everything included', theirs: 'Connect Team $199/mo ($149 yearly), 5 users; extra users $29/mo on eligible plans' },
+      { label: 'Price for one person', ours: 'Free plan (owner only; no texting or missed-call features) or the $99/mo Team plan', theirs: 'Core $49/mo ($29 billed yearly), 1 user — automated reminders and QuickBooks sync are not on Core' },
+      { label: 'Price for two technicians', ours: '$99/mo flat, everything included', theirs: 'Connect Team $199/mo ($149 yearly), 5 users; extra users $29/mo on eligible plans' },
       { label: 'Features held back to upper plans', ours: 'Two plans only: Free runs the business; the $100 plan adds texting, missed-call capture, routing and the live map', theirs: 'Yes — automated reminders and QuickBooks sync start on Connect; AI Receptionist is a $29/mo add-on except on Plus' },
       { label: 'Setup', ours: 'A 20-minute call with a person; we import your customers', theirs: 'Self-serve with help articles and onboarding resources' },
       { label: 'Card payments', ours: 'Pay link sent automatically with every invoice (Stripe). No Servienza fee on top of Stripe\'s rate', theirs: 'Jobber Payments; processing rates on their pricing page' },
@@ -83,8 +83,8 @@ export const COMPETITORS: Competitor[] = [
     verdict:
       'Housecall Pro is a full-featured platform aimed at home-service companies that want online booking, marketing and financing in one place; Servienza is the simpler tool for a one-truck business or a small crew that mainly needs scheduling, estimates, invoices and payments to just work, with a person to set it up. Under ten people and not a "computer person"? Servienza. Want consumer financing and a booking widget on your website today? Housecall Pro.',
     rows: [
-      { label: 'Price for one person', ours: 'Free plan (owner only; no texting or missed-call features) or the $100/mo Team plan', theirs: 'Basic $79/mo ($59 billed yearly), 1 user — no QuickBooks sync on Basic' },
-      { label: 'Price for two technicians', ours: '$100/mo flat, everything included', theirs: 'Essentials $189/mo ($149 yearly), up to 5 users' },
+      { label: 'Price for one person', ours: 'Free plan (owner only; no texting or missed-call features) or the $99/mo Team plan', theirs: 'Basic $79/mo ($59 billed yearly), 1 user — no QuickBooks sync on Basic' },
+      { label: 'Price for two technicians', ours: '$99/mo flat, everything included', theirs: 'Essentials $189/mo ($149 yearly), up to 5 users' },
       { label: 'Features held back to upper plans', ours: 'Two plans only: Free runs the business; the $100 plan adds texting, missed-call capture, routing and the live map', theirs: 'Yes — QuickBooks sync from Essentials; advanced reporting and escalated support on MAX; sales proposals an add-on below MAX' },
       { label: 'Setup', ours: 'A 20-minute call with a person; we import your customers', theirs: 'Self-serve; onboarding specialist on MAX' },
       { label: 'Card payments', ours: 'Pay link sent automatically with every invoice (Stripe). No Servienza fee on top of Stripe\'s rate', theirs: 'HCP Payments: 2.99% customer-entered online, 2.59% card reader, 3.49% keyed/Amex' },

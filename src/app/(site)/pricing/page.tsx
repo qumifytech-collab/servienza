@@ -21,7 +21,7 @@ const PRICING_FAQ = [
   { q: 'I only want the Free plan. Do I still get the trial?', a: `Yes — every account starts with ${TRIAL_DAYS} days of Team so you can see the texting and missed-call features with your own customers. If they aren’t for you, do nothing: you move to Free automatically, with everything you entered intact.` },
   { q: 'What happens if I hit the text or voicemail limit?', a: 'You get a notice, and that’s all. Voicemails are still recorded and listed, just without the typed-out transcript. Pay links switch to email, and alerts to your team go by push and email. Login codes are never counted or blocked. Limits reset on the 1st.' },
   { q: 'Why have limits at all?', a: 'Texts and transcription cost us per message. The limits are set well above what a two-person business uses in a normal month; they exist so one unusual month doesn’t change the flat price for everyone.' },
-  { q: 'Is there a contract?', a: 'No. Pay monthly and cancel any time from the app. Or pay for a year up front at 20% off ($960 instead of $1,200); an annual plan runs to the end of the year you paid for and does not renew if you cancel.' },
+  { q: 'Is there a contract?', a: 'No. Pay monthly and cancel any time from the app. Or pay for a year up front at 20% off ($950 instead of $1,188); an annual plan runs to the end of the year you paid for and does not renew if you cancel.' },
   { q: 'Can I switch between monthly and annual?', a: 'Yes, from the billing page in the app. Switching to annual charges the year right away; switching back takes effect when the annual term ends.' },
   { q: 'If I leave, can I take my data?', a: 'Yes — customers, jobs, invoices and payments export to spreadsheets with one click, before or after you cancel.' },
 ]

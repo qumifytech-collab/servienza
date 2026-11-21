@@ -25,8 +25,8 @@ const VENUE_COUNTY = 'Palm Beach County, Florida'
 const PRICE_CHANGE_NOTICE_DAYS = 30
 const ARBITRATION_OPT_OUT_DAYS = 30
 const TRIAL_DAYS = 60
-const TEAM_MONTHLY = '$100'
-const TEAM_ANNUAL = '$960'
+const TEAM_MONTHLY = '$99'
+const TEAM_ANNUAL = '$950'
 const SEAT_MONTHLY = '$25'
 const SEAT_ANNUAL = '$240'
 

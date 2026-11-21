@@ -1,7 +1,7 @@
 /**
  * Pricing — the ONLY place prices and limits live. Pages, JSON-LD and llms.txt read from here.
  * Decisions as of 12 Nov 2026 (plan-costing handoff), all confirmed: Free owner-only plan (not built
- * yet — see FREE_PLAN_LIVE), $100/mo for two technicians with every feature, $25/mo per extra seat,
+ * yet — see FREE_PLAN_LIVE), $99/mo for two technicians with every feature, $25/mo per extra seat,
  * 60-day trial, trial that ends unpaid drops to Free. No email ceiling is advertised.
  */
 
@@ -14,7 +14,7 @@ export const FREE_PLAN_LIVE = true
 export const EXTRA_SEAT_MONTHLY: number | null = 25
 /** Extra technician seat on annual billing (decided 15 Nov 2026, same 20% off). */
 export const EXTRA_SEAT_ANNUAL = 240
-/** What the Annual toggle advertises: 960 vs 12 × 100. */
+/** What the Annual toggle advertises: 950 vs 12 × 99 (1,188). */
 export const ANNUAL_SAVING_PCT = 20
 
 export type PlanId = 'free' | 'paid'
@@ -64,8 +64,8 @@ export const PLANS: Plan[] = [
     id: 'paid',
     name: 'Team',
     tagline: 'You plus a technician, with the phone and texting features on.',
-    monthly: 100,
-    annual: 960,
+    monthly: 99,
+    annual: 950,
     seats: 2,
     seatsLabel: '2 technicians included',
     featured: true,
